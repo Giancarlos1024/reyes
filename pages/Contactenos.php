@@ -13,13 +13,13 @@ include('../includes/db.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/style.css">
-    <title>Nuestros Seguros</title>
+    <title>Contáctenos</title>
 </head>
 <body>
     
     <?php include('../templates/header.php');?>
-    
-    <h1>Nuestros Seguros</h1>
+
+    <h1>Contactenos</h1>
 
     <?php include('../templates/footer.php');?>
 </body>

@@ -2,4 +2,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+body{
+    /* background-color: orange; */
+}
+
+.headerTop{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 110px;
+}
+.imgLogo{
+    width: 245px;
+    height:50px ;
+    margin-left: 50px;
+    /* background-color: rebeccapurple; */
+}
+nav{
+    /* background-color: greenyellow; */
+   
+    width: 60vw;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    /* background-color: aqua;   */
+    list-style: none;
+
+}
+nav > ul > li{
+    margin-right: 50px;
+    /* background-color: red; */
+    
+}
+
+nav > ul > li > a{
+    font-size: 16px;
+    color: #38509D;
+    text-decoration: none;
+    font-weight: 500;
 }
