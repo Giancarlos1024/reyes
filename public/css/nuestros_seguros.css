@@ -1,0 +1,178 @@
+
+
+/* Estilo del contenedor principal de la sección */
+.seguro-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que sea responsive */
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px; /* Anchura máxima del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el contenedor de la imagen */
+.image-container {
+    flex: 1; /* Ocupa el 50% del espacio */
+    padding: 10px;
+}
+
+/* Ajusta la imagen dentro del contenedor */
+.seguro-img {
+    max-width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    /*border-radius: 10px;*/
+}
+
+/* Estilo para el contenedor de texto */
+.text-container {
+    flex: 1; /* Ocupa el otro 50% */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Estilo para el título principal */
+.text-container h1 {
+    font-size: 2rem;
+    color: #2E3B87; /* Color azul */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el párrafo */
+.text-container p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Color gris */
+    margin-bottom: 20px;
+}
+
+/* Estilo para los botones */
+.button-container {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+/* Estilo de los botones generales */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón "Leer más" */
+.leer-mas {
+    background-color: #82BC49; /* Color verde */
+    color: #FFFFFF;
+}
+
+/* Botón "Contáctanos" */
+.contactanos {
+    background-color: transparent;
+    border: 2px solid #2E3B87; /* Borde azul */
+    color: #2E3B87;
+}
+
+/* Efecto hover en los botones */
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsividad para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .seguro-section {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .text-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Nueva sección de riesgos */
+.riesgos-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: flex-start;
+    margin: 50px 0; /* Añadir espacio arriba y abajo */
+
+
+
+}
+
+.riesgo-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Dos tarjetas ocupan el 48% del espacio cada una 48*/
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+    height: 560px;
+
+}
+
+.riesgo-card h2 {
+    font-size: 2.5rem;
+    color: #82BC49; /* Verde para el título */
+    margin-bottom: 15px;
+}
+
+.riesgo-card img {
+    max-width: 100%;
+    height: auto;
+    /*border-radius: 10px;*/
+    margin-bottom: 15px;
+}
+
+.riesgo-card p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Gris suave */
+    margin-bottom: 20px;
+    /*text-align: justify;  Justifica el texto */
+}
+
+.riesgo-card .leer-mas {
+    background-color: #82BC49; /* Verde para el botón */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.riesgo-card .leer-mas:hover {
+    opacity: 0.8;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .riesgo-card {
+        width: 100%; /* Las tarjetas ocupan el 100% en pantallas pequeñas */
+    }
+}
+
+
+
+
+

@@ -1,0 +1,67 @@
+
+
+.aliados-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.aliados-section h2 {
+    color: #82BC49;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 40%; /* Muestra 5 imágenes a la vez */
+    max-width: 288px; /* Tamaño máximo de las imágenes */
+    object-fit: contain;
+    padding: 0 15px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    color: #2E3B87;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Efectos hover en los botones 
+.carousel-btn:hover {
+    background-color: #bf8b43;
+    color: white;
+}*/
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carousel img {
+        width: 50%; /* Muestra 2 imágenes a la vez en pantallas pequeñas */
+    }
+}
