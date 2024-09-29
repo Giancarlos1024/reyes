@@ -1,0 +1,24 @@
+/*CALIFICACIONES HOME */
+
+.Calificaciones{
+    background-color: #38509D;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px;
+}
+.Calificaciones > div{
+    background-color: #fff;
+    padding: 30px 28px;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+}
+.Calificaciones > div > h4{
+    font-size: 50px;
+    color: #80BB4A;
+}
+.Calificaciones > div > p{
+    font-size: 15px;
+    color: #38509D;
+}

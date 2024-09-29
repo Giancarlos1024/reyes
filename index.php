@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/aliados.css">
+    <link rel="stylesheet" href="./public/css/home.css">
 </head>
 <body>
     <header class="headerTop">
@@ -21,7 +23,66 @@
             </ul>
         </nav>
     </header>
-    <h1>Hola</h1>
+    <main>
+        <section class="Seccion1">
+            <div class="div-Seccion-1">
+                <img src="./public/img/tituloDescripcion.png" alt="tituloDescripcion">
+                <div>
+                    <button class="button-leer">Leer más</button>
+                    <button class="button-contactanos">Contáctenos</button>
+                </div>
+            </div>
+            <div class="div-Seccion-2">
+                <img src="./public/img/tituloPersonas.png" alt="tituloPersonas">
+                <div></div>
+            </div>
+
+        </section>
+        <section class="Seccion2">
+            <div class="div-Seccion-3">
+                <img src="./public/img/tituloPersona2.png" alt="tituloPersona2">
+            </div>
+            <div class="div-Seccion-4">
+                <h4>¿Quiénes somos?</h4>
+                <h1>Tu corredor de seguros de confianza</h1>
+                <p>
+                F. REYES Y CIA Corredores de Seguros S.A.C. es una empresa peruana sólida con una 
+                trayectoria de más de 40 años en el corretaje y asesoramiento en seguros, con R.N.P.S. 
+                N° J0233.
+                </p>
+                <div class="button-somos">
+                    <button class="leer-somos">Leer más</button>
+                </div>
+            </div>
+        </section>
+        <section class="Seccion3">
+            <h2><strong>Nuestros</strong> Seguros</h2>
+            <div>
+                <div class="div-Seccion-5">
+                    <img src="./public/img/foto_riesgos_generales.png" alt="">
+                    <h3>Riesgos Generales</h3>
+                    <p>
+                    Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
+                    como accidentes, incendios o robos, generando pérdidas económicas.
+                    </p>
+                    <button class="leer-somos">Leer más</button>
+                </div>
+                <div class="div-Seccion-5">
+                    <img src="./public/img/foto_riesgos_humanos.png" alt="">
+                    <h3>Riesgos Humanos</h3>
+                    <p>
+                    Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
+                    como accidentes, incendios o robos, generando pérdidas económicas.
+                    </p>
+                    <button class="leer-somos">Leer más</button>
+                </div>
+            </div>
+        </section>
+        <?php include('./templates/calificaciones.php');?>
+        <section>
+        <?php include('./templates/aliados.php');?>
+        </section>
+    </main>
 
     <footer>
         <section class="SeccionFooter-One">

@@ -61,10 +61,6 @@ include('../includes/db.php');
 <?php include('../templates/aliados.php');?>
 
 
-</body>
-</html>
-
-
     <?php include('../templates/footer.php');?>
 </body>
 </html>

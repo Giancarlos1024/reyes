@@ -1,0 +1,183 @@
+/*SECCION 1 EN HOME */
+.Seccion1{
+    display: flex;
+    /* background-color: yellow; */
+}
+.Seccion1 > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.div-Seccion-1{
+    width: 50%;
+    /* background-color: orange; */
+    padding: 40px;
+}
+.div-Seccion-1 > div{
+    /* background-color: brown; */
+    width: 100%;
+    text-align: center;
+}
+.div-Seccion-1 > div > button{
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+.Seccion1 > div > img{
+    width: 100%;
+}
+
+.div-Seccion-2{
+    width: 50%;
+    
+}
+.div-Seccion-2 > div{
+    background-color: #ffffff50;
+    height: 370px;
+    width: 100px;
+    position: absolute;
+    
+}
+
+.button-leer{
+    background-color: #80BB4A;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin-right: 20px;
+}
+.button-contactanos{
+    color: #3A519E;
+    background-color: #fff;
+    font-weight: bold;
+    border: 1px solid #3A519E;
+
+}
+
+
+/*SECCION 2 HOME*/
+
+.Seccion2{
+    display: flex;
+    /* background-color: yellow; */
+}
+.Seccion2 > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.div-Seccion-3{
+    width: 50%;
+    /* background-color: orange; */
+    padding: 40px;  
+}
+.div-Seccion-3 > img{
+    /* background-color: #80BB4A; */
+    /* padding: 10px; */
+    box-shadow: -10px 10px #3A519E;
+}
+
+.div-Seccion-3 > div{
+    /* background-color: brown; */
+    width: 100%;
+    text-align: center;
+}
+.div-Seccion-3 > div > button{
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+.Seccion2 > div > img{
+    width: 100%;
+}
+
+.div-Seccion-4{
+    width: 50%;
+    /* background-color: yellow; */
+    padding: 0px 40px;  
+}
+.div-Seccion-4 > h4{
+    
+    color: #3A519E;
+}
+.div-Seccion-4 > h1{
+    color: #80BB4A;
+    font-size: 45px;
+    padding: 20px 0px;
+}
+
+.div-Seccion-4 > p{
+    color: #3A519E;
+    text-align: justify;
+    padding-right: 35px;
+    padding-bottom: 35px;
+}
+
+.button-somos{
+    /* background-color: olivedrab; */
+    width: 100%;
+    text-align: center;
+}
+
+.leer-somos{
+    color: #3A519E;
+    font-weight: bold;
+    border: 1px solid #3A519E;
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    background-color: #fff;
+}
+/*SECCION 3 HOME*/
+
+.Seccion3{
+    /* background-color: yellow;  */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.Seccion3 > h2{
+    text-align: center;
+    color: #80BB4A;
+    font-size: 45px;
+}
+.Seccion3 > h2 > strong{
+    color: #3A519E;
+}
+
+.Seccion3 > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+}
+
+
+.div-Seccion-5{
+    /* background-color: olivedrab; */
+    margin: 40px;
+    text-align: center;
+    width: 480px;
+    padding-bottom: 25px;
+    box-shadow: 0px 1px 1px 2px rgb(238, 234, 234);
+}
+.div-Seccion-5 > p{
+    text-align: left;
+    padding: 20px 10px;
+    text-align: justify;
+}
+.div-Seccion-5 > h3{
+    padding: 15px 0px;
+    color: #80BB4A;
+}
+
+.div-Seccion-5 > img{
+    padding-bottom: 10px;
+    width: 100%;
+}

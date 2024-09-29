@@ -7,12 +7,13 @@
 
 
 .headerTop{
-    /* background-color: yellow; */
+    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 110px;
+    box-shadow: 1px 1px 1px 1px #00000044;
 }
 .imgLogo{
     width: 245px;
@@ -22,7 +23,7 @@
 }
 nav{
     /* background-color: greenyellow; */
-   
+    margin-right: 0px;
     width: 60vw;
 }
 ul{
@@ -35,7 +36,7 @@ ul{
 }
 nav > ul > li{
     margin-right: 50px;
-    /* background-color: red; */
+    /* background-color: red;  */
     
 }
 
@@ -119,4 +120,10 @@ footer{
 
 .LogoFooter > img{
     width: 300px;
+}
+
+.bloque{
+    padding: 0px;
+    margin: 0px;
+    background-color: aqua;
 }
