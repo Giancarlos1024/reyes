@@ -1,13 +1,10 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: "Montserrat";
 }
 
-body{
-    /* background-color: orange; */
-}
 
 .headerTop{
     /* background-color: yellow; */
@@ -47,4 +44,79 @@ nav > ul > li > a{
     color: #38509D;
     text-decoration: none;
     font-weight: 500;
+}
+
+
+/*footer*/
+
+footer{
+    background-color: #38509D;
+    
+    color: #fff;
+}
+.SeccionFooter-One{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+}
+
+.SeccionFooter-Two{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px;
+    
+}
+.SeccionFooter-Two > div > p{
+    font-size: 12px;
+}
+
+.SeccionFooterLinea{
+    display: flex;
+    justify-content: center;
+}
+
+.SeccionFooterLinea > div{
+    border-top: 1px solid;
+    width: 90vw;
+    padding: 5px 10px;
+   
+}
+
+.informacionFooter > h4{
+    padding-bottom: 5px;
+}
+
+.informacionFooter > div{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+}
+
+.informacionFooter > div > img{
+    margin-right: 10px;
+}
+
+.informacionFooter > div > a{
+    color: #fff;
+    text-decoration: none;
+
+}
+.redes > h4{
+    padding-bottom: 20px;
+}
+.redes > div > a > img{
+   padding-right: 5px;
+   width: 30px;
+   height: 25px;
+}
+.LogoFooter{
+    /* background-color: yellow; */
+    display: flex;
+    align-items: end;
+}
+
+.LogoFooter > img{
+    width: 300px;
 }
