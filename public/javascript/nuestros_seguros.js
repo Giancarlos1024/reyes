@@ -1,16 +1,30 @@
 const carousel = document.querySelector('.carousel');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let scrollPosition = 0;
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
-nextBtn.addEventListener('click', () => {
-    // Desplaza 100% del contenedor (ajustado para ver 5 imágenes)
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-    scrollPosition = Math.min(scrollPosition + carousel.clientWidth, maxScroll);
-    carousel.style.transform = `translateX(-${scrollPosition}px)`;
+let currentIndex = 0;
+const totalImages = document.querySelectorAll('.carousel img').length;
+const visibleImages = 5; // Cantidad de imágenes visibles a la vez
+const imageWidth = document.querySelector('.carousel img').offsetWidth; // Ancho de una imagen
+
+// Desplazar el carrusel
+function updateCarousel() {
+    const translateX = -currentIndex * imageWidth;
+    carousel.style.transform = `translateX(${translateX}px)`;
+}
+
+// Botón "Siguiente"
+nextButton.addEventListener('click', () => {
+    if (currentIndex < totalImages - visibleImages) {
+        currentIndex++;
+        updateCarousel();
+    }
 });
 
-prevBtn.addEventListener('click', () => {
-    scrollPosition = Math.max(scrollPosition - carousel.clientWidth, 0);
-    carousel.style.transform = `translateX(-${scrollPosition}px)`;
+// Botón "Anterior"
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
 });
