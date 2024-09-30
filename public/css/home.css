@@ -1,6 +1,7 @@
 /*SECCION 1 EN HOME */
 .Seccion1{
     display: flex;
+    padding-top: 2px;
     /* background-color: yellow; */
 }
 .Seccion1 > div{
@@ -33,13 +34,13 @@
     width: 50%;
     
 }
-.div-Seccion-2 > div{
+/* .div-Seccion-2 > div{
     background-color: #ffffff50;
     height: 370px;
     width: 100px;
     position: absolute;
     
-}
+} */
 
 .button-leer{
     background-color: #80BB4A;
