@@ -9,15 +9,18 @@
 
 .aliados-section h2 {
     color: #82BC49;
-    font-size: 2rem;
+    font-size: 48px;
     margin-bottom: 20px;
+}
+.aliados-section h2 strong {
+    color: #38509D;
 }
 
 .carousel-container {
     position: relative;
-    width: 80%;
+width: 90%;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 10px auto;
     overflow: hidden;
 }
 
@@ -39,11 +42,11 @@
     transform: translateY(-50%);
     background-color: transparent;
     border: none;
-    font-size: 2rem;
     cursor: pointer;
     padding: 10px;
     z-index: 10;
     color: #2E3B87;
+    font-size: 65px;
 }
 
 .prev {

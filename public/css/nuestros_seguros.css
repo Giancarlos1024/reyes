@@ -6,12 +6,12 @@
     flex-wrap: wrap; /* Permite que sea responsive */
     justify-content: center;
     align-items: center;
-    max-width: 1140px; /* Anchura máxima del contenedor */
-    margin: 0 auto; /* Centrar el contenedor */
+    max-width: 1345px; /* Anchura máxima del contenedor */
+    margin: 10px auto; /* Centrar el contenedor */ 
     background-color: #FFFFFF;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+   
 }
 
 /* Estilo para el contenedor de la imagen */
@@ -30,28 +30,40 @@
 /* Estilo para el contenedor de texto */
 .text-container {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 20px;
+    padding: 100px;
     text-align: left;
+    
+    
 }
 
 /* Estilo para el título principal */
 .text-container h1 {
-    font-size: 2rem;
-    color: #2E3B87; /* Color azul */
+    font-size: 64px;
+    font-weight:bold;
+    color: #38509D; /* Color azul */
     margin-bottom: 10px;
+
 }
 
-/* Estilo para el párrafo */
+.text-container h1 strong{
+    color: #82BC49;
+    font-weight:bold;
+}
+
+/* Estilo para el párrafo eliminado
 .text-container p {
     font-size: 1.2rem;
-    color: #6c757d; /* Color gris */
+    color: #6c757d; /* Color gris 
     margin-bottom: 20px;
-}
+}*/
 
 /* Estilo para los botones */
 .button-container {
     display: flex;
     gap: 15px; /* Espacio entre los botones */
+    justify-content: center;
+    margin-top: 50px;
+
 }
 
 /* Estilo de los botones generales */
@@ -59,7 +71,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -73,8 +85,8 @@
 /* Botón "Contáctanos" */
 .contactanos {
     background-color: transparent;
-    border: 2px solid #2E3B87; /* Borde azul */
-    color: #2E3B87;
+    border: 2px solid #38509D; /* Borde azul */
+    color: #38509D;
 }
 
 /* Efecto hover en los botones */
@@ -111,7 +123,7 @@
 .riesgos-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: flex-start;
     margin: 50px 0; /* Añadir espacio arriba y abajo */
 
@@ -123,19 +135,21 @@
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px; /* Dos tarjetas ocupan el 48% del espacio cada una 48*/
-    padding: 20px;
+    width: 506px; /* Dos tarjetas ocupan el 48% del espacio cada una 48*/
     text-align: center;
     margin-bottom: 20px; /* Espacio entre las tarjetas */
-    height: 560px;
+    height: 600px;
 
 }
+
 
 .riesgo-card h2 {
     font-size: 2.5rem;
     color: #82BC49; /* Verde para el título */
     margin-bottom: 15px;
 }
+
+
 
 .riesgo-card img {
     max-width: 100%;
@@ -145,10 +159,12 @@
 }
 
 .riesgo-card p {
-    font-size: 1.2rem;
+    font-size: 20px;
     color: #6c757d; /* Gris suave */
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;
     /*text-align: justify;  Justifica el texto */
+    text-align: justify;
+    margin: 20px 10px;
 }
 
 .riesgo-card .leer-mas {
@@ -159,6 +175,7 @@
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
+    align-items: center;
 }
 
 .riesgo-card .leer-mas:hover {

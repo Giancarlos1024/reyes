@@ -29,8 +29,8 @@ include('../includes/db.php');
         </div>
         <div class="text-container">
             <!-- Título y texto al lado derecho -->
-            <h1>Puedes escoger un seguro con toda confianza.</h1>
-            <p>Elige el mejor seguro que se adapte a tus necesidades y te brinde la confianza que mereces.</p>
+            <h1>Puedes escoger un seguro <strong>con toda confianza.</strong></h1>
+            
             <!-- Botones debajo del texto -->
             <div class="button-container">
                 <button class="btn leer-mas">Leer más</button>
@@ -42,7 +42,7 @@ include('../includes/db.php');
 
     <div class="riesgos-section">
     <div class="riesgo-card">
-        <h2>Riesgos Generales</h2>
+        <h2><strong>Riesgos </strong>Generales</h2>
         <img src="../public/img/riesgos_generales.png" alt="Riesgos Generales">
         <p>Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, como accidentes, incendios o robos, generando pérdidas económicas.</p>
         <button class="btn leer-mas">Leer más</button>
@@ -51,7 +51,7 @@ include('../includes/db.php');
     <div class="riesgo-card">
         <h2>Riesgos Humanos</h2>
         <img src="../public/img/riesgos_humanos.png" alt="Riesgos Humanos">
-        <p>Los riesgos humanos son amenazas derivadas de comportamientos, decisiones o acciones de las personas que pueden causar daño o pérdidas, como errores, negligencia o malas decisiones.</p>
+        <p>Los riesgos humanos son amenazas derivadas de comportamientos, decisiones o acciones de las personas que pueden causar daño o pérdidas como negligencia o malas decisiones.</p>
         <button class="btn leer-mas">Leer más</button>
     </div>
 </div>

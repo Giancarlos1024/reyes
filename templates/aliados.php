@@ -10,7 +10,7 @@
 <body>
 
     <div class="aliados-section">
-        <h2>Nuestros Aliados</h2>
+        <h2>Nuestros<strong>Aliados</strong></h2>
         <div class="carousel-container">
             <div class="carousel">
                 <img src="../public/img/pacifico.png" alt="Pacífico">
