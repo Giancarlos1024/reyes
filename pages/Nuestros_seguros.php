@@ -44,15 +44,16 @@ include('../includes/db.php');
     <div class="riesgo-card">
         <h2><strong>Riesgos </strong>Generales</h2>
         <img src="../public/img/riesgos_generales.png" alt="Riesgos Generales">
-        <p>Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, como accidentes, incendios o robos, generando pérdidas económicas.</p>
-        <button class="btn leer-mas">Leer más</button>
+        <p>Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, como accidentes, incendios o robos, generando pérdidas económicas significativas.</p>
+        <a href="Nuestros_seguros_riesgos_generales.php" class="btn leer-mas">Leer más</a>
+
     </div>
 
     <div class="riesgo-card">
         <h2>Riesgos Humanos</h2>
         <img src="../public/img/riesgos_humanos.png" alt="Riesgos Humanos">
         <p>Los riesgos humanos son amenazas derivadas de comportamientos, decisiones o acciones de las personas que pueden causar daño o pérdidas como negligencia o malas decisiones.</p>
-        <button class="btn leer-mas">Leer más</button>
+        <a href="Nuestros_seguros_riesgos_humanos.php" class="btn leer-mas">Leer más</a>
     </div>
 </div>
 

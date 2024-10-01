@@ -138,7 +138,7 @@
     width: 506px; /* Dos tarjetas ocupan el 48% del espacio cada una 48*/
     text-align: center;
     margin-bottom: 20px; /* Espacio entre las tarjetas */
-    height: 600px;
+    height: 555px;
 
 }
 
@@ -153,29 +153,31 @@
 
 .riesgo-card img {
     max-width: 100%;
-    height: auto;
+    height: 276px;
     /*border-radius: 10px;*/
     margin-bottom: 15px;
 }
 
 .riesgo-card p {
-    font-size: 20px;
+
     color: #6c757d; /* Gris suave */
     /*margin-bottom: 20px;
     /*text-align: justify;  Justifica el texto */
     text-align: justify;
-    margin: 20px 10px;
+    margin: 20px 15px;
 }
 
 .riesgo-card .leer-mas {
     background-color: #82BC49; /* Verde para el botón */
     color: #FFFFFF;
+
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
     align-items: center;
+    text-decoration: none;
 }
 
 .riesgo-card .leer-mas:hover {
