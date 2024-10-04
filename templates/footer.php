@@ -13,7 +13,7 @@
         <section class="SeccionFooter-One">
             
             <div class="LogoFooter">
-                <img src="../public/img/LogoFooter.png" alt="Logo Header">
+                <img src="../public/img/LogoFooter.svg" alt="Logo Header">
             </div>
             <div class="informacionFooter">
                 <h4>Informacion de contacto</h4>

@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="headerTop">
-        <img class="imgLogo" src="../public/img/LogoHeader.png" alt="Logo Header">
+        <img class="imgLogo" src="../public/img/logoHeader.svg" alt="Logo Header">
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>

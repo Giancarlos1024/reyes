@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="headerTop">
-        <img class="imgLogo" src="./public/img/LogoHeader.png" alt="Logo Header">
+        <img class="imgLogo" src="./public/img/logoHeader.svg" alt="Logo Header">
         <nav>
             <ul>
                 <li><a href="./index.php">Inicio</a></li>
@@ -88,7 +88,7 @@
         <section>
 
         <div class="aliados-section">
-            <h2>Nuestros<strong>Aliados</strong></h2>
+            <h2>Nuestros <strong>Aliados</strong></h2>
             <div class="carousel-container">
                 <div class="carousel">
                     <img src="./public/img/pacifico.png" alt="Pacífico">
@@ -99,6 +99,8 @@
                     <img src="./public/img/protecta.png" alt="Protecta">
                     <img src="./public/img/chubb.png" alt="Chubb">
                 </div>
+            </div>
+            <div class="btn-carousel">
                 <button class="carousel-btn prev">&lt;</button>
                 <button class="carousel-btn next">&gt;</button>
             </div>
@@ -113,7 +115,7 @@
         <section class="SeccionFooter-One">
             
             <div class="LogoFooter">
-                <img src="./public/img/LogoFooter.png" alt="Logo Header">
+                <img src="./public/img/LogoFooter.svg" alt="Logo Header">
             </div>
             <div class="informacionFooter">
                 <h4>Informacion de contacto</h4>
