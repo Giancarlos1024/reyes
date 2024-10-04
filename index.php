@@ -21,15 +21,14 @@
                 <li>
                     <a href="./pages/Nuestros_seguros.php">Nuestros seguros</a>
                     <ul class="dropdown">
-                        <li><a href="./seguro1.php">Riesgos Generales</a></li>
-                        <li><a href="./seguro2.php">Riegos Humanos</a></li>
+                        <li><a href="./pages/Nuestros_seguros_riesgos_generales.php">Riesgos Generales</a></li>
+                        <li><a href="./pages/Nuestros_seguros_riesgos_humanos.php">Riegos Humanos</a></li>
                     </ul>
                 </li>
                 <li><a href="./pages/Contactenos.php">Contáctenos</a></li>
             </ul>
         </nav>
     </header>
-    
     <main>
         <section class="Seccion1">
             <div class="div-Seccion-1">
@@ -89,23 +88,21 @@
         <section>
 
         <div class="aliados-section">
-    <h2>Nuestros <strong>Aliados</strong></h2>
-    <div class="carousel-container">
-        <div class="carousel">
-            <img src="./public/img/pacifico.png" alt="Pacífico">
-            <img src="./public/img/positiva.png" alt="La Positiva">
-            <img src="./public/img/mapfre.png" alt="MAPFRE">
-            <img src="./public/img/sanitas.png" alt="Sanitas">
-            <img src="./public/img/rimac.png" alt="Rimac">
-            <img src="./public/img/protecta.png" alt="Protecta">
-            <img src="./public/img/chubb.png" alt="Chubb">
+            <h2>Nuestros<strong>Aliados</strong></h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="./public/img/pacifico.png" alt="Pacífico">
+                    <img src="./public/img/positiva.png" alt="La Positiva">
+                    <img src="./public/img/mapfre.png" alt="MAPFRE">
+                    <img src="./public/img/sanitas.png" alt="Sanitas">
+                    <img src="./public/img/rimac.png" alt="Rimac">
+                    <img src="./public/img/protecta.png" alt="Protecta">
+                    <img src="./public/img/chubb.png" alt="Chubb">
+                </div>
+                <button class="carousel-btn prev">&lt;</button>
+                <button class="carousel-btn next">&gt;</button>
+            </div>
         </div>
-    </div>
-    <div class="btn-carousel">
-        <button class="carousel-btn prev">&lt;</button>
-        <button class="carousel-btn next">&gt;</button>
-    </div>
-</div>
 
 
 

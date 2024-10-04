@@ -20,7 +20,65 @@ include('../includes/db.php');
     
     <?php include('../templates/header.php');?>
 
-    <h1>Contactenos</h1>
+    <main>
+        <section class="section-nuestras-oficinas">
+            <div class="section-informacion">
+                <h2><strong>Nuestras</strong> Oficinas</h2>
+                <p>Contamos con seis ubicaciones estratégicas que nos permiten estar más cerca de ti. 
+                Cada una de nuestras sedes refleja nuestra dedicación a proteger lo que más valoras. 
+                Te invitamos a explorar nuestras instalaciones y a conocer al equipo que está comprometido 
+                en ser tu socio en la seguridad financiera y la tranquilidad de tu negocio.</p>
+                <button class="section-botones button-leer">Leer más</button>
+                <button class="section-botones button-contactanos">Contáctenos</button>
+            </div>
+            <div class="section-Saludo-img">
+                <img src="../public/img/SaludoGIF1.png" alt="saludo">
+            </div>
+        </section>
+
+        <section>
+            <h1>Mapa</h1>
+            <div id="map" style="height: 500px; width: 100%;"></div>
+        </section>
+
+        <section class="section-contacto">
+            <h2>Contáctenos</h2>
+            <form id="data">
+                <div class="datos-form-personales">
+                    <label for="">Nombre</label>
+                    <input type="text" placeholder="Introduzca su nombre">
+                    <label for="">Correo Electrónico</label>
+                    <input type="email" placeholder="Introduzca su correo">
+                    <label for="">Teléfono</label>
+                    <input type="tel" placeholder="Introduzca su teléfono">
+                    <div class="validacion-form">
+                        <input type="checkbox" id="promo-checkbox">
+                        <label id="label-validacion" for="promo-checkbox">Deseo recibir promociones y recordatorios en mi buzón de mensajes de mi correo electrónico.</label>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </div>
+                <div class="datos-form-personales">
+                    <label for="">Tipo de Seguro</label>
+                    <select id="select-seguros">
+                        <option value="#">Introduzca el tipo de seguro</option>
+                        <option value="tipo1">tipo 1</option>
+                        <option value="tipo2">tipo 2</option>
+                        <option value="tipo3">tipo 3</option>
+                    </select>
+                    <label for="">Oficina</label>
+                    <select id="select-oficina">
+                        <option value="#">Introduzca la oficina</option>
+                        <option value="oficina1">oficina 1</option>
+                        <option value="oficina2">oficina 2</option>
+                        <option value="oficina3">oficina 3</option>
+                    </select>
+                    <label for="">Mensaje</label>
+                    <textarea id="mensaje" rows="5" placeholder="Describe tu mensaje aquí..."></textarea>
+                </div>
+            </form>
+        </section>
+
+    </main>
 
     <?php include('../templates/footer.php');?>
 
