@@ -114,9 +114,9 @@ footer{
    height: 25px;
 }
 .LogoFooter{
-    /* background-color: yellow; */
+    /* background-color: yellow;  */
     display: flex;
-    align-items: end;
+    align-items: center;
 }
 
 .LogoFooter > img{

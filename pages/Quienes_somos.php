@@ -87,6 +87,7 @@ include('../includes/db.php');
 
     <?php include('../templates/calificaciones.php');?>
 
+    <?php include('../templates/aliados.php');?>
     <?php include('../templates/footer.php');?>
 </body>
 </html>

@@ -34,8 +34,8 @@
             <div class="redes">
                 <h4>Siguenos en :</h4>
                 <div>
-                    <a href="#"><img src="../public/img/facebook.png" alt="facebook"></a>
-                    <a href="#"><img src="../public/img/instagram.png" alt="instagram"></a>
+                    <a href="#"><img src="../public/img/facebook.svg" alt="facebook"></a>
+                    <a href="#"><img src="../public/img/instagram.svg" alt="instagram"></a>
                 </div>   
 
             </div>
