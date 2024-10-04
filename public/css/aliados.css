@@ -1,71 +1,86 @@
-
-
 .aliados-section {
+    position: relative;
     text-align: center;
-    padding: 20px;
-    /* background-color: orange; */
-
-}
-
-.aliados-section h2 {
-    color: #82BC49;
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-.aliados-section h2 strong {
-    color: #38509D;
+    padding: 25px 0; /* Espaciado entre el título y las imágenes */
 }
 
 .carousel-container {
     position: relative;
-width: 90%;
-    max-width: 1440px;
-    margin: 10px auto;
-    overflow: hidden;
+    width: 80%; /* Ajusta el tamaño según sea necesario */
+    margin: auto;
+    overflow: hidden; /* Oculta las imágenes fuera de vista */
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra verticalmente las imágenes */
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; /* Animación suave para el desplazamiento */
+    height: 200px; /* Ajusta la altura del carrusel para las imágenes */
 }
 
 .carousel img {
-    width: 40%; /* Muestra 5 imágenes a la vez */
-    max-width: 288px; /* Tamaño máximo de las imágenes */
-    object-fit: contain;
-    padding: 0 15px;
+    width: 20%; /* 5 imágenes visibles a la vez */
+    max-height: 100%; /* Ajusta la altura máxima de las imágenes */
+    object-fit: contain; /* Ajusta la imagen para que no se deforme */
+    margin: auto 10px;
 }
 
+
+.aliados-section > h2{
+    /*text-align: center;*/
+    color: #80BB4A;
+    font-size: 45px;
+}
+.aliados-section h2 strong{
+    color: #3A519E;
+}
+
+/* Botones de navegación */
 .carousel-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 60%; /* Coloca los botones al centro verticalmente en relación a las imágenes */
+    transform: translateY(-50%); /* Alineación precisa verticalmente */
     background-color: transparent;
+    color: #38509D;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-    color: #2E3B87;
-    font-size: 65px;
+    font-size: 50px;
+    z-index: 1; /* Asegura que los botones estén encima de las imágenes */
 }
 
-.prev {
-    left: 10px;
+.carousel-btn.prev {
+    left: 30px; /* Ajusta la posición del botón "anterior" a la izquierda */
 }
 
-.next {
-    right: 10px;
+.carousel-btn.next {
+    right: 30px; /* Ajusta la posición del botón "siguiente" a la derecha */
 }
 
-/* Efectos hover en los botones 
 .carousel-btn:hover {
-    background-color: #bf8b43;
-    color: white;
-}*/
+    background-color: rgba(0, 0, 0, 0.1); /* Opcional: efecto de hover */
+}
 
-/* Responsivo */
+/* Responsivo para dispositivos móviles */
 @media (max-width: 768px) {
     .carousel img {
-        width: 50%; /* Muestra 2 imágenes a la vez en pantallas pequeñas */
+        width: 40%; /* Aumenta el tamaño de las imágenes en pantallas pequeñas */
+    }
+    .carousel-btn {
+        font-size: 30px; /* Reduce el tamaño de las flechas en pantallas pequeñas */
+        padding: 5px 10px;
     }
 }
+
+@media (max-width: 480px) {
+    .carousel img {
+        width: 60%; /* Muestra menos imágenes en pantallas muy pequeñas */
+    }
+    .carousel-btn {
+        font-size: 25px; /* Ajusta el tamaño de las flechas aún más en pantallas pequeñas */
+    }
+}
+
+

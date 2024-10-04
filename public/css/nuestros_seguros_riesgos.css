@@ -1,0 +1,143 @@
+/* Estilos generales */
+.riesgos-generales {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    color: #2D3E87;
+    margin-bottom: 10px;
+}
+
+.title-section .highlight {
+    color: #6DBF43;
+}
+
+.title-section p {
+    font-size: 1rem;
+    color: #6DBF43;
+    margin-bottom: 40px;
+}
+
+.title-section a {
+    color: #2D3E87;
+    text-decoration: none;
+}
+
+/* Estilo de la cuadrícula */
+.riesgos-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
+    gap: 120px; /* Espacio entre los elementos */
+    justify-content: center;
+
+}
+
+
+
+.riesgo-item {
+    /*flex: 0 1 calc(50% - 20px);  Cada elemento ocupa el 50% del ancho menos el espacio de gap */
+    flex: 0 1 calc(35% - 20px);
+    background-color: #fff;
+
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
+
+
+    
+}
+
+
+
+.button{
+    position: relative;
+
+    height: 60px;
+    width: auto;
+    
+}
+
+
+
+
+.riesgo-item:hover {
+    transform: translateY(-5px);
+}
+
+.riesgo-item img {
+    width: 100%;
+    height: auto;
+
+}
+
+.riesgo-item h3 {
+
+    color: #2D3E87;
+    margin: 10px 0;
+    min-height: 46px;
+}
+
+.riesgo-item p {
+    color: #555;
+    margin-bottom: 20px;
+    margin: 0px 15px;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas */
+    line-height: 1.5; /* Altura de línea para ajustar el espacio entre líneas */
+    max-height: calc(1.5em * 3); /* Altura máxima: 3 líneas de texto */
+
+    
+}
+
+
+
+/* Estilo del botón */
+.cotizar-btn {
+    background-color: white;
+    color: #2D3E87;
+    border: 2px solid #2D3E87;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+    
+    position:absolute;
+    bottom: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Evita que el texto salga de los límites */
+}
+
+
+
+.cotizar-btn:hover {
+    background-color: #2D3E87;
+    color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .riesgo-item {
+        flex: 0 1 100%; /* En pantallas pequeñas, los items ocuparán el 100% del ancho */
+    }
+}
+
+
+
+
+
+
+
+
