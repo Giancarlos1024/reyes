@@ -18,7 +18,13 @@
             <ul>
                 <li><a href="./index.php">Inicio</a></li>
                 <li><a href="./pages/Quienes_somos.php">¿Quiénes somos?</a></li>
-                <li><a href="./pages/Nuestros_seguros.php">Nuestros seguros</a></li>
+                <li>
+                    <a href="./pages/Nuestros_seguros.php">Nuestros seguros</a>
+                    <ul class="dropdown">
+                        <li><a href="./seguro1.php">Riesgos Generales</a></li>
+                        <li><a href="./seguro2.php">Riegos Humanos</a></li>
+                    </ul>
+                </li>
                 <li><a href="./pages/Contactenos.php">Contáctenos</a></li>
             </ul>
         </nav>

@@ -127,3 +127,39 @@ footer{
     margin: 0px;
     background-color: aqua;
 }
+
+/* Código existente */
+
+/* Estilos para el menú desplegable */
+nav ul li {
+    position: relative; /* Necesario para posicionar el dropdown */
+}
+
+.dropdown {
+    display: none; /* Ocultar por defecto */
+    position: absolute; /* Posicionar absolutamente respecto al elemento padre */
+    top: 100%; /* Colocarlo debajo del elemento padre */
+    left: 0; /* Alinear a la izquierda */
+    background-color: white; /* Color de fondo del menú */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra del menú */
+    z-index: 1000; /* Asegura que se muestre sobre otros elementos */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Mostrar el dropdown al pasar el mouse */
+}
+
+.dropdown li {
+    width: 200px; /* Ancho de los enlaces del dropdown */
+}
+
+.dropdown a {
+    padding: 10px; /* Espaciado interno */
+    display: block; /* Hacer que el enlace ocupe todo el ancho */
+    color: #38509D; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+}

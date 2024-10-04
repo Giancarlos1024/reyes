@@ -1,0 +1,147 @@
+
+
+
+.section-nuestras-oficinas{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-nuestras-oficinas > div{
+    padding: 40px 40px;
+    text-align: center;
+}
+
+.section-nuestras-oficinas > div > h2{
+   color: #3A519E;
+   font-size: 45px;
+   margin-bottom: 20px;
+}
+.section-nuestras-oficinas > div > h2 > strong{
+    color: #80BB4A;
+ }
+
+.section-nuestras-oficinas > div > p{
+    text-align: justify;
+    padding-left: -10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #666666;
+
+}
+
+.section-Saludo-img > img{
+    width: 500px;
+    height: 400px;
+
+}
+
+.section-nuestras-oficinas > div > button{
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.button-leer{
+    background-color: #80BB4A;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin-right: 20px;
+}
+.button-contactanos{
+    color: #3A519E;
+    background-color: #fff;
+    font-weight: bold;
+    border: 1px solid #3A519E;
+
+}
+/*MAPA*/
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/*contactenos*/
+
+.section-contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-contacto > form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* background-color: yellow; */
+    width: 100%;
+    padding: 50px 0px;
+
+}
+
+.datos-form-personales > label{
+    color: #80BB4A;
+    font-weight: 500;
+}
+.datos-form-personales{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.datos-form-personales > button{
+    background-color: #80BB4A;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+}
+
+.section-contacto > h2{
+    color: #3A519E;
+    font-size: 45px;
+}
+
+
+.datos-form-personales > input, select{
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    margin-bottom: 10px;
+    margin-top: 5px;
+
+}
+
+
+.validacion-form{
+    width: 300px;
+    /* background-color: orange; */
+    text-align: justify;
+    font-size: 12px;
+
+}
+
+
+textarea {                    
+    color: black;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.212); /* Agregado para mejor visibilidad */
+    border-radius: 4px; /* Agregado para un mejor estilo */
+}
