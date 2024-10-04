@@ -19,7 +19,9 @@ include('../includes/db.php');
     
     <?php include('../templates/header.php');?>
 
-    <h1>Contactenos</h1>
+    <h1>Contáctanos</h1>
+
+    
 
     <?php include('../templates/footer.php');?>
 </body>

@@ -17,7 +17,7 @@
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="./Quienes_somos.php">¿Quiénes somos?</a></li>
                 <li><a href="./Nuestros_seguros.php">Nuestros seguros</a></li>
-                <li><a href="./Contactenos.php">Contáctenos</a></li>
+                <li><a href="./Contactenos.php">Contáctanos</a></li>
             </ul>
         </nav>
     </header>

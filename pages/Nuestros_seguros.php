@@ -33,8 +33,8 @@ include('../includes/db.php');
             
             <!-- Botones debajo del texto -->
             <div class="button-container">
-                <button class="btn leer-mas">Leer más</button>
-                <button class="btn contactanos">Contáctanos</button>
+                <a href="" class="btn leer-mas">Leer más</a>
+                <a href="" class="btn contactanos">contáctanos</a>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@
 
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
-    max-width: 100%; /* Ajusta el tamaño de la imagen */
+    max-width: 90%; /* Ajusta el tamaño de la imagen */
     height: auto;
     /*border-radius: 10px;*/
 }
@@ -51,12 +51,6 @@
     font-weight:bold;
 }
 
-/* Estilo para el párrafo eliminado
-.text-container p {
-    font-size: 1.2rem;
-    color: #6c757d; /* Color gris 
-    margin-bottom: 20px;
-}*/
 
 /* Estilo para los botones */
 .button-container {
@@ -74,6 +68,8 @@
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
+    text-decoration: none;
 }
 
 /* Botón "Leer más" */
@@ -90,8 +86,13 @@
 }
 
 /* Efecto hover en los botones */
-.btn:hover {
+.leer-mas:hover {
     opacity: 0.8;
+}
+
+.contactanos:hover {
+    background-color: #2D3E87;
+    color: white;
 }
 
 /* Responsividad para dispositivos más pequeños */
