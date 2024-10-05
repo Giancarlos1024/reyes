@@ -85,9 +85,94 @@ include('../includes/db.php');
         </div>
     </div>
 
-    <?php include('../templates/calificaciones.php');?>
 
-    <?php include('../templates/aliados.php');?>
-    <?php include('../templates/footer.php');?>
+
+
+
+
+
+
+    <div class="equipo-section">
+        <div class="text-container-equipo">
+                <!-- Título y texto al lado izquierdi -->
+                <h1>Nuestro <strong>Equipo</strong> </h1>   
+        </div>
+    </div>
+
+    <!-- Primer bloque grande: Equipo -->
+    <div class="team-section">
+        <!-- Tres bloques pequeños -->
+        <div class="team-member">
+            <img src="../public/img/perfil_vilma.png" alt="Vilma Reyes Moyano">
+            <h3>Vilma Reyes Moyano</h3>
+            <h5>Gerente General</h5>
+            <br>
+            <p>Hija de don Fernando Reyes Breña, especialista en la gestión de seguros,
+                 con más de 30 años de experiencia en dicho sector, con conocimientos en 
+                 la parte gerencial y administrativa de la organización. Conocedora de
+                  las nuevas tendencias en los mercados, finanzas , planeamiento estratégico.</p>
+        </div>
+        
+        <div class="team-member">
+            <img src="../public/img/perfil_javier.png" alt="Javier Reyes Moyano">
+            <h3>Javier Reyes Moyano</h3>
+            <h5>Gerente Comercial</h5>
+            <br>
+            <p>Hijo de don Fernando Reyes Breña, es economista de profesión, con más de 
+                30 años de experienciaen el sector seguros, con conocimientos en la parte 
+                comercial y técnica en la gestión de seguros. Conocedor de las tendencias
+                 tecnológicas enfocadas en la gestión empresarial.</p>
+        </div>
+        <div class="team-member">
+            <img src="../public/img/perfil_roger.png" alt="Roger Portilla Portilla">
+            <h3>Roger Portilla Portilla</h3>
+            <h5>Subgerente Técnico</h5>
+            <br>
+            <p>Administrador de profesión y técnico en seguros con una impresionante 
+                trayectoria de más de 30 años en el sector. Durante su carrera ha liderado
+                 equipos en las áreas de emisión, suscripción y siniestros, demostrando 
+                 habilidades excepcionales de gestión</p>
+        </div>
+    </div>
+
+    <!-- Segundo bloque grande: Misión, Visión y Valores -->
+    <div class="mission-section">
+        <!-- Tres bloques pequeños -->
+        <div class="mission-block">
+            <img src="../public/img/logo_mision.svg" alt="Icono Misión" class="icon">
+            <h4>Misión</h4>
+            <p>Brindar soluciones profesionales, a través de propuestas competitivas...</p>
+        </div>
+        <div class="mission-block">
+            <img src="../public/img/logo_vision.svg" alt="Icono Visión" class="icon">
+            <h4>Visión</h4>
+            <p>Ser un bróker de seguros altamente competitivo, reconocido por su actitud...</p>
+        </div>
+        <div class="mission-block">
+            <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
+            <h4>Valores</h4>
+            <ul>
+                <li>Respeto</li>
+                <li>Aptitud</li>
+                <li>Eficiencia</li>
+                <li>Solidaridad</li>
+                <li>Honestidad</li>
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,6 +21,7 @@ include('../includes/db.php');
     <?php include('../templates/header.php');?>
 
 
+    
     <!-- Comienza el contenedor principal -->
     <div class="seguro-section">
         <div class="image-container">

@@ -236,3 +236,166 @@
         height: auto; /* Permite que los bloques se ajusten en pantallas pequeñas */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.equipo-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que sea responsive */
+    justify-content: center;
+    align-items: center;
+    max-width: 1345px; /* Anchura máxima del contenedor */
+    margin: 10px auto; /* Centrar el contenedor */ 
+    background-color: #ffffff;
+    padding: 20px;
+    word-spacing: 10px;  
+}
+
+/* Estilo para el contenedor de texto */
+.text-container-equipo {
+    flex: 1; /* Ocupa el otro 50% */
+    padding: 50px;
+    text-align: left;
+    
+    
+}
+
+/* Estilo para el título principal */
+.text-container-equipo h1 {
+    font-size: 45px;
+    font-weight:bold;
+    color: #38509D; /* Color azul */
+    margin-bottom: 10px;
+    text-align: center;
+    
+
+}
+
+.text-container-equipo h1 strong{
+    color: #82BC49;
+    font-weight:bold;
+}
+
+
+/* Estilos para el bloque del equipo */
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.team-member {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #f5f5f5;
+    margin: 10px 30px;
+    padding: 35px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    color: #4CAF50; /* Color verde para los nombres */
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+}
+
+.team-member h5 {
+    color: #2D3E87;
+}
+
+
+
+/* Responsivo para equipo */
+@media screen and (max-width: 768px) {
+    .team-member {
+        flex: 1 1 100%;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+
+
+
+/* Estilos para el bloque de misión, visión y valores */
+.mission-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.mission-block {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: transparent;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.mission-block img.icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.mission-block h4 {
+    color: #4CAF50; /* Color verde para los títulos */
+    margin-bottom: 10px;
+}
+
+.mission-block p, .mission-block ul {
+    font-size: 14px;
+    color: #333;
+}
+
+.mission-block ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mission-block ul li {
+    margin-bottom: 5px;
+}
+
+/* Responsivo para misión, visión y valores */
+@media screen and (max-width: 768px) {
+    .mission-block {
+        flex: 1 1 100%;
+    }
+}
