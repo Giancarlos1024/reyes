@@ -5,9 +5,9 @@
     justify-content: center;
     align-items: center;
     max-width: 1345px; /* Anchura máxima del contenedor */
-    margin: 10px auto; /* Centrar el contenedor */ 
+
     background-color: #ffffff;
-    padding: 20px;
+    padding: 0px 20px;
     word-spacing: 10px;
 
    
@@ -21,7 +21,7 @@
 
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
-    max-width: 90%; /* Ajusta el tamaño de la imagen */
+    max-width: 100%; /* Ajusta el tamaño de la imagen */
     height: auto;
     /*border-radius: 10px;*/
 }
@@ -29,7 +29,7 @@
 /* Estilo para el contenedor de texto */
 .text-container {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 50px;
+    padding: 90px;
     text-align: left;
     
     
@@ -43,6 +43,11 @@
     margin-bottom: 10px;
     text-align: center;
 
+}
+
+.text-container p{
+    font-size: 18px;
+    text-align: justify;
 }
 
 
@@ -129,7 +134,7 @@
 /* Estilo para el contenedor de texto */
 .text-container-h {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 50px;
+    padding:10px 10%;
     text-align: left;
     
     
@@ -139,7 +144,7 @@
 .text-container-h h1 {
     font-size: 45px;
     font-weight:bold;
-    color: #38509D; /* Color azul */
+    color: #80BB4A; /* Color azul */
     margin-bottom: 10px;
     text-align: center;
     
@@ -147,17 +152,103 @@
 }
 
 .text-container-h h1 strong{
-    color: #82BC49;
-    font-weight:bold;
+    color: #38509D;
 }
 
-.text-container-h p {
-    padding: 0px 10%;
+.text-container-h p{
+    text-align: center;
+    color: #38509D;
+    font-size: 18px;
+}
+
+
+
+
+.container-gerente {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los bloques se ajusten en varias líneas si es necesario */
+    gap: 20px; /* Espacio entre los bloques */
+    margin: 20px; /* Margen alrededor del contenedor */
+    /*align-items: center;*/ /*alinear verticalmente*/
+    justify-content: center; /*alinear horizontalmente*/
+}
+
+.block-gerente {
+    background-color: white; /* Color de fondo blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra pequeña */
+    padding: 35px 60px; /* Espaciado interno */
+    flex: 1 1 300px; /* Permite que los bloques se ajusten en tamaño */
+    max-width: 450px; /* Ancho máximo de los bloques */
     text-align: center;
 }
 
 
 
+.block-gerente h1 {
+    text-align: center; /* Centra el texto */
+    color: #38509D; /* Color azul */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+.block-gerente h2 {
+    text-align: left; /* Alinea a la izquierda */
+    color: #80BB4A; /* Color verde */
+    margin: 5px 0; /* Margen superior e inferior */
+}
+
+.block-gerente h2 strong {
+    color: #38509D; /* Color azul */
+}
+
+.block-gerente p {
+    text-align: justify; /* Justifica el texto */
+    color: black; /* Color negro */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+
+
+
+
+
+
+
+/* Estilo para los botones */
+.button-container-history {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+/* Estilo de los botones generales */
+.btn-h {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    text-decoration: none;
+}
+
+
+
+/* Botón "Leer mas" */
+.leer-mas-history {
+    background-color: transparent;
+    border: 2px solid #38509D; /* Borde azul */
+    color: #38509D;
+}
+
+/* Efecto hover en los botones */
+
+.leer-mas-history:hover {
+    background-color: #2D3E87;
+    color: white;
+}
 
 
 
@@ -223,7 +314,7 @@
 }
 
 .block p {
-    font-size: 14px;
+    font-size: 16px;
     color: #6c757d; /* Gris suave */
     text-align: justify;
     flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
@@ -236,6 +327,7 @@
         height: auto; /* Permite que los bloques se ajusten en pantallas pequeñas */
     }
 }
+
 
 
 
@@ -267,7 +359,8 @@
 /* Estilo para el contenedor de texto */
 .text-container-equipo {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 50px;
+    margin-top: 5px;
+    padding-bottom: 50px;
     text-align: left;
     
     
@@ -296,38 +389,63 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
+    padding: 0px 5%;
 }
+
 
 .team-member {
     flex: 1 1 calc(25% - 20px);
-    background-color: #f5f5f5;
+    background-color: hsl(0, 0%, 100%);
     margin: 10px 30px;
-    padding: 35px;
+    padding: 35px 40px; /* Agrega padding en la parte inferior */
     text-align: center;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Posicionamiento relativo */
+    overflow: visible; /* Asegúrate de que el contenido sobresalga */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s ease; /* Cambia 0.3s a 0.5s o más */
+
+}
+
+.team-member:hover {
+    transform: translateY(-10px); /* Mueve el div hacia arriba */
 }
 
 .team-member img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    position: absolute; /* Posicionamiento absoluto */
+    top: -100px; /* Ajusta este valor para que sobresalga más o menos */
+    left: 50%; /* Centro horizontal */
+    transform: translateX(-50%); /* Ajusta para centrar */
+    margin-bottom: 0; /* Elimina el margen inferior */
+    z-index: 1; /* Asegura que la imagen esté por encima del borde */
 }
 
+
+
+
+
+
+
 .team-member h3 {
-    color: #4CAF50; /* Color verde para los nombres */
+    color: #82BC49; /* Color verde para los nombres */
     margin-bottom: 10px;
+    margin-top: 30%;
+    
 }
 
 .team-member p {
-    font-size: 14px;
+    font-size: 17px;
     color: #333;
     text-align: justify;
 }
 
 .team-member h5 {
-    color: #2D3E87;
+    color: #38509D;
 }
 
 
@@ -349,12 +467,15 @@
 
 
 
+
+
+
 /* Estilos para el bloque de misión, visión y valores */
 .mission-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin:30px 8%;
 }
 
 .mission-block {
@@ -363,35 +484,40 @@
     margin: 10px;
     padding: 20px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 
 .mission-block img.icon {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     margin-bottom: 10px;
 }
 
 .mission-block h4 {
-    color: #4CAF50; /* Color verde para los títulos */
+    color: #3A519E; /* Color verde para los títulos */
     margin-bottom: 10px;
+    font-size: 25px;
+
 }
 
-.mission-block p, .mission-block ul {
-    font-size: 14px;
-    color: #333;
+
+.valores {
+    list-style-type: none; /* Asegúrate de que no haya lista */
+    padding-left: 20px; /* Espacio a la izquierda */
 }
 
-.mission-block ul {
-    list-style-type: none;
-    padding: 0;
+.valores::before {
+    content: "• "; /* El punto antes de cada línea */
 }
 
-.mission-block ul li {
-    margin-bottom: 5px;
+.valores div {
+    margin-bottom: 5px; /* Espacio entre cada palabra */
 }
+
+
+
+
 
 /* Responsivo para misión, visión y valores */
 @media screen and (max-width: 768px) {

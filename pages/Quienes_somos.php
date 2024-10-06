@@ -22,6 +22,7 @@ include('../includes/db.php');
 <body>
    
     <?php include('../templates/header.php');?>
+    <br>
     
     <!-- Comienza el contenedor principal -->
     <div class="seguro-section">
@@ -58,12 +59,17 @@ include('../includes/db.php');
                     Hoy en día, la empresa está bajo el liderazgo de la familia Reyes Moyano, quienes 
                     han asumido el compromiso de llevar adelante la visión y los valores que nos caracterizan.
                 </p>    
+                <!-- Botones debajo del texto -->
+                <div class="button-container-history">
+                    
+                    <a href="" class="btn-h leer-mas-history">Leer más</a>
+                </div>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="block">
+    <div class="container-gerente">
+        <div class="block-gerente">
             <img src="../public/img/perfil_fernando.png" alt="Imagen 1">
             <h1>Fernando Francisco Reyes Breña</h1>
             <h2>1934-<strong>2024</strong></h2>
@@ -73,7 +79,7 @@ include('../includes/db.php');
                 valores forjando el desrrollo y crecimiento de la organizació
             </p>
         </div>
-        <div class="block"> <strong></strong>
+        <div class="block-gerente"> <strong></strong>
             <img src="../public/img/perfil_fernando2.png" alt="Imagen 2">
             <h1>Fernando Martín Reyes Moyano</h1>
             <h2>1934-<strong>2024</strong></h2>
@@ -96,6 +102,7 @@ include('../includes/db.php');
         <div class="text-container-equipo">
                 <!-- Título y texto al lado izquierdi -->
                 <h1>Nuestro <strong>Equipo</strong> </h1>   
+                <br><br>
         </div>
     </div>
 
@@ -104,6 +111,7 @@ include('../includes/db.php');
         <!-- Tres bloques pequeños -->
         <div class="team-member">
             <img src="../public/img/perfil_vilma.png" alt="Vilma Reyes Moyano">
+            
             <h3>Vilma Reyes Moyano</h3>
             <h5>Gerente General</h5>
             <br>
@@ -115,6 +123,7 @@ include('../includes/db.php');
         
         <div class="team-member">
             <img src="../public/img/perfil_javier.png" alt="Javier Reyes Moyano">
+            
             <h3>Javier Reyes Moyano</h3>
             <h5>Gerente Comercial</h5>
             <br>
@@ -125,6 +134,7 @@ include('../includes/db.php');
         </div>
         <div class="team-member">
             <img src="../public/img/perfil_roger.png" alt="Roger Portilla Portilla">
+            
             <h3>Roger Portilla Portilla</h3>
             <h5>Subgerente Técnico</h5>
             <br>
@@ -141,26 +151,35 @@ include('../includes/db.php');
         <div class="mission-block">
             <img src="../public/img/logo_mision.svg" alt="Icono Misión" class="icon">
             <h4>Misión</h4>
-            <p>Brindar soluciones profesionales, a través de propuestas competitivas...</p>
+            <p>Brindar soluciones profesionales, a través de propuestas competitivas y 
+                transformadoras en materia de prevención y protección de riesgos, mediante
+                 una asesoría y corretaje integral y personalizado a nuestros clientes.</p>
         </div>
         <div class="mission-block">
             <img src="../public/img/logo_vision.svg" alt="Icono Visión" class="icon">
             <h4>Visión</h4>
-            <p>Ser un bróker de seguros altamente competitivo, reconocido por su actitud...</p>
+            <p>Ser un bróker de seguros altamente competitivo, reconocido por su actitud de 
+                servicio, calidad y profesionalismo, con un alto sentido de responsabilidad 
+                y principios éticos.</p>
         </div>
         <div class="mission-block">
-            <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
-            <h4>Valores</h4>
-            <ul>
-                <li>Respeto</li>
-                <li>Aptitud</li>
-                <li>Eficiencia</li>
-                <li>Solidaridad</li>
-                <li>Honestidad</li>
-            </ul>
+        <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
+        <h4>Valores</h4>
+            <div class="valores">
+                Respeto<br>
+                Aptitud<br>
+                Eficiencia<br>
+                Solidaridad<br>
+                Honestidad
+            </div>
         </div>
     </div>
 
+
+    <?php include('../templates/aliados.php');?>
+
+
+    <?php include('../templates/footer.php');?>
 </body>
 </html>
 
