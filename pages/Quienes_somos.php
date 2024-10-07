@@ -163,14 +163,14 @@ include('../includes/db.php');
                 y principios éticos.</p>
         </div>
         <div class="mission-block">
-        <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
-        <h4>Valores</h4>
+            <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
+            <h4>Valores</h4>
             <div class="valores">
-                Respeto<br>
-                Aptitud<br>
-                Eficiencia<br>
-                Solidaridad<br>
-                Honestidad
+                <li>Respeto</li>
+                <li>Aptitud</li>
+                <li>Eficiencia</li>
+                <li>Solidaridad</li>
+                <li>Honestidad</li>
             </div>
         </div>
     </div>

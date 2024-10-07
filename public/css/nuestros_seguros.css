@@ -23,7 +23,7 @@
 
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
-    max-width: 90%; /* Ajusta el tamaño de la imagen */
+    max-width: 100%; /* Ajusta el tamaño de la imagen */
     height: auto;
     /*border-radius: 10px;*/
 }
@@ -166,6 +166,8 @@
     /*text-align: justify;  Justifica el texto */
     text-align: justify;
     margin: 20px 15px;
+    padding: 0px 20px;
+    margin-bottom: 30px;
 }
 
 .riesgo-card .leer-mas {

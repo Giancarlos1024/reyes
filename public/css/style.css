@@ -48,6 +48,10 @@ nav > ul > li > a{
     font-weight: 500;
 }
 
+nav > ul > li > a.active {
+    color:#82BC49; /* Cambia esto al color que prefieras */
+    font-weight: bold; /* Opcional: Para resaltar el enlace activo */
+}
 
 /*footer*/
 

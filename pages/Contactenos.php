@@ -37,12 +37,12 @@ include('../includes/db.php');
         </section>
 
         <section>
-            <h1>Mapa</h1>
+            
             <div id="map" style="height: 500px; width: 100%;"></div>
         </section>
 
         <section class="section-contacto">
-            <h2>Contáctenos</h2>
+            <h2>Contáctanos</h2>
             <form id="data">
                 <div class="datos-form-personales">
                     <label for="">Nombre</label>
@@ -61,16 +61,32 @@ include('../includes/db.php');
                     <label for="">Tipo de Seguro</label>
                     <select id="select-seguros">
                         <option value="#">Introduzca el tipo de seguro</option>
-                        <option value="tipo1">tipo 1</option>
-                        <option value="tipo2">tipo 2</option>
-                        <option value="tipo3">tipo 3</option>
+                        <option value="Vehículos y SOAT">Vehículos y SOAT</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Incendio, Equipo Electrónico y Líneas Aliadas">Incendio, Equipo Electrónico y Líneas Aliadas</option>
+                        <option value="Robo y Asalto">Robo y Asalto</option>
+                        <option value="Deshonestidad y 3D">Deshonestidad y 3D</option>
+                        <option value="Ramos Técnicos">Ramos Técnicos</option>
+                        <option value="Lucro Cesante">Lucro Cesante</option>
+                        <option value="Responsabilidad Civil">Responsabilidad Civil</option>
+                        <option value="Seguro de Crédito y Caución">Seguro de Crédito y Caución</option>
+                        <option value="Inspección de Riesgos">Inspección de Riesgos</option>
+                        <option value="SCTR Pensión">SCTR Pensión</option>
+                        <option value="SCTR Salud">SCTR Salud</option>
+                        <option value="Inspección de Riesgos">Seguros de vida con retorno</option>
+                        <option value="Inspección de Riesgos">Accidentes personales</option>
+                        <option value="Inspección de Riesgos">Asistencia médica familiar</option>
+                        <option value="Inspección de Riesgos">EPS</option>      
                     </select>
                     <label for="">Oficina</label>
                     <select id="select-oficina">
                         <option value="#">Introduzca la oficina</option>
-                        <option value="oficina1">oficina 1</option>
-                        <option value="oficina2">oficina 2</option>
-                        <option value="oficina3">oficina 3</option>
+                        <option value="Piura">Piura</option>
+                        <option value="Chiclayo">Chiclayo</option>
+                        <option value="Lima">Lima</option>
+                        <option value="Pisco">Pisco</option>
+                        <option value="Ica">Ica</option>
+                        <option value="Cusco">Cusco</option>
                     </select>
                     <label for="">Mensaje</label>
                     <textarea id="mensaje" rows="5" placeholder="Describe tu mensaje aquí..."></textarea>

@@ -16,7 +16,7 @@
         <img class="imgLogo" src="./public/img/logoHeader.svg" alt="Logo Header">
         <nav>
             <ul>
-                <li><a href="./index.php">Inicio</a></li>
+                <li><a href="./index.php" class="active">Inicio</a></li>
                 <li><a href="./pages/Quienes_somos.php">¿Quiénes somos?</a></li>
                 <li>
                     <a href="./pages/Nuestros_seguros.php">Nuestros seguros</a>
@@ -71,7 +71,7 @@
                     Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
                     como accidentes, incendios o robos, generando pérdidas económicas.
                     </p>
-                    <button class="leer-somos">Leer más</button>
+                    <button class="leer-somos somos">Leer más</button>
                 </div>
                 <div class="div-Seccion-5">
                     <img src="./public/img/foto_riesgos_humanos.png" alt="">
@@ -80,7 +80,7 @@
                     Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
                     como accidentes, incendios o robos, generando pérdidas económicas.
                     </p>
-                    <button class="leer-somos">Leer más</button>
+                    <button class="leer-somos somos">Leer más</button>
                 </div>
             </div>
         </section>

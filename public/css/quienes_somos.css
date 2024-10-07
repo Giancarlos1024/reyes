@@ -48,6 +48,7 @@
 .text-container p{
     font-size: 18px;
     text-align: justify;
+    line-height: 1.5;
 }
 
 
@@ -160,6 +161,7 @@
     text-align: center;
     color: #38509D;
     font-size: 18px;
+    padding: 0px 90px;
 }
 
 
@@ -190,6 +192,9 @@
     text-align: center; /* Centra el texto */
     color: #38509D; /* Color azul */
     margin: 10px 0; /* Margen superior e inferior */
+    /* background-color: yellow; */
+    
+
 }
 
 .block-gerente h2 {
@@ -485,10 +490,15 @@
     background-color: transparent;
     margin: 10px;
     padding: 20px;
+    /* background-color: yellow; */
     text-align: center;
     
 }
 
+.mission-block > p{
+    text-align: justify;
+    padding: 0px 10px;
+}
 
 .mission-block img.icon {
     width: 55px;
@@ -505,14 +515,14 @@
 
 
 .valores {
-    list-style-type: none; /* Asegúrate de que no haya lista */
+    /* Asegúrate de que no haya lista */
     padding-left: 20px; /* Espacio a la izquierda */
+    /* background-color: #3A519E; */
+    text-align: start;
+   /* list-style: none; */
+    
+    
 }
-
-.valores::before {
-    content: "• "; /* El punto antes de cada línea */
-}
-
 .valores div {
     margin-bottom: 5px; /* Espacio entre cada palabra */
 }

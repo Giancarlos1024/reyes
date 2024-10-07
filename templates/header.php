@@ -1,3 +1,7 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +16,16 @@
         <img class="imgLogo" src="../public/img/logoHeader.svg" alt="Logo Header">
         <nav>
             <ul>
-                <li><a href="../index.php">Inicio</a></li>
-                <li><a href="./Quienes_somos.php">¿Quiénes somos?</a></li>
+                <li><a href="../index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">Inicio</a></li>
+                <li><a href="./Quienes_somos.php" class="<?php echo $current_page == 'Quienes_somos.php' ? 'active' : ''; ?>">¿Quiénes somos?</a></li>
                 <li>
-                    <a href="./Nuestros_seguros.php">Nuestros seguros</a>
+                    <a href="./Nuestros_seguros.php" class="<?php echo $current_page == 'Nuestros_seguros.php' ? 'active' : ''; ?>">Nuestros seguros</a>
                     <ul class="dropdown">
-                        <li><a href="./Nuestros_seguros_riesgos_generales.php">Riesgos Generales</a></li>
-                        <li><a href="./Nuestros_seguros_riesgos_humanos.php">Riegos Humanos</a></li>
+                        <li><a href="./Nuestros_seguros_riesgos_generales.php" class="<?php echo $current_page == 'Nuestros_seguros_riesgos_generales.php' ? 'active' : ''; ?>">Riesgos Generales</a></li>
+                        <li><a href="./Nuestros_seguros_riesgos_humanos.php" class="<?php echo $current_page == 'Nuestros_seguros_riesgos_humanos.php' ? 'active' : ''; ?>">Riesgos Humanos</a></li>
                     </ul>
                 </li>
-                <li><a href="./Contactenos.php">Contáctenos</a></li>
+                <li><a href="./Contactenos.php" class="<?php echo $current_page == 'Contactenos.php' ? 'active' : ''; ?>">Contáctenos</a></li>
             </ul>
         </nav>
     </header>
