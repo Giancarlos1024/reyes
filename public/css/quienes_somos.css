@@ -4,7 +4,7 @@
     flex-wrap: wrap; /* Permite que sea responsive */
     justify-content: center;
     align-items: center;
-    max-width: 1345px; /* Anchura máxima del contenedor */
+    max-width: 100%; /* Anchura máxima del contenedor */
 
     background-color: #ffffff;
     padding: 0px 20px;
@@ -29,7 +29,7 @@
 /* Estilo para el contenedor de texto */
 .text-container {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 90px;
+    padding: 50px 100px;
     text-align: left;
     
     
@@ -46,9 +46,9 @@
 }
 
 .text-container p{
-    font-size: 18px;
+    font-size: 22px;
     text-align: justify;
-    line-height: 1.5;
+
 }
 
 
@@ -73,12 +73,18 @@
     transition: background-color 0.3s ease;
 
     text-decoration: none;
+    text-decoration: none;
 }
 
 /* Botón "Leer más" */
 .leer-mas {
     background-color: #82BC49; /* Color verde */
     color: #FFFFFF;
+    text-align: center;
+    background-color: #80BB4A;
+
+    font-weight: bold;
+    word-spacing: normal;
 }
 
 /* Botón "Contáctanos" */
@@ -184,6 +190,7 @@
     flex: 1 1 300px; /* Permite que los bloques se ajusten en tamaño */
     max-width: 450px; /* Ancho máximo de los bloques */
     text-align: center;
+    margin: 0px 50px;
 }
 
 
@@ -193,14 +200,16 @@
     color: #38509D; /* Color azul */
     margin: 10px 0; /* Margen superior e inferior */
     /* background-color: yellow; */
+    font-size: 24px;
     
 
 }
 
 .block-gerente h2 {
-    text-align: left; /* Alinea a la izquierda */
+    text-align: center; /* Alinea a la izquierda */
     color: #80BB4A; /* Color verde */
     margin: 5px 0; /* Margen superior e inferior */
+    font-size: 22px;
 }
 
 .block-gerente h2 strong {
@@ -211,6 +220,7 @@
     text-align: justify; /* Justifica el texto */
     color: black; /* Color negro */
     margin: 10px 0; /* Margen superior e inferior */
+    font-size: 17px;
 }
 
 
@@ -248,6 +258,8 @@
     background-color: transparent;
     border: 2px solid #38509D; /* Borde azul */
     color: #38509D;
+    text-align: center;
+    word-spacing: normal;
 }
 
 /* Efecto hover en los botones */
@@ -442,7 +454,13 @@
     color: #82BC49; /* Color verde para los nombres */
     margin-bottom: 10px;
     margin-top: 30%;
+    font-size: 22px;
     
+}
+
+.team-member h5 {
+    color: #38509D;
+    font-size: 20px;
 }
 
 .team-member p {
@@ -450,12 +468,6 @@
     color: #333;
     text-align: justify;
 }
-
-.team-member h5 {
-    color: #38509D;
-}
-
-
 
 /* Responsivo para equipo */
 @media screen and (max-width: 768px) {

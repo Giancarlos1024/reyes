@@ -1,6 +1,7 @@
 /* Estilos generales */
 .riesgos-generales {
     padding: 40px;
+    padding-bottom: 70px;
     /* background-color: #d32e2e; */
     text-align: center;
     box-shadow: 1px 1px 1px 1px #00000044;
@@ -79,7 +80,7 @@
 
     color: #82BC49;
     margin: 10px 0;
-    min-height: 46px;
+    min-height: 26px;
 }
 
 .riesgo-item p {

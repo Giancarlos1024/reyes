@@ -19,7 +19,7 @@
                 <h4>Informacion de contacto</h4>
                 <div>
                     <img src="../public/img/phone.png" alt="phone">
-                    <a href="#" target="_blank">+51 923 217 317</a>
+                    <a href="#" target="_blank">+51 923 217 317 - (056) 231151 anexo 1001</a>
                 </div>
                 <div>
                     <img src="../public/img/mensaje.png" alt="mensaje">

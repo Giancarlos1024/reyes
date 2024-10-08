@@ -17,7 +17,7 @@ include('../includes/db.php');
     <link rel="stylesheet" href="../public/css/quienes_somos.css">
     
 
-    <title>Quienes Somos</title>
+    <title>Sobre nosotros</title>
 </head>
 <body>
    
@@ -38,7 +38,7 @@ include('../includes/db.php');
             <!-- Botones debajo del texto -->
             <div class="button-container">
                 <a href="" class="btn leer-mas">Leer más</a>
-                <a href="" class="btn contactanos">contáctanos</a>
+                <a href="" class="btn contactanos">Contáctenos</a>
             </div>
         </div>
         <div class="image-container">
@@ -70,25 +70,17 @@ include('../includes/db.php');
 
     <div class="container-gerente">
         <div class="block-gerente">
-            <img src="../public/img/perfil_fernando.png" alt="Imagen 1">
-            <h1>Fernando Francisco Reyes Breña</h1>
+            <img src="../public/img/perfil_fernando.svg" alt="Imagen 1">
+            <h1>Fernando Francisco <br>Reyes Breña</h1>
             <h2>1934-<strong>2024</strong></h2>
-            <p>Fundador y lider de la empresa F.REYES Y CIA
-                Corredores de Seguros S.A.C., con un legado honorable
-                en su trayectoria como persona y empresario, con sólidos 
-                valores forjando el desrrollo y crecimiento de la organizació
-            </p>
+            <p>Fundador y líder de la empresa F.REYES Y CIA Corredores de Seguros S.A.C., dejó un legado honorable en su trayectoria como persona y empresario. Con sólidos valores y principios, forjó el desarrollo y crecimiento de la organización, asegurando así su éxito en el competitivo sector asegurador y su reconocimiento en el mercado</p>
         </div>
         <div class="block-gerente"> <strong></strong>
-            <img src="../public/img/perfil_fernando2.png" alt="Imagen 2">
-            <h1>Fernando Martín Reyes Moyano</h1>
+            <img src="../public/img/perfil_fernando2.svg" alt="Imagen 2">
+            <h1>Fernando Martín <br>Reyes Moyano</h1>
             <h2>1934-<strong>2024</strong></h2>
-            <p>Fue hijo de don Fernando Reyes Breña, especialista en seguros y administración 
-                de empresas, con conocimientos en la parte comercial y técnica, fue el subgerente 
-                comercial de la zona sur, logrando el crecimiento y expansión de la cartera de 
-                seguros con diversas empresas del sector, en base a estrategias concibiendo un
-                desarrollo empresarial sólido. <br> </p>
-        </div>
+            <p>Fue hijo de don Fernando Reyes Breña, especialista en seguros y administración de empresas, con conocimientos en la parte comercial y técnica. Fue subgerente comercial de la zona sur, logrando el crecimiento y la expansión de la cartera de seguros con diversas empresas, mediante estrategias que concibieron un desarrollo empresarial sólido.<br> </p>
+       </div>
     </div>
 
 
@@ -149,21 +141,21 @@ include('../includes/db.php');
     <div class="mission-section">
         <!-- Tres bloques pequeños -->
         <div class="mission-block">
-            <img src="../public/img/logo_mision.svg" alt="Icono Misión" class="icon">
+            <img src="../public/img/mision.svg" alt="Icono Misión" class="icon">
             <h4>Misión</h4>
             <p>Brindar soluciones profesionales, a través de propuestas competitivas y 
                 transformadoras en materia de prevención y protección de riesgos, mediante
                  una asesoría y corretaje integral y personalizado a nuestros clientes.</p>
         </div>
         <div class="mission-block">
-            <img src="../public/img/logo_vision.svg" alt="Icono Visión" class="icon">
+            <img src="../public/img/vision.svg" alt="Icono Visión" class="icon">
             <h4>Visión</h4>
             <p>Ser un bróker de seguros altamente competitivo, reconocido por su actitud de 
                 servicio, calidad y profesionalismo, con un alto sentido de responsabilidad 
                 y principios éticos.</p>
         </div>
         <div class="mission-block">
-            <img src="../public/img/logo_valores.svg" alt="Icono Valores" class="icon">
+            <img src="../public/img/valores.svg" alt="Icono Valores" class="icon">
             <h4>Valores</h4>
             <div class="valores">
                 <li>Respeto</li>
@@ -175,6 +167,7 @@ include('../includes/db.php');
         </div>
     </div>
 
+    <?php include('../templates/calificaciones.php');?>
 
     <?php include('../templates/aliados.php');?>
 
