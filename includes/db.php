@@ -6,7 +6,7 @@
 
 $servername = "localhost:3306";
 $username = "root";
-$password = "73415641";
+$password = "123456";
 $dbname = "reyes_cia";
 
 

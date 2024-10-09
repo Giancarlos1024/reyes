@@ -363,21 +363,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .equipo-section {
     display: flex;
     flex-wrap: wrap; /* Permite que sea responsive */
@@ -459,20 +444,11 @@
     z-index: 1; /* Asegura que la imagen esté por encima del borde */
 }
 
-
-
-
-
-
-
 .team-member h3 {
     color: #82BC49; /* Color verde para los nombres */
     margin-bottom: 10px;
     margin-top: 30%;
-
     font-size: 20px;
-
-
     
 }
 

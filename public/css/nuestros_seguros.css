@@ -23,8 +23,8 @@
 
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
-    max-width: 100%; /* Ajusta el tamaño de la imagen */
-    height: auto;
+    width: 90%; /* Ajusta el tamaño de la imagen */
+    height: 500px;
     /*border-radius: 10px;*/
 }
 
@@ -39,7 +39,7 @@
 
 /* Estilo para el título principal */
 .text-container h1 {
-    font-size: 45px;
+    font-size: 50px;
     font-weight:bold;
     color: #38509D; /* Color azul */
     margin-bottom: 10px;
