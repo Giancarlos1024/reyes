@@ -27,7 +27,13 @@
     cursor: pointer;
 }
 .Seccion1 > div > img{
-    width: 100%;
+    width: 90%;
+    margin: 0px 20px;
+    margin-left: 40px;
+}
+
+#imgdescripcion{
+    margin-left: 55px;
 }
 
 .div-Seccion-2{
@@ -181,6 +187,7 @@
 .div-Seccion-5 > h3{
     padding: 15px 0px;
     color: #80BB4A;
+    font-size: 22px;
 }
 
 .div-Seccion-5 > img{

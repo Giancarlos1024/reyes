@@ -32,7 +32,7 @@
     <main>
         <section class="Seccion1">
             <div class="div-Seccion-1">
-                <img src="./public/img/tituloDescripcion.png" alt="tituloDescripcion">
+                <img id="imgdescripcion" src="./public/img/tituloDescripcion.png" alt="tituloDescripcion">
                 <div>
                     <button class="button-leer">Leer más</button>
                     <button class="button-contactanos">Contáctenos</button>
@@ -50,7 +50,7 @@
             </div>
             <div class="div-Seccion-4">
                 <h4>¿Quiénes somos?</h4>
-                <h1>Tu corredor de seguros de confianza</h1>
+                <h1>Tu corredor de <br>seguros de confianza</h1>
                 <p>
                 F. REYES Y CIA Corredores de Seguros S.A.C. es una empresa peruana sólida con una 
                 trayectoria de más de 40 años en el corretaje y asesoramiento en seguros, con R.N.P.S. 
@@ -101,8 +101,8 @@
                 </div>
             </div>
             <div class="btn-carousel">
-                <button class="carousel-btn prev">&lt;</button>
-                <button class="carousel-btn next">&gt;</button>
+                <button class="carousel-btn prev"><img src="./public/img/derecha_btn.svg" alt="izquierda"></button>
+                <button class="carousel-btn next"><img src="./public/img/izquierda_btn.svg" alt="derecha"></button>
             </div>
         </div>
 

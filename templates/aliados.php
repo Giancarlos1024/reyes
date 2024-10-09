@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="btn-carousel">
-        <button class="carousel-btn prev">&lt;</button>
-        <button class="carousel-btn next">&gt;</button>
+        <button class="carousel-btn prev"><img src="../public/img/derecha_btn.svg" alt="izquierda"></button>
+        <button class="carousel-btn next"><img src="../public/img/izquierda_btn.svg" alt="derecha"></button>
     </div>
 </div>
 
