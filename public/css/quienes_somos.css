@@ -22,7 +22,7 @@
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
     max-width: 100%; /* Ajusta el tamaño de la imagen */
-    height: auto;
+    height: 500px;
     /*border-radius: 10px;*/
 }
 
@@ -37,7 +37,7 @@
 
 /* Estilo para el título principal */
 .text-container h1 {
-    font-size: 45px;
+    font-size: 50px;
     font-weight:bold;
     color: #38509D; /* Color azul */
     margin-bottom: 10px;
@@ -46,7 +46,7 @@
 }
 
 .text-container p{
-    font-size: 18px;
+    font-size: 20px;
     text-align: justify;
     line-height: 1.5;
 }
@@ -77,13 +77,20 @@
 
 /* Botón "Leer más" */
 .leer-mas {
-    background-color: #82BC49; /* Color verde */
-    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #80BB4A;
+    color: #ffffff;
 }
 
 /* Botón "Contáctanos" */
 .contactanos {
-    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    margin-top: 20px;
     border: 2px solid #38509D; /* Borde azul */
     color: #38509D;
 }
@@ -198,7 +205,7 @@
 }
 
 .block-gerente h2 {
-    text-align: left; /* Alinea a la izquierda */
+    text-align: center; /* Alinea a la izquierda */
     color: #80BB4A; /* Color verde */
     margin: 5px 0; /* Margen superior e inferior */
 }
@@ -211,9 +218,13 @@
     text-align: justify; /* Justifica el texto */
     color: black; /* Color negro */
     margin: 10px 0; /* Margen superior e inferior */
+    line-height: 1.3;
 }
 
-
+.block-gerente > img{
+    width: 200px;
+    height: 200px;
+}
 
 
 
@@ -442,17 +453,19 @@
     color: #82BC49; /* Color verde para los nombres */
     margin-bottom: 10px;
     margin-top: 30%;
+    font-size: 20px;
     
 }
 
 .team-member p {
-    font-size: 17px;
+    font-size: 13px;
     color: #333;
     text-align: justify;
 }
 
 .team-member h5 {
     color: #38509D;
+    font-size: 16px;
 }
 
 
