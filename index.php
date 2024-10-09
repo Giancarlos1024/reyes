@@ -153,6 +153,7 @@
         </section>
     </footer>
 
+    
     <script src="./public/javascript/nuestros_seguros.js"></script>
 
 </body>

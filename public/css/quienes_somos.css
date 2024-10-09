@@ -4,7 +4,7 @@
     flex-wrap: wrap; /* Permite que sea responsive */
     justify-content: center;
     align-items: center;
-    max-width: 1345px; /* Anchura máxima del contenedor */
+    max-width: 100%; /* Anchura máxima del contenedor */
 
     background-color: #ffffff;
     padding: 0px 20px;
@@ -29,7 +29,7 @@
 /* Estilo para el contenedor de texto */
 .text-container {
     flex: 1; /* Ocupa el otro 50% */
-    padding: 90px;
+    padding: 50px 100px;
     text-align: left;
     
     
@@ -46,9 +46,13 @@
 }
 
 .text-container p{
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 22px;
+>>>>>>> origin/master
     text-align: justify;
-    line-height: 1.5;
+
 }
 
 
@@ -73,16 +77,27 @@
     transition: background-color 0.3s ease;
 
     text-decoration: none;
+    text-decoration: none;
 }
 
 /* Botón "Leer más" */
 .leer-mas {
+<<<<<<< HEAD
     padding: 10px 20px;
     border-radius: 45px;
     cursor: pointer;
     margin-top: 20px;
     background-color: #80BB4A;
     color: #ffffff;
+=======
+    background-color: #82BC49; /* Color verde */
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #80BB4A;
+
+    font-weight: bold;
+    word-spacing: normal;
+>>>>>>> origin/master
 }
 
 /* Botón "Contáctanos" */
@@ -191,6 +206,7 @@
     flex: 1 1 300px; /* Permite que los bloques se ajusten en tamaño */
     max-width: 450px; /* Ancho máximo de los bloques */
     text-align: center;
+    margin: 0px 50px;
 }
 
 
@@ -200,6 +216,7 @@
     color: #38509D; /* Color azul */
     margin: 10px 0; /* Margen superior e inferior */
     /* background-color: yellow; */
+    font-size: 24px;
     
 
 }
@@ -208,6 +225,7 @@
     text-align: center; /* Alinea a la izquierda */
     color: #80BB4A; /* Color verde */
     margin: 5px 0; /* Margen superior e inferior */
+    font-size: 22px;
 }
 
 .block-gerente h2 strong {
@@ -218,7 +236,11 @@
     text-align: justify; /* Justifica el texto */
     color: black; /* Color negro */
     margin: 10px 0; /* Margen superior e inferior */
+<<<<<<< HEAD
     line-height: 1.3;
+=======
+    font-size: 17px;
+>>>>>>> origin/master
 }
 
 .block-gerente > img{
@@ -259,6 +281,8 @@
     background-color: transparent;
     border: 2px solid #38509D; /* Borde azul */
     color: #38509D;
+    text-align: center;
+    word-spacing: normal;
 }
 
 /* Efecto hover en los botones */
@@ -453,8 +477,17 @@
     color: #82BC49; /* Color verde para los nombres */
     margin-bottom: 10px;
     margin-top: 30%;
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 22px;
+>>>>>>> origin/master
     
+}
+
+.team-member h5 {
+    color: #38509D;
+    font-size: 20px;
 }
 
 .team-member p {
@@ -463,6 +496,7 @@
     text-align: justify;
 }
 
+<<<<<<< HEAD
 .team-member h5 {
     color: #38509D;
     font-size: 16px;
@@ -470,6 +504,8 @@
 
 
 
+=======
+>>>>>>> origin/master
 /* Responsivo para equipo */
 @media screen and (max-width: 768px) {
     .team-member {

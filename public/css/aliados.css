@@ -60,7 +60,7 @@
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Opcional: efecto de hover */
+    /*background-color: rgba(0, 0, 0, 0.1); /* Opcional: efecto de hover */
 }
 
 /* Responsivo para dispositivos móviles */

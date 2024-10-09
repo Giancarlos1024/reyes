@@ -78,10 +78,6 @@
 .leer-mas {
     background-color: #82BC49; /* Color verde */
     color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 45px;
-    cursor: pointer;
-    margin-top: 20px;
 }
 
 /* Botón "Contáctanos" */
@@ -92,6 +88,8 @@
     margin-top: 20px;
     border: 2px solid #38509D; /* Borde azul */
     color: #38509D;
+    font-weight: bold;
+    word-spacing: normal;
 }
 
 /* Efecto hover en los botones */
