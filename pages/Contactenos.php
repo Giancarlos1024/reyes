@@ -32,7 +32,7 @@ include('../includes/db.php');
                 <button class="section-botones button-contactanos">Contáctenos</button>
             </div>
             <div class="section-Saludo-img">
-                <img src="../public/img/SaludoGIF1.png" alt="saludo">
+                <img src="../public/img/SaludoGIF1.svg" alt="saludo">
             </div>
         </section>
 
@@ -42,7 +42,7 @@ include('../includes/db.php');
         </section>
 
         <section class="section-contacto">
-            <h2>Contáctanos</h2>
+            <h2>Contáctenos</h2>
             <form id="data">
                 <div class="datos-form-personales">
                     <label for="">Nombre</label>
