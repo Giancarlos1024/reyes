@@ -30,7 +30,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/vehiculos_soat.svg" alt="Vehículos y SOAT">
             <h3>Vehículos y SOAT</h3>
-            <p>Proteja su vehículo y a usted mismo con un seguro de auto. El SOAT cubre los gastos médicos, funerarios y de reparación de daños a terceros en caso de accidente.</p>
+            <p>Proteja su vehículo y a usted mismo con un seguro de auto. El SOAT cubre gastos médicos y funerarios, así como daños a terceros en caso de accidente de tránsito grave.</p> 
             <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
@@ -39,7 +39,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/transporte.svg" alt="Transporte">
             <h3>Transporte</h3>
-            <p>Nuestro seguro cubre los daños materiales, personales y de responsabilidad civil en caso de accidente vial inesperado y grave                                                 </p>
+            <p>Nuestro seguro cubre daños materiales y personales, así como responsabilidad civil en accidentes viales inesperados y de gravedad, protegiendo así a los afectados.</p>
             <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
@@ -49,8 +49,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/incendio.svg" alt="Incendio, Equipo Electrónico y Líneas Aliadas">
             <h3>Incendio, Equipo Electrónico y Líneas Aliadas</h3>
-            <p>Nuestro seguro cubre los daños materiales causados por incendios, daños eléctricos, fenómenos naturales y otros eventos.                                                                                     </p>
-            <br>
+            <p>Nuestro seguro abarca daños materiales causados por incendios, fenómenos naturales, daños eléctricos y otros eventos, garantizando protección en todas las eventualidades.</p> <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -59,8 +58,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/robo.svg" alt="Robo y Asalto">
             <h3>Robo y Asalto</h3>
-            <p>El seguro cubre daños y pérdidas por robo y asalto en negocios, incluyendo dinero, inventario, equipo, y daños a empleados o clientes.                                                               </p>
-            <br>
+            <p>El seguro cubre pérdidas por robo y asalto en negocios, incluyendo dinero, inventario, equipo y daños ocasionados a empleados o clientes, garantizando la seguridad.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -71,8 +69,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/desonestidad.svg" alt="Vehículos y SOAT">
             <h3>Deshonestidad y 3D</h3>
-            <p>Nuestro seguro de Deshonestidad y 3D es tu escudo contra prácticas comerciales deshonestas. Protegemos tu negocio de riesgos financieros derivados de actos intencionados.                                    </p>
-            <br>
+            <p>Nuestro seguro de Deshonestidad y 3D actúa como escudo ante prácticas comerciales deshonestas, protegiendo tu negocio de riesgos financieros derivados de actos intencionados.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -81,8 +78,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/ramos_tecnicos.svg" alt="Transporte">
             <h3>Ramos Técnicos</h3>
-            <p>Los seguros de ramos técnicos cubren bienes, maquinaria y responsabilidad en actividades técnicas, protegiendo contra daños y riesgos.                                                                        </p>
-            <br>
+            <p>Los seguros de ramos técnicos cubren bienes, maquinaria y responsabilidad en actividades técnicas, protegiendo de daños y riesgos que puedan surgir en operaciones.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -91,8 +87,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/lucro_cesante.svg" alt="Incendio, Equipo Electrónico y Líneas Aliadas">
             <h3>Lucro Cesante</h3>
-            <p>Nuestro seguro de Lucro Cesante protege tu negocio ante interrupciones por eventos imprevistos, cubriendo ingresos perdidos y gastos fijos, asegurando la recuperación y estabilidad financiera de tu empresa.</p>
-            <br>
+            <p>Nuestro seguro de Lucro Cesante protege tu negocio ante interrupciones imprevistas, cubriendo ingresos perdidos y gastos fijos, asegurando estabilidad financiera.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -101,8 +96,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/responsabilidad_civil.svg" alt="Robo y Asalto">
             <h3>Responsabilidad Civil</h3>
-            <p>Nuestro seguro de Responsabilidad Civil te protege contra imprevistos, cubriendo accidentes personales y daños a la propiedad de terceros, asegurando tu patrimonio.                                           </p>
-            <br>
+            <p>Nuestro seguro de Responsabilidad Civil te protege ante imprevistos, cubriendo accidentes personales y daños a propiedad ajena, asegurando la protección de tu patrimonio.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -111,8 +105,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/seguro_credito.svg" alt="Incendio, Equipo Electrónico y Líneas Aliadas">
             <h3>Seguro de Crédito y Caución</h3>
-            <p>Nuestro seguro de Responsabilidad Civil te protege contra imprevistos y daños a terceros en situaciones accidentales, negligencias o incumplimientos legales inesperados.            </p>
-            <br>
+            <p>Nuestro seguro de Responsabilidad Civil protege contra imprevistos y daños a terceros en situaciones accidentales, negligencias o incumplimientos legales inesperados.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>
@@ -121,8 +114,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/inspeccion_riesgos.svg" alt="Robo y Asalto">
             <h3>Inspección de Riesgos</h3>
-            <p>Nuestro seguro de inspección de riesgos cubre los costos de inspecciones y la implementación de medidas de control en su negocio.                                                                               </p>
-            <br>
+            <p>Nuestro seguro de inspección de riesgos cubre costos de inspecciones y medidas de control, asegurando el correcto funcionamiento de su negocio ante posibles eventualidades.</p><br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
             </div>

@@ -1,7 +1,7 @@
 /* Estilos generales */
 .riesgos-generales {
     padding: 40px;
-    padding-bottom: 70px;
+    padding-bottom: 75px;
     /* background-color: #d32e2e; */
     text-align: center;
     box-shadow: 1px 1px 1px 1px #00000044;
@@ -32,7 +32,7 @@
 .riesgos-grid {
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
-    gap: 120px; /* Espacio entre los elementos */
+    gap: 70px 120px; /* Espacio entre los elementos */
     justify-content: center;
 
 }
@@ -92,9 +92,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 3; /* Limita a 3 líneas */
+    -webkit-line-clamp: 4; /* Limita a 3 líneas */
     line-height: 1.5; /* Altura de línea para ajustar el espacio entre líneas */
-    max-height: calc(1.5em * 3); /* Altura máxima: 3 líneas de texto */
+    max-height: calc(1.5em * 4); /* Altura máxima: 3 líneas de texto */
 
     
 }

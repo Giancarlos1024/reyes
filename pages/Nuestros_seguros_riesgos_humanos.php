@@ -39,7 +39,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/sctr_salud.svg" alt="Transporte">
             <h3>SCTR Salud</h3>
-            <p>Nuestro SCTR para Salud te protege en accidentes laborales o enfermedades ocupacionales, brindando atención médica de calidad.</p>
+            <p>Nuestro SCTR para Salud te protege en accidentes laborales o enfermedades ocupacionales, brindando atención médica de calidad y un servicio excepcional.</p>
             <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
@@ -49,7 +49,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/seguro_vida.svg" alt="Incendio, Equipo Electrónico y Líneas Aliadas">
             <h3>Seguros de vida con retorno</h3>
-            <p>Nuestros Seguros de Vida con Retorno son una inversión para tu futuro y el de tus seres queridos, combinando protección y ahorro con beneficios adicionales al final del plazo.</p>
+            <p>Nuestros Seguros de Vida con Retorno son una inversión para tu futuro y el de tus seres queridos, combinando protección y ahorro con beneficios al final del plazo.</p>
             <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
@@ -71,7 +71,7 @@ include('../includes/db.php');
         <div class="riesgo-item">
             <img src="../public/img/asistencia_medica.svg" alt="Vehículos y SOAT">
             <h3>Asistencia médica familiar</h3>
-            <p>Nuestra Asistencia Médica Familiar es la inversión en la salud de tu familia, brindando acceso a atención de calidad. Priorizamos tu bienestar y la seguridad de tu familia.</p>
+            <p>Nuestra Asistencia Médica Familiar es la inversión en la salud de tu familia, brindando acceso a atención de calidad. Priorizamos tu bienestar y la seguridad familiar.</p>
             <br>
             <div class="button">
                 <a href="#" class="cotizar-btn">Cotízalo ahora</a>
