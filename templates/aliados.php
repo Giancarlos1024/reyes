@@ -13,13 +13,20 @@
     <h2>Nuestros <strong>Aliados</strong></h2>
     <div class="carousel-container">
         <div class="carousel">
-            <img src="../public/img/pacifico.png" alt="Pacífico">
-            <img src="../public/img/positiva.png" alt="La Positiva">
-            <img src="../public/img/mapfre.png" alt="MAPFRE">
-            <img src="../public/img/sanitas.png" alt="Sanitas">
-            <img src="../public/img/rimac.png" alt="Rimac">
-            <img src="../public/img/protecta.png" alt="Protecta">
-            <img src="../public/img/chubb.png" alt="Chubb">
+            <!-- Grupo 1 (visible al inicio) -->
+            <div class="image-group">
+                <img src="../public/img/positiva.png" alt="La Positiva">
+                <img src="../public/img/mapfre.png" alt="MAPFRE">
+                <img src="../public/img/chubb.png" alt="Chubb">
+                <img src="../public/img/qualitas.png" alt="Qualitas">
+            </div>
+            <!-- Grupo 2 (oculto inicialmente) -->
+            <div class="image-group">
+                <img src="../public/img/rimac.png" alt="Rimac">
+                <img src="../public/img/protecta.png" alt="Protecta">
+                <img src="../public/img/sanitas.png" alt="Sanitas">
+                <img src="../public/img/pacifico.png" alt="Pacífico">
+            </div>
         </div>
     </div>
     <div class="btn-carousel">
@@ -29,7 +36,9 @@
 </div>
 
 
-    <script src="../public/javascript/nuestros_seguros.js"></script>
+
+
+    <script src="../public/javascript/nuestros_aliados.js"></script>
 
 </body>
 </html>

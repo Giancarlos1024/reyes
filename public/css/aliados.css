@@ -1,86 +1,71 @@
-.aliados-section {
-    position: relative;
-    text-align: center;
-    padding: 25px 0; /* Espaciado entre el título y las imágenes */
-}
-
-.carousel-container {
-    position: relative;
-    width: 80%; /* Ajusta el tamaño según sea necesario */
-    margin: auto;
-    overflow: hidden; /* Oculta las imágenes fuera de vista */
-    display: flex;
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center; /* Centra verticalmente las imágenes */
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease; /* Animación suave para el desplazamiento */
-    height: 200px; /* Ajusta la altura del carrusel para las imágenes */
-}
-
-.carousel img {
-    width: 20%; /* 5 imágenes visibles a la vez */
-    max-height: 100%; /* Ajusta la altura máxima de las imágenes */
-    object-fit: contain; /* Ajusta la imagen para que no se deforme */
-    margin: auto 10px;
-}
-
-
 .aliados-section > h2{
     /*text-align: center;*/
     color: #80BB4A;
     font-size: 45px;
+    margin-bottom: 30px;
 }
 .aliados-section h2 strong{
     color: #3A519E;
 }
 
+
+
+
+
+
+.aliados-section {
+    position: relative;
+    text-align: center;
+    padding: 25px 0;
+    margin-bottom: 50px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: 1fr; /* Solo un grupo visible a la vez */
+}
+
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Muestra 4 imágenes por fila */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+.carousel img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 100px;
+}
+
 /* Botones de navegación */
 .carousel-btn {
     position: absolute;
-    top: 60%; /* Coloca los botones al centro verticalmente en relación a las imágenes */
-    transform: translateY(-50%); /* Alineación precisa verticalmente */
+    top: 67%;
+    transform: translateY(-50%);
     background-color: transparent;
-    color: #38509D;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    font-size: 50px;
-    z-index: 1; /* Asegura que los botones estén encima de las imágenes */
+    z-index: 1;
 }
 
 .carousel-btn.prev {
-    left: 30px; /* Ajusta la posición del botón "anterior" a la izquierda */
+    left: 60px;
 }
 
 .carousel-btn.next {
-    right: 30px; /* Ajusta la posición del botón "siguiente" a la derecha */
-}
-
-.carousel-btn:hover {
-    /*background-color: rgba(0, 0, 0, 0.1); /* Opcional: efecto de hover */
+    right: 60px;
 }
 
 /* Responsivo para dispositivos móviles */
 @media (max-width: 768px) {
     .carousel img {
-        width: 40%; /* Aumenta el tamaño de las imágenes en pantallas pequeñas */
-    }
-    .carousel-btn {
-        font-size: 30px; /* Reduce el tamaño de las flechas en pantallas pequeñas */
-        padding: 5px 10px;
+        max-height: 80px;
     }
 }
-
-@media (max-width: 480px) {
-    .carousel img {
-        width: 60%; /* Muestra menos imágenes en pantallas muy pequeñas */
-    }
-    .carousel-btn {
-        font-size: 25px; /* Ajusta el tamaño de las flechas aún más en pantallas pequeñas */
-    }
-}
-
-
