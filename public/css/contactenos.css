@@ -6,26 +6,33 @@
     flex-direction: row;
 }
 
-.section-nuestras-oficinas > div{
-    padding: 40px 40px;
+
+.section-informacion{
+    padding: 83px 65px;
     text-align: center;
 }
+
+.section-Saludo-img{
+    padding: 40px 65px;
+    
+}
+
+
+
 
 .section-nuestras-oficinas > div > h2{
    color: #3A519E;
    font-size: 55px;
    margin-bottom: 20px;
 }
-.section-nuestras-oficinas > div > h2 > strong{
-    color: #80BB4A;
- }
+
 
 .section-nuestras-oficinas > div > p{
-    text-align: justify;
+    text-align: center;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 40px;
+    padding-right: 20px;
     line-height: 1.5;
     font-weight: 500;
     color: #666666;
@@ -33,18 +40,25 @@
 
 }
 
+
+
 .section-Saludo-img > img{
-    width: 400px;
-    height: 400px;
+    width: 530px;
+    height: auto;
     margin-right: 10px;
 
+
 }
+
 
 .section-nuestras-oficinas > div > button{
     padding: 10px 20px;
     border-radius: 45px;
     cursor: pointer;
     margin-top: 20px;
+
+    font-weight: bold;
+    FONT-SIZE: 16px;
 }
 
 
@@ -122,6 +136,10 @@
     color: #3A519E;
     font-size: 55px;
     margin-top: 20px;
+
+    TEXT-DECORATION: UNDERLINE;
+    TEXT-UNDERLINE-OFFSET: 20PX;
+    TEXT-DECORATION-COLOR: #38509D;
 }
 
 

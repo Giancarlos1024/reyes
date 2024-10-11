@@ -2,7 +2,11 @@
     /*text-align: center;*/
     color: #80BB4A;
     font-size: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
+
+    TEXT-DECORATION: UNDERLINE;
+    TEXT-UNDERLINE-OFFSET: 20PX;
+    TEXT-DECORATION-COLOR: #38509D;
 }
 .aliados-section h2 strong{
     color: #3A519E;

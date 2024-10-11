@@ -31,9 +31,7 @@ include('../includes/db.php');
             <!-- Título y texto al lado izquierdi -->
             <h1>¿Quiénes Somos?</h1>
             <br>
-            <br>
-            <p>Somos una empresa peruana sólida con una trayectoria de más de 40 años en el 
-                corretaje y asesoramiento en seguros, con R.N.P.S. N° J0233.</p>
+            <p>Somos una empresa peruana con trayectoria de más de 40 años en el corretaje y asesoramiento en seguros, ofreciendo soluciones personalizadas y un servicio de calidad para satisfacer las necesidades de nuestros clientes. Contamos con un equipo de profesionales altamente capacitados, comprometidos con brindar confianza y seguridad en cada paso del proceso. Nuestro número de registro de corredores de seguros es R.N.P.S. N° J0233, lo que respalda nuestra legalidad y transparencia en el sector.</p>
             
             <!-- Botones debajo del texto -->
             <div class="button-container">

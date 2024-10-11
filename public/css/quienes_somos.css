@@ -40,7 +40,7 @@
     font-size: 50px;
     font-weight:bold;
     color: #38509D; /* Color azul */
-    margin-bottom: 10px;
+
     text-align: center;
 
 }
@@ -49,7 +49,7 @@
 
     font-size: 20px;
 
-    text-align: justify;
+    text-align: center;
 
 }
 
@@ -61,7 +61,7 @@
     display: flex;
     gap: 15px; /* Espacio entre los botones */
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     font-weight: bold;
 
 }
@@ -163,6 +163,11 @@
     color: #80BB4A; /* Color azul */
     margin-bottom: 10px;
     text-align: center;
+
+   
+    TEXT-DECORATION: UNDERLINE;
+    TEXT-UNDERLINE-OFFSET: 20PX;
+    TEXT-DECORATION-COLOR: #38509D;
     
 
 }
@@ -392,6 +397,10 @@
     color: #82BC49; /* Color verde */
     margin-bottom: 10px;
     text-align: center;
+
+    TEXT-DECORATION: UNDERLINE;
+    TEXT-UNDERLINE-OFFSET: 20PX;
+    TEXT-DECORATION-COLOR: #38509D;
     
 
 }

@@ -158,6 +158,10 @@
     text-align: center;
     color: #80BB4A;
     font-size: 45px;
+
+    TEXT-DECORATION: UNDERLINE;
+    TEXT-UNDERLINE-OFFSET: 20PX;
+    TEXT-DECORATION-COLOR: #38509D;
 }
 .Seccion3 > h2 > strong{
     color: #3A519E;

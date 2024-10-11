@@ -64,7 +64,9 @@ footer{
     display: flex;
     justify-content: space-between;
     
-    padding: 40px 60px;
+    padding: 40px 85px;
+
+ 
 }
 
 .SeccionFooter-Two{
