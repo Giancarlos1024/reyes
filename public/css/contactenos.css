@@ -82,7 +82,34 @@
     width: 100%;
 }
 
+.mapaDinamico{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
 
+
+.mapaDinamico > img{
+    width: 700px;
+    
+}
+/* #coordenada1{
+    background-color: #3A519E;
+}
+#coordenada2{
+    background-color: #1c40df;
+}
+#coordenada3{
+    background-color: #141518;
+}
+#coordenada4{
+    background-color: #b97419;
+} */
+/* #coordenada1, #coordenada2, #coordenada3, #coordenada4 {
+    outline: 2px solid red;
+} */
 
 
 

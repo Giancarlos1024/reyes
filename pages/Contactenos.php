@@ -15,6 +15,16 @@ include('../includes/db.php');
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <title>Contáctenos</title>
+    <style>
+        .img11 {
+            width: 100%;
+            height: auto;
+        }
+
+        area {
+            /* outline: 2px solid red;  */
+        }
+    </style>
 </head>
 <body>
     
@@ -36,9 +46,23 @@ include('../includes/db.php');
             </div>
         </section>
 
-        <section>
+        <section class="mapaDinamico">
             
-            <div id="map" style="height: 500px; width: 100%;"></div>
+        
+        <img class="img11" src="../public/img/Vector_Mapa.svg" alt="Mapa" usemap="#mapa-interactivo">
+        
+    
+        <!-- Mapa con áreas interactivas -->
+        <map name="mapa-interactivo">
+            <!-- Aquí actualizo el área para ser poligonal (shape="poly") -->
+            <area id="coordenada1" shape="poly" coords="180,100,240,100,240,150,180,150" alt="Zona 1" href="javascript:void(0);" onclick="accionObjeto1()">
+            <area id="coordenada2" shape="poly" coords="200,150,235,150,235,200,200,200" alt="Zona 2" href="javascript:void(0);" onclick="accionObjeto2()">
+            <area id="coordenada3" shape="poly" coords="260,250,330,250,330,330,295,330" alt="Zona 3" href="javascript:void(0);" onclick="accionObjeto3()">
+            <area id="coordenada4" shape="poly" coords="300,330,350,330,350,360,300,360" alt="Zona 4" href="javascript:void(0);" onclick="accionObjeto4()">
+            <area id="coordenada5" shape="poly" coords="315,360,350,360,350,430,315,430" alt="Zona 5" href="javascript:void(0);" onclick="accionObjeto5()">
+            <area id="coordenada6" shape="poly" coords="350,290,455,290,455,400,440,400" alt="Zona 6" href="javascript:void(0);" onclick="accionObjeto6()">
+            <!-- Añade más áreas según sea necesario -->
+        </map>
         </section>
 
         <section class="section-contacto">
@@ -99,71 +123,46 @@ include('../includes/db.php');
     <?php include('../templates/footer.php');?>
 
     <script>
-        // Inicializar el mapa
-        var map = L.map('map').setView([-9.19, -75.0152], 5); // Coordenadas centradas en Perú con un nivel de zoom más adecuado
+        // PIURA
+        function accionObjeto1() {
+            // alert("zona 1")
+            window.open("https://maps.app.goo.gl/N1cBBCpu7TaxFYrt5", "_blank");
+        }
 
-        // Añadir capa base de mapa
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
 
-        // Datos de las oficinas
-        var oficinas = [
-            {
-                "ciudad": "Piura",
-                "direccion": "Calle Junín Nro. 1011",
-                "telefono1": "+51 973 557825",
-                "telefono2": "+51 981 296 934",
-                "coordenadas": [-5.1945, -80.6328]
-            },
-            {
-                "ciudad": "Cusco",
-                "direccion": "Jr. Retiro 426, Dpto. 402, Wanchaq",
-                "telefono1": "+51 947 413 560",
-                "coordenadas": [-13.532, -71.9675]
-            },
-            {
-                "ciudad": "Chiclayo",
-                "direccion": "Calle Colón No. 686, Ofi. 402 (Edificio Atlas)",
-                "telefono1": "+51 074 270516",
-                "telefono2": "+51 956 113 225",
-                "coordenadas": [-6.7714, -79.8409]
-            },
-            {
-                "ciudad": "Lima",
-                "direccion": "Av. José Larco N°743, Ofi. 401, Miraflores",
-                "telefono1": "+51 981 320 285",
-                "telefono2": "+51 981 012 291",
-                "telefono3": "+51 981 012 294",
-                "coordenadas": [-12.0464, -77.0428]
-            },
-            {
-                "ciudad": "Ica",
-                "direccion": "Residencial San Martín G-101",
-                "telefono1": "+51 056 231151",
-                "telefono2": "+51 923 217 317",
-                "coordenadas": [-14.0678, -75.7286]
-            },
-            {
-                "ciudad": "Pisco",
-                "direccion": "Mariscal Castilla Nro. 230",
-                "telefono1": "+51 056 322462",
-                "telefono2": "+51 960 238 266",
-                "coordenadas": [-13.7103, -76.2032]
-            }
-        ];
+        // CHICLAYO - CORREGIR EL LINK CORRECTO
+        function accionObjeto2() {
+            // alert("zona 2")
+            window.open("https://maps.app.goo.gl/6PuxPi5phVYtyRDm7", "_blank");
+            
+        }
+        // LIMA 
+        function accionObjeto3() {
+            // alert("zona 3")
+            window.open("https://maps.app.goo.gl/62CcC12eLgpgjH1w9", "_blank");
+           
+            // Puedes añadir otro tipo de interacción aquí
+        }
 
-        // Añadir marcadores al mapa
-        oficinas.forEach(function(oficina) {
-            var marker = L.marker(oficina.coordenadas).addTo(map);
-            marker.bindPopup(
-                "<b>Ciudad:</b> " + oficina.ciudad + "<br>" +
-                "<b>Dirección:</b> " + oficina.direccion + "<br>" +
-                "<b>Teléfonos:</b> " + (oficina.telefono1 ? oficina.telefono1 + "<br>" : "") +
-                (oficina.telefono2 ? oficina.telefono2 + "<br>" : "") +
-                (oficina.telefono3 ? oficina.telefono3 + "<br>" : "")
-            );
-        });
+        // PISCO - CORREGIR EL LINK
+        function accionObjeto4() {
+            // alert("zona 4")
+            window.open("https://maps.app.goo.gl/EysPz45CcefUrBjFA", "_blank");
+            // Puedes añadir otro tipo de interacción aquí
+        }
+        // ICA 
+        function accionObjeto5() {
+            // alert("zona 5")
+            window.open("https://maps.app.goo.gl/8ymbgRpaiD7maWwz7", "_blank");
+            // Puedes añadir otro tipo de interacción aquí
+        }
+        //CUSCO 
+
+        function accionObjeto6() {
+            // alert("zona 6")
+            window.open("https://maps.app.goo.gl/uVKTmdWRKjzi1Gto8", "_blank");
+            // Puedes añadir otro tipo de interacción aquí
+        }
     </script>
 
 </body>
