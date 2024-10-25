@@ -35,8 +35,8 @@ include('../includes/db.php');
             
             <!-- Botones debajo del texto -->
             <div class="button-container">
-                <a href="" class="btn leer-mas">Leer más</a>
-                <a href="" class="btn contactanos">Contáctenos</a>
+                <a href="../pages/Quienes_somos.php" class="btn leer-mas">Leer más</a>
+                <a href="../pages/Contactenos.php" class="btn contactanos">Contáctenos</a>
             </div>
         </div>
         <div class="image-container">
@@ -58,9 +58,8 @@ include('../includes/db.php');
                     han asumido el compromiso de llevar adelante la visión y los valores que nos caracterizan.
                 </p>    
                 <!-- Botones debajo del texto -->
-                <div class="button-container-history">
-                    
-                    <a href="" class="btn-h leer-mas-history">Leer más</a>
+                <div class="button-container-history">             
+                    <a href="../pages/Quienes_somos.php" class="btn-h leer-mas-history">Leer más</a>
                 </div>
         </div>
     </div>

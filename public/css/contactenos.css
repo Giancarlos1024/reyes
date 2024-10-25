@@ -51,7 +51,7 @@
 }
 
 
-.section-nuestras-oficinas > div > button{
+.section-nuestras-oficinas > div > a{
     padding: 10px 20px;
     border-radius: 45px;
     cursor: pointer;
@@ -59,6 +59,7 @@
 
     font-weight: bold;
     FONT-SIZE: 16px;
+    text-decoration: none;
 }
 
 

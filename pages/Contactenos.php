@@ -38,8 +38,8 @@ include('../includes/db.php');
                 Cada una de nuestras sedes refleja nuestra dedicación a proteger lo que más valoras. 
                 Te invitamos a explorar nuestras instalaciones y a conocer al equipo que está comprometido 
                 en ser tu socio en la seguridad financiera y la tranquilidad de tu negocio.</p>
-                <button class="section-botones button-leer">Leer más</button>
-                <button class="section-botones button-contactanos">Contáctenos</button>
+                <a href="../pages/Contactenos.php" class="section-botones button-leer">Leer más</a>
+                <a href="../pages/Contactenos.php" class="section-botones button-contactanos">Contáctenos</a>
             </div>
             <div class="section-Saludo-img">
                 <img src="../public/img/fercito.gif" alt="saludo">

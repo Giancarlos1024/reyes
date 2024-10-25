@@ -19,25 +19,25 @@
                 <h4>Informacion de contacto</h4>
                 <div>
                     <img src="../public/img/phone.png" alt="phone">
-                    <a href="#" target="_blank">+51 923 217 317 - (056) 231151 Anexo 1001</a>
+                    <a href="tel:+51923217317">+51 923 217 317</a> - <a href="tel:+5656231151"> (056) 231151 Anexo 1001</a>
+
                 </div>
                 <div>
                     <img src="../public/img/mensaje.png" alt="mensaje">
-                    <a href="#" target="_blank">contacto@freyescorredoresseguros.com</a>
+                    <a href="mailto:contacto@freyescorredoresseguros.com">contacto@freyescorredoresseguros.com</a>
                 </div>
                 <div>
                     <img src="../public/img/ubicacion.png" alt="ubicacion">
-                    <a href="#" target="_blank">Residencial San Martín G-101, Ica, Perú</a>
+                    <a href="https://maps.app.goo.gl/HCsRQVJkGY722Foa9" target="_blank">Residencial San Martín G-101, Ica, Perú</a>
                 </div>   
             </div>
             <div>
             <div class="redes">
                 <h4>Siguenos en :</h4>
                 <div>
-                    <a href="#"><img src="../public/img/facebook.svg" alt="facebook"></a>
-                    <a href="#"><img src="../public/img/instagram.svg" alt="instagram"></a>
-                </div>   
-
+                    <a href="https://www.facebook.com/freyesycia" target="_blank"><img src="../public/img/facebook.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com/freyesycia/" target="_blank"><img src="../public/img/instagram.svg" alt="instagram"></a>                
+                </div> 
             </div>
             
         </section>

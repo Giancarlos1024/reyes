@@ -34,8 +34,8 @@
             <div class="div-Seccion-1">
                 <img id="imgdescripcion" src="./public/img/tituloDescripcion.png" alt="tituloDescripcion">
                 <div>
-                    <button class="button-leer">Leer más</button>
-                    <button class="button-contactanos">Contáctenos</button>
+                    <a href="./pages/Quienes_somos.php" class="button-leer">Leer más</a>
+                    <a href="./pages/Contactenos.php" class="button-contactanos">Contáctenos</a>
                 </div>
             </div>
             <div class="div-Seccion-2">
@@ -57,7 +57,7 @@
                 N° J0233.
                 </p>
                 <div class="button-somos">
-                    <button class="leer-somos">Leer más</button>
+                    <a href="./pages/Quienes_somos.php" class="leer-somos">Leer más</a>
                 </div>
             </div>
         </section>
@@ -71,7 +71,7 @@
                     Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
                     como accidentes, incendios o robos, generando pérdidas económicas.
                     </p>
-                    <button class="leer-somos somos">Leer más</button>
+                    <a href="./pages/Nuestros_seguros_riesgos_generales.php" class="leer-somos somos">Leer más</a>
                 </div>
                 <div class="div-Seccion-5">
                     <img src="./public/img/foto_riesgos_humanos.png" alt="">
@@ -80,7 +80,7 @@
                     Los riesgos generales se refieren a amenazas comunes que afectan a individuos y empresas, 
                     como accidentes, incendios o robos, generando pérdidas económicas.
                     </p>
-                    <button class="leer-somos somos">Leer más</button>
+                    <a href="./pages/Nuestros_seguros_riesgos_humanos.php" class="leer-somos somos">Leer más</a>
                 </div>
             </div>
         </section>
@@ -127,25 +127,25 @@
                 <h4>Informacion de contacto</h4>
                 <div>
                     <img src="./public/img/phone.png" alt="phone">
-                    <a href="#" target="_blank">+51 923 217 317 - (056) 231151 Anexo 1001</a>
+                    <a href="tel:+51923217317">+51 923 217 317</a> - <a href="tel:+5656231151"> (056) 231151 Anexo 1001</a>
+
                 </div>
                 <div>
                     <img src="./public/img/mensaje.png" alt="mensaje">
-                    <a href="#" target="_blank">contacto@freyescorredoresseguros.com</a>
+                    <a href="mailto:contacto@freyescorredoresseguros.com">contacto@freyescorredoresseguros.com</a>
                 </div>
                 <div>
                     <img src="./public/img/ubicacion.png" alt="ubicacion">
-                    <a href="#" target="_blank">Residencial San Martín G-101, Ica, Perú</a>
+                    <a href="https://maps.app.goo.gl/HCsRQVJkGY722Foa9" target="_blank">Residencial San Martín G-101, Ica, Perú</a>
                 </div>   
             </div>
             <div>
             <div class="redes">
                 <h4>Siguenos en :</h4>
                 <div>
-                    <a href="#"><img src="./public/img/facebook.svg" alt="facebook"></a>
-                    <a href="#"><img src="./public/img/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/freyesycia" target="_blank"><img src="./public/img/facebook.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com/freyesycia/" target="_blank"><img src="./public/img/instagram.svg" alt="instagram"></a>                
                 </div> 
-
             </div>
             
         </section>
