@@ -35,19 +35,14 @@
 
 #imgdescripcion{
     margin-left: 55px;
+    margin-bottom: 20px;
 }
 
 .div-Seccion-2{
     width: 50%;
     
 }
-/* .div-Seccion-2 > div{
-    background-color: #ffffff50;
-    height: 370px;
-    width: 100px;
-    position: absolute;
-    
-} */
+
 
 .button-leer{
     background-color: #80BB4A;
@@ -206,4 +201,71 @@
     background-color: #80BB4A;
     color: #fff;
     border: none;
+}
+
+
+
+
+
+
+
+/* CSS Responsivo para dispositivos más pequeños */
+@media (max-width: 768px) {
+    /* SECCION 1 */
+    .Seccion1 {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .div-Seccion-1, .div-Seccion-2 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .Seccion1 > div > img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* SECCION 2 */
+    .Seccion2 {
+        flex-direction: column;
+    }
+    .div-Seccion-3, .div-Seccion-4 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .div-Seccion-4 > h1 {
+        font-size: 32px;
+        padding: 10px 0;
+    }
+    .div-Seccion-4 > p {
+        padding-right: 0;
+    }
+
+    /* SECCION 3 */
+    .Seccion3 > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    .div-Seccion-5 {
+        width: 90%;
+        margin: 20px;
+    }
+}
+
+/* CSS Responsivo para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    /* Ajustes adicionales */
+    .div-Seccion-1 > div > a,
+    .button-somos .leer-somos {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .div-Seccion-4 > h1 {
+        font-size: 26px;
+    }
+    .Seccion3 > h2 {
+        font-size: 30px;
+    }
 }

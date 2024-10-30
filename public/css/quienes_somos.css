@@ -122,12 +122,49 @@
         font-size: 1.8rem;
     }
 
+    
+
+
+    .seguro-img {
+        height: auto; /* Mantener la proporción de la imagen */
+        max-height: 300px; /* Limitar la altura de la imagen */
+    }
+
     .text-container p {
+        font-size: 1rem; /* Tamaño de fuente ajustado */
+    }
+    .historia-section .text-container-h p {
         font-size: 1rem;
     }
+    
 }
 
+/* Responsividad para dispositivos más pequeños */
+@media (max-width: 480px) {
+    .seguro-section {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
 
+    .text-container h1 {
+        font-size: 1.8rem;
+    }
+
+    
+
+
+    .seguro-img {
+        height: auto; /* Mantener la proporción de la imagen */
+        max-height: 300px; /* Limitar la altura de la imagen */
+    }
+
+    .text-container p {
+        font-size: 1rem; /* Tamaño de fuente ajustado */
+    }
+    .historia-section .text-container-h p {
+        font-size: 1rem;
+    }
+    
+}
 
 
 
@@ -186,6 +223,9 @@
 
 
 
+
+
+
 .container-gerente {
     display: flex;
     flex-wrap: wrap; /* Permite que los bloques se ajusten en varias líneas si es necesario */
@@ -194,6 +234,8 @@
     /*align-items: center;*/ /*alinear verticalmente*/
     justify-content: center; /*alinear horizontalmente*/
 }
+
+
 
 .block-gerente {
     background-color: white; /* Color de fondo blanco */
@@ -244,6 +286,62 @@
     width: 200px;
     height: 200px;
 }
+
+
+/* Ajustes para pantallas menores a 768px */
+@media (max-width: 768px) {
+    .block-gerente {
+        padding: 25px 40px;
+        max-width: 400px;
+    }
+
+    .block-gerente h1 {
+        font-size: 22px;
+    }
+
+    .block-gerente h2 {
+        font-size: 20px;
+    }
+
+    .block-gerente p {
+        font-size: 15px;
+    }
+
+    .block-gerente > img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Ajustes para pantallas menores a 480px */
+@media (max-width: 480px) {
+    .block-gerente {
+        padding: 15px 20px;
+        max-width: 100%;
+    }
+
+    .block-gerente h1 {
+        font-size: 20px;
+    }
+
+    .block-gerente h2 {
+        font-size: 18px;
+    }
+
+    .block-gerente p {
+        font-size: 14px;
+    }
+
+    .block-gerente > img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+
+
 
 
 
@@ -473,22 +571,73 @@
 }
 
 
-
-
-
-
-
-/* Responsivo para equipo */
-@media screen and (max-width: 768px) {
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
     .team-member {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas de 768px */
+    }
+    .team-member {
+        margin-top: 95px;
+    }
+    .text-container-equipo{
+        margin: 0px;
+        padding: 0px;
+    }
+    .team-member h3 {
+        margin-top: 20%;
+    }
+    .team-member p {
+        font-size: 15px;
+        text-align: justify;
+
+    }
+
+
+@media (max-width: 480px) {
+    .team-member {
+        flex: 1 1 100%; /* Una columna en pantallas de 480px */
+        margin: 10px 0; /* Ajusta el margen para mejorar el espaciado */
+        padding: 20px; /* Reduce el padding en pantallas pequeñas */
     }
 
     .team-member img {
-        width: 80px;
-        height: 80px;
+        width: 150px; /* Reduce el tamaño de la imagen */
+        height: 150px; /* Reduce el tamaño de la imagen */
+        top: -70px; /* Ajusta la posición de la imagen */
+    }
+
+    .team-member h3 {
+        font-size: 20px; /* Reduce el tamaño de la fuente */
+    }
+
+    .team-member h5 {
+        font-size: 18px; /* Reduce el tamaño de la fuente */
+    }
+
+    .team-member p {
+        font-size: 16px; /* Reduce el tamaño de la fuente */
+    }
+
+    .team-member {
+        margin-top: 95px;
+    }
+    .text-container-equipo{
+        margin: 0px;
+        padding: 0px;
+    }
+    .team-member h3 {
+        margin-top: 20%;
+    }
+    .team-member p {
+        font-size: 15px;
+        text-align: justify;
+
     }
 }
+
+
+
+
 
 
 
@@ -556,5 +705,35 @@
 @media screen and (max-width: 768px) {
     .mission-block {
         flex: 1 1 100%;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+    /* Ajustes para el título "Nuestra Historia" */
+    .text-container-h h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+
+    /* Ajustes para el título "Nuestro Equipo" */
+    .text-container-equipo h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    /* Ajustes para el título "Nuestra Historia" */
+    .text-container-h h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+
+    /* Ajustes para el título "Nuestro Equipo" */
+    .text-container-equipo h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
     }
 }
