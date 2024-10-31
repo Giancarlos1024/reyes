@@ -211,6 +211,9 @@
 
 /* CSS Responsivo para dispositivos más pequeños */
 @media (max-width: 768px) {
+    #imgdescripcion {
+        margin: 20px 55px;
+    }
     /* SECCION 1 */
     .Seccion1 {
         flex-direction: column;
@@ -230,14 +233,23 @@
     .Seccion2 {
         flex-direction: column;
     }
-    .div-Seccion-3, .div-Seccion-4 {
+    .div-Seccion-3 {
         width: 100%;
         padding: 20px;
         text-align: center;
     }
+
+    .Seccion3 > h2 {
+        font-size: 30px;
+    }
+
+    .div-Seccion-4 > h4 {
+        font-size: 18px;
+    }
     .div-Seccion-4 > h1 {
-        font-size: 32px;
+        font-size: 30px;
         padding: 10px 0;
+        text-align: left;
     }
     .div-Seccion-4 > p {
         padding-right: 0;
@@ -249,23 +261,22 @@
         align-items: center;
     }
     .div-Seccion-5 {
-        width: 90%;
+        width: 62%;
         margin: 20px;
+    }
+
+   
+    .Seccion2 > div > img {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .div-Seccion-4 {
+        width: 100%;
+        padding: 35px 12%;
+        text-align: center;
     }
 }
 
-/* CSS Responsivo para dispositivos muy pequeños */
-@media (max-width: 480px) {
-    /* Ajustes adicionales */
-    .div-Seccion-1 > div > a,
-    .button-somos .leer-somos {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-    .div-Seccion-4 > h1 {
-        font-size: 26px;
-    }
-    .Seccion3 > h2 {
-        font-size: 30px;
-    }
-}
+
+

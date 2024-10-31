@@ -161,6 +161,7 @@
 
     
     <script src="./public/javascript/nuestros_aliados.js"></script>
+    <script src="./public/javascript/calificaciones.js"></script>
 
 </body>
 </html>

@@ -26,5 +26,7 @@
             <p>Oficinas a nivel<br/> nacional</p>
         </div>
     </section>
+
+    <script src="../public/javascript/calificaciones.js"></script>
 </body>
 </html>
