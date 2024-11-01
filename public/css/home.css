@@ -153,15 +153,16 @@
 }
 .Seccion3 > h2{
     text-align: center;
-    color: #80BB4A;
+    color: #3A519E;
     font-size: 45px;
-
     TEXT-DECORATION: UNDERLINE;
     TEXT-UNDERLINE-OFFSET: 20PX;
     TEXT-DECORATION-COLOR: #38509D;
+
+    margin-bottom: 28px;
 }
 .Seccion3 > h2 > strong{
-    color: #3A519E;
+    color: #80BB4A;
 }
 
 .Seccion3 > div{

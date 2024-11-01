@@ -16,7 +16,7 @@
             <!-- Grupo 1 (visible al inicio) -->
             <div class="image-group">
                 <img src="../public/img/positiva.png" alt="La Positiva">
-                <img src="../public/img/mapfre.png" alt="MAPFRE">
+                <img src="../public/img/mapfre.jpg" alt="MAPFRE">
                 <img src="../public/img/chubb.png" alt="Chubb">
                 <img src="../public/img/qualitas.png" alt="Qualitas">
             </div>
