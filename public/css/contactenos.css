@@ -4,16 +4,20 @@
 .section-nuestras-oficinas{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
 .section-informacion{
     padding: 83px 65px;
     text-align: center;
+    width: 50%;
 }
 
 .section-Saludo-img{
     padding: 40px 65px;
+    width: 50%;
     
 }
 
@@ -49,7 +53,6 @@
 
 
 }
-
 
 .section-nuestras-oficinas > div > a{
     padding: 10px 20px;
@@ -96,21 +99,7 @@
     width: 700px;
     
 }
-/* #coordenada1{
-    background-color: #3A519E;
-}
-#coordenada2{
-    background-color: #1c40df;
-}
-#coordenada3{
-    background-color: #141518;
-}
-#coordenada4{
-    background-color: #b97419;
-} */
-/* #coordenada1, #coordenada2, #coordenada3, #coordenada4 {
-    outline: 2px solid red;
-} */
+
 
 
 
@@ -196,4 +185,65 @@ textarea {
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.212); /* Agregado para mejor visibilidad */
     border-radius: 4px; /* Agregado para un mejor estilo */
+}
+
+
+
+
+
+/* ---- Media Queries ---- */
+@media screen and (max-width: 768px) {
+    .section-nuestras-oficinas {
+        flex-direction: column;
+    }
+
+    .section-informacion,
+    .section-Saludo-img {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .section-Saludo-img img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .mapaDinamico img {
+        width: 90%;
+    }
+
+    .section-contacto form {
+        flex-direction: row;
+    }
+
+    .datos-form-personales {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-nuestras-oficinas > div > h2 {
+        font-size: 36px;
+    }
+
+    .section-nuestras-oficinas > div > p {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .section-contacto h2 {
+        font-size: 32px;
+    }
+
+    .datos-form-personales input,
+    .datos-form-personales select,
+    textarea {
+        max-width: 100%;
+    }
+
+    .section-contacto form {
+        padding: 20px;
+    }
 }
