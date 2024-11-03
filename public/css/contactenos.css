@@ -193,14 +193,26 @@ textarea {
 
 /* ---- Media Queries ---- */
 @media screen and (max-width: 768px) {
+
+    .section-nuestras-oficinas > div > h2 {
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+
+    .section-nuestras-oficinas > div > p {
+        font-size: 15px;
+        margin: 10px;
+    }
     .section-nuestras-oficinas {
         flex-direction: column;
+        margin-bottom: 20px;
     }
 
     .section-informacion,
     .section-Saludo-img {
         width: 100%;
         padding: 20px;
+        text-align: center;
     }
 
     .section-Saludo-img img {
@@ -212,38 +224,34 @@ textarea {
         width: 90%;
     }
 
-    .section-contacto form {
-        flex-direction: row;
-    }
-
-    .datos-form-personales {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
+    
 }
 
-@media screen and (max-width: 480px) {
-    .section-nuestras-oficinas > div > h2 {
-        font-size: 36px;
+@media (max-width: 768px) {
+    .section-contacto > form {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .section-nuestras-oficinas > div > p {
-        font-size: 16px;
-        padding: 10px;
+    .section-contacto > h2 {
+        font-size: 35px; /* Tamaño ajustado para pantallas pequeñas */
+        text-align: center;
     }
 
-    .section-contacto h2 {
-        font-size: 32px;
-    }
-
-    .datos-form-personales input,
-    .datos-form-personales select,
+    .datos-form-personales > input,
+    select,
     textarea {
-        max-width: 100%;
+        width: 90%;
+        max-width: 100%; /* Para pantallas más pequeñas */
     }
 
-    .section-contacto form {
-        padding: 20px;
+    .datos-form-personales > button {
+        width: 90%;
+        max-width: 100px;
+    }
+
+    .validacion-form {
+        width: 90%;
     }
 }
+
