@@ -118,13 +118,17 @@
 
 .section-contacto > form{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 70px 120px;
+    justify-content: center;
     /* background-color: yellow; */
     width: 100%;
     padding: 50px 0px;
 
 }
+
+
+
 
 .datos-form-personales > label{
     color: #80BB4A;
@@ -141,11 +145,10 @@
     color: #fff;
     font-weight: bold;
     border: none;
-    margin-right: 20px;
     padding: 10px 20px;
     border-radius: 45px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 5px;
     width: 100px;
 }
 
@@ -176,6 +179,7 @@
     /* background-color: orange; */
     text-align: justify;
     font-size: 12px;
+    margin: 10px;
 
 }
 
@@ -188,9 +192,6 @@ textarea {
 }
 
 
-
-
-
 /* ---- Media Queries ---- */
 @media screen and (max-width: 768px) {
 
@@ -201,7 +202,8 @@ textarea {
 
     .section-nuestras-oficinas > div > p {
         font-size: 15px;
-        margin: 10px;
+        margin-bottom: 20px;
+        padding: 15px 60px;
     }
     .section-nuestras-oficinas {
         flex-direction: column;
@@ -225,12 +227,11 @@ textarea {
     }
 
     
-}
 
-@media (max-width: 768px) {
     .section-contacto > form {
-        flex-direction: column;
-        align-items: center;
+        gap: 5px;
+        padding: 10px 30%;
+        margin: 5%;
     }
 
     .section-contacto > h2 {
@@ -241,17 +242,17 @@ textarea {
     .datos-form-personales > input,
     select,
     textarea {
-        width: 90%;
+  
         max-width: 100%; /* Para pantallas más pequeñas */
     }
 
     .datos-form-personales > button {
-        width: 90%;
+
         max-width: 100px;
     }
 
     .validacion-form {
-        width: 90%;
+        width: 98%;
     }
 }
 

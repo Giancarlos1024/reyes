@@ -75,13 +75,6 @@ include('../includes/db.php');
                     <input type="email" placeholder="Introduzca su correo">
                     <label for="">Teléfono</label>
                     <input type="tel" placeholder="Introduzca su teléfono">
-                    <div class="validacion-form">
-                        <input type="checkbox" id="promo-checkbox">
-                        <label id="label-validacion" for="promo-checkbox">Deseo recibir promociones y recordatorios en mi buzón de mensajes de mi correo electrónico.</label>
-                    </div>
-                    <button type="submit">Enviar</button>
-                </div>
-                <div class="datos-form-personales">
                     <label for="">Tipo de Seguro</label>
                     <select id="select-seguros">
                         <option value="#">Introduzca el tipo de seguro</option>
@@ -102,6 +95,8 @@ include('../includes/db.php');
                         <option value="Inspección de Riesgos">Asistencia médica familiar</option>
                         <option value="Inspección de Riesgos">EPS</option>      
                     </select>
+                </div>
+                <div class="datos-form-personales">
                     <label for="">Oficina</label>
                     <select id="select-oficina">
                         <option value="#">Introduzca la oficina</option>
@@ -114,6 +109,11 @@ include('../includes/db.php');
                     </select>
                     <label for="">Mensaje</label>
                     <textarea id="mensaje" rows="5" placeholder="Describe tu mensaje aquí..."></textarea>
+                    <div class="validacion-form">
+                        <input type="checkbox" id="promo-checkbox">
+                        <label id="label-validacion" for="promo-checkbox">Deseo recibir promociones y recordatorios en mi buzón de mensajes de mi correo electrónico.</label>
+                    </div>
+                    <button type="submit">Enviar</button>
                 </div>
             </form>
         </section>
