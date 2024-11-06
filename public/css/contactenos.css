@@ -96,7 +96,7 @@
 
 
 .mapaDinamico > img{
-    width: 700px;
+    width: 1000px;
     
 }
 
@@ -191,7 +191,9 @@ textarea {
     border-radius: 4px; /* Agregado para un mejor estilo */
 }
 
-
+/* area {
+    outline: 2px solid red;
+} */
 /* ---- Media Queries ---- */
 @media screen and (max-width: 768px) {
 

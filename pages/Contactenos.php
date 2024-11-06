@@ -55,12 +55,12 @@ include('../includes/db.php');
         <!-- Mapa con áreas interactivas -->
         <map name="mapa-interactivo">
             <!-- Aquí actualizo el área para ser poligonal (shape="poly") -->
-            <area id="coordenada1" shape="poly" coords="180,100,240,100,240,150,180,150" alt="Zona 1" href="javascript:void(0);" onclick="accionObjeto1()">
-            <area id="coordenada2" shape="poly" coords="200,150,235,150,235,200,200,200" alt="Zona 2" href="javascript:void(0);" onclick="accionObjeto2()">
-            <area id="coordenada3" shape="poly" coords="260,250,330,250,330,330,295,330" alt="Zona 3" href="javascript:void(0);" onclick="accionObjeto3()">
-            <area id="coordenada4" shape="poly" coords="300,330,350,330,350,360,300,360" alt="Zona 4" href="javascript:void(0);" onclick="accionObjeto4()">
-            <area id="coordenada5" shape="poly" coords="315,360,350,360,350,430,315,430" alt="Zona 5" href="javascript:void(0);" onclick="accionObjeto5()">
-            <area id="coordenada6" shape="poly" coords="350,290,455,290,455,400,440,400" alt="Zona 6" href="javascript:void(0);" onclick="accionObjeto6()">
+            <area id="coordenada1" shape="poly" coords="270,140,340,140,340,210,270,210" alt="Zona 1" href="javascript:void(0);" onclick="accionObjeto1()">
+            <area id="coordenada2" shape="poly" coords="280,215,330,215,330,250,280,250" alt="Zona 2" href="javascript:void(0);" onclick="accionObjeto2()">
+            <area id="coordenada3" shape="poly" coords="380,380,470,380,470,465,380,465" alt="Zona 3" href="javascript:void(0);" onclick="accionObjeto3()">
+            <area id="coordenada4" shape="poly" coords="400,470,470,470,470,505,400,505" alt="Zona 4" href="javascript:void(0);" onclick="accionObjeto4()">
+            <area id="coordenada5" shape="poly" coords="440,510,500,510,500,600,440,600" alt="Zona 5" href="javascript:void(0);" onclick="accionObjeto5()">
+            <area id="coordenada6" shape="poly" coords="530,390,655,390,655,550,530,550" alt="Zona 6" href="javascript:void(0);" onclick="accionObjeto6()">
             <!-- Añade más áreas según sea necesario -->
         </map>
         </section>
@@ -140,7 +140,6 @@ include('../includes/db.php');
         function accionObjeto3() {
             // alert("zona 3")
             window.open("https://maps.app.goo.gl/62CcC12eLgpgjH1w9", "_blank");
-           
             // Puedes añadir otro tipo de interacción aquí
         }
 
