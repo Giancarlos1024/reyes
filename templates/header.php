@@ -14,7 +14,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
     <header class="headerTop">
         <img class="imgLogo" src="../public/img/logoHeader.svg" alt="Logo Header">
-        <nav>
+        <!-- Botón de hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navMenu">
             <ul>
                 <li><a href="../index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">Inicio</a></li>
                 <li><a href="./Quienes_somos.php" class="<?php echo $current_page == 'Quienes_somos.php' ? 'active' : ''; ?>">¿Quiénes somos?</a></li>
@@ -29,5 +35,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </ul>
         </nav>
     </header>
+    <script src="../public/javascript/menu.js"></script>
 </body>
 </html>

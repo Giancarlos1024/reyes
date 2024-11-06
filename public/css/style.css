@@ -52,6 +52,22 @@ nav > ul > li > a.active {
     color:#82BC49; /* Cambia esto al color que prefieras */
     font-weight: bold; /* Opcional: Para resaltar el enlace activo */
 }
+/* Botón de hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger span {
+    background: #38509D;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    transition: 0.3s;
+    /* padding: 5px; */
+}
 
 /*footer*/
 
@@ -63,10 +79,7 @@ footer{
 .SeccionFooter-One{
     display: flex;
     justify-content: space-between;
-    
     padding: 40px 85px;
-
- 
 }
 
 .SeccionFooter-Two{
@@ -155,6 +168,7 @@ nav ul li {
 
 nav ul li:hover .dropdown {
     display: block; /* Mostrar el dropdown al pasar el mouse */
+    
 }
 
 .dropdown li {
@@ -169,5 +183,88 @@ nav ul li:hover .dropdown {
 }
 
 .dropdown a:hover {
-    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    background-color: #f8f4f4; /* Color de fondo al pasar el mouse */
+}
+
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Ocultar el menú en dispositivos móviles */
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 20px;
+        /* background-color: blueviolet; */
+    }
+    .navMenu > ul{
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+    .navMenu > ul > li{
+        /* background-color: rgb(26, 162, 204); */
+        width: 100%;
+        padding: 20px 20px;
+        margin: 5px 0px;
+    }
+    .navMenu > ul > li:hover{
+        background-color: rgb(242, 247, 247);
+    }
+    .navMenu > ul > li >a{
+        /* background-color: rgb(238, 255, 0); */
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+        /* background-color: yellow; */
+    }
+
+    .navMenu.active {
+        display: block; /* Mostrar el menú cuando el botón de hamburguesa está activo */
+        /* background-color: orange; */
+        
+    }
+    /*Footer*/
+    .SeccionFooter-One {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .LogoFooter img {
+        width: 200px; /* Ajusta el tamaño del logo para móviles */
+        margin-bottom: 20px;
+    }
+
+    .informacionFooter, .redes {
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .informacionFooter > div, .redes > div {
+        flex-direction: column; /* Coloca cada sección de contacto en una columna */
+        align-items: center;
+    }
+
+    .informacionFooter > div > img, .redes > div > a > img {
+        margin-bottom: 5px; /* Añade espacio entre icono y texto */
+    }
+
+    .SeccionFooter-Two {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .SeccionFooterLinea > div {
+        width: 80%; /* Ajusta el ancho de la línea divisoria */
+    }
 }
