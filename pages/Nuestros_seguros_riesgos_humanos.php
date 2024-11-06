@@ -90,7 +90,7 @@ include('../includes/db.php');
     </div>
 </section>
 
-
+<?php include('../templates/chatbot.php');?>
     <?php include('../templates/footer.php');?>
 </body>
 </html>

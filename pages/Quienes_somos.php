@@ -163,7 +163,7 @@ include('../includes/db.php');
             </div>
         </div>
     </div>
-
+    <?php include('../templates/chatbot.php');?>
     <?php include('../templates/calificaciones.php');?>
 
     <?php include('../templates/aliados.php');?>

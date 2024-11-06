@@ -119,7 +119,8 @@ include('../includes/db.php');
         </section>
 
     </main>
-
+    
+    <?php include('../templates/chatbot.php');?>
     <?php include('../templates/footer.php');?>
 
     <script>

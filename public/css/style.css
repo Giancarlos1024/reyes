@@ -185,8 +185,143 @@ nav ul li:hover .dropdown {
 .dropdown a:hover {
     background-color: #f8f4f4; /* Color de fondo al pasar el mouse */
 }
+#chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
 
+#chatbot-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    max-height: 450px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
 
+#chatbot-window.show-chatbot {
+    display: flex;
+}
+
+#chatbot-header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+#chatbot-header > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#chatbot-messages {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 400px;
+    background-color: #fff;
+    font-size: 12px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.bot-message {
+    background-color: #e6e6e6;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bot-message > p{
+    font-size: 12px;
+}
+.presentacion-chatbot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    max-width: 800%;
+    align-self: flex-end;
+}
+
+#chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#chatbot-input button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.chat-fercito-logo{
+    width: 25px;
+    margin-right: 7px;
+}
+.closebutton{
+    background: none;
+    border: none;
+    color: #38509D;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.options {
+    margin-top: 10px;
+}
+
+.option-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.option-button:hover {
+    background-color: #45a049;
+}
 /* Media queries para móviles */
 @media (max-width: 768px) {
     nav {

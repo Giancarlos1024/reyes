@@ -59,10 +59,10 @@ include('../includes/db.php');
 </div>
 
 
-
+<?php include('../templates/chatbot.php');?>
 <?php include('../templates/aliados.php');?>
 
 
-    <?php include('../templates/footer.php');?>
+<?php include('../templates/footer.php');?>
 </body>
 </html>
