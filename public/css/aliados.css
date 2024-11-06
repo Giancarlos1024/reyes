@@ -45,7 +45,7 @@
 .carousel img {
     width: 100%;
     object-fit: contain;
-    max-height: 100px;
+    max-height: 80px;
 }
 
 /* Botones de navegación */
@@ -70,6 +70,25 @@
 /* Responsivo para dispositivos móviles */
 @media (max-width: 768px) {
     .carousel img {
-        max-height: 80px;
+        max-height: 35px;
     }
+
+    .aliados-section > h2 {
+        font-size: 30px;
+    }
+
+    .image-group {
+        gap: 0px;
+    }
+
+    .carousel-btn.prev {
+        left: 20px;
+    }
+    .carousel-btn.next {
+        right: 20px;
+    }
+    .carousel-btn {
+        top: 78%;
+    }
+
 }

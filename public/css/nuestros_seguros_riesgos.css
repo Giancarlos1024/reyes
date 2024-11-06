@@ -132,8 +132,23 @@
 /* Responsivo */
 @media (max-width: 768px) {
     .riesgo-item {
-        flex: 0 1 100%; /* En pantallas pequeñas, los items ocuparán el 100% del ancho */
+        flex: 0 1 70%; /* En pantallas pequeñas, los items ocuparán el 100% del ancho */
     }
+
+    .title-section h1 {
+        font-size: 30px;
+    }
+    .title-section p {
+        font-size: 14px;
+    }
+    .riesgo-item h3 {
+        font-size: 16px;
+    }
+    .riesgo-item p{
+        font-size: 14px;
+    }
+    
+
 }
 
 

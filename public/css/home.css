@@ -35,19 +35,14 @@
 
 #imgdescripcion{
     margin-left: 55px;
+    margin-bottom: 20px;
 }
 
 .div-Seccion-2{
     width: 50%;
     
 }
-/* .div-Seccion-2 > div{
-    background-color: #ffffff50;
-    height: 370px;
-    width: 100px;
-    position: absolute;
-    
-} */
+
 
 .button-leer{
     background-color: #80BB4A;
@@ -158,15 +153,16 @@
 }
 .Seccion3 > h2{
     text-align: center;
-    color: #80BB4A;
+    color: #3A519E;
     font-size: 45px;
-
     TEXT-DECORATION: UNDERLINE;
     TEXT-UNDERLINE-OFFSET: 20PX;
     TEXT-DECORATION-COLOR: #38509D;
+
+    margin-bottom: 28px;
 }
 .Seccion3 > h2 > strong{
-    color: #3A519E;
+    color: #80BB4A;
 }
 
 .Seccion3 > div{
@@ -207,3 +203,81 @@
     color: #fff;
     border: none;
 }
+
+
+
+
+
+
+
+/* CSS Responsivo para dispositivos más pequeños */
+@media (max-width: 768px) {
+    #imgdescripcion {
+        margin: 20px 55px;
+    }
+    /* SECCION 1 */
+    .Seccion1 {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .div-Seccion-1, .div-Seccion-2 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .Seccion1 > div > img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* SECCION 2 */
+    .Seccion2 {
+        flex-direction: column;
+    }
+    .div-Seccion-3 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Seccion3 > h2 {
+        font-size: 30px;
+    }
+
+    .div-Seccion-4 > h4 {
+        font-size: 18px;
+    }
+    .div-Seccion-4 > h1 {
+        font-size: 30px;
+        padding: 10px 0;
+        text-align: left;
+    }
+    .div-Seccion-4 > p {
+        padding-right: 0;
+    }
+
+    /* SECCION 3 */
+    .Seccion3 > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    .div-Seccion-5 {
+        width: 62%;
+        margin: 20px;
+    }
+
+   
+    .Seccion2 > div > img {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .div-Seccion-4 {
+        width: 100%;
+        padding: 35px 12%;
+        text-align: center;
+    }
+}
+
+
+

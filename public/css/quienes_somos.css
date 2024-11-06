@@ -8,9 +8,7 @@
 
     background-color: #ffffff;
     padding: 0px 50px;
-    word-spacing: 10px;
-
-   
+    word-spacing: 10px; 
 }
 
 /* Estilo para el contenedor de la imagen */
@@ -31,8 +29,7 @@
     flex: 1; /* Ocupa el otro 50% */
     padding: 50px 90px;
     text-align: left;
-    
-    
+        
 }
 
 /* Estilo para el título principal */
@@ -52,9 +49,6 @@
     text-align: center;
 
 }
-
-
-
 
 /* Estilo para los botones */
 .button-container {
@@ -122,9 +116,24 @@
         font-size: 1.8rem;
     }
 
+    .seguro-img {
+        height: auto; /* Mantener la proporción de la imagen */
+        max-height: 300px; /* Limitar la altura de la imagen */
+    }
+
     .text-container p {
+        font-size: 1rem; /* Tamaño de fuente ajustado */
+    }
+    .historia-section .text-container-h p {
         font-size: 1rem;
     }
+
+    .text-container {
+        padding: 20px 90px;    
+    }
+
+    
+    
 }
 
 
@@ -186,6 +195,9 @@
 
 
 
+
+
+
 .container-gerente {
     display: flex;
     flex-wrap: wrap; /* Permite que los bloques se ajusten en varias líneas si es necesario */
@@ -194,6 +206,8 @@
     /*align-items: center;*/ /*alinear verticalmente*/
     justify-content: center; /*alinear horizontalmente*/
 }
+
+
 
 .block-gerente {
     background-color: white; /* Color de fondo blanco */
@@ -246,6 +260,36 @@
 }
 
 
+/* Ajustes para pantallas menores a 768px */
+@media (max-width: 768px) {
+    .block-gerente {
+        padding: 25px 40px;
+        max-width: 400px;
+    }
+
+    .block-gerente h1 {
+        font-size: 22px;
+    }
+
+    .block-gerente h2 {
+        font-size: 20px;
+    }
+
+    .block-gerente p {
+        font-size: 15px;
+    }
+
+    .block-gerente > img {
+        width: 170px;
+        height: 170px;
+    }
+
+
+    .historia-section {
+        margin: 0px auto;
+        padding: 0px;
+    }
+}
 
 
 
@@ -359,13 +403,7 @@
     flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .block {
-        width: 100%;
-        height: auto; /* Permite que los bloques se ajusten en pantallas pequeñas */
-    }
-}
+
 
 
 .equipo-section {
@@ -473,25 +511,31 @@
 }
 
 
-
-
-
-
-
-/* Responsivo para equipo */
-@media screen and (max-width: 768px) {
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
     .team-member {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas de 768px */
     }
+    .team-member {
+        margin: 55px 90px;
+    }
+    .text-container-equipo{
+        margin: 0px;
+        padding: 0px;
+    }
+    .team-member h3 {
+        margin-top: 9%;
+    }
+    .team-member p {
+        font-size: 15px;
+        text-align: justify;
 
-    .team-member img {
-        width: 80px;
-        height: 80px;
+    }
+    .team-member img{
+        width: 150px;
+        height: 150px;
     }
 }
-
-
-
 
 
 
@@ -552,9 +596,42 @@
 
 
 
+
+
+
+
 /* Responsivo para misión, visión y valores */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .mission-block {
         flex: 1 1 100%;
+        padding: 0px 50px;
+        margin: 10px 20px;
+    }
+    /* Ajustes para el título "Nuestra Historia" */
+    .text-container-h h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+
+    /* Ajustes para el título "Nuestro Equipo" */
+    .text-container-equipo h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+    .mission-block > p {
+        font-size: 15px;
+    }
+}
+@media (max-width: 768px) {
+    /* Ajustes para el título "Nuestra Historia" */
+    .text-container-h h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
+    }
+
+    /* Ajustes para el título "Nuestro Equipo" */
+    .text-container-equipo h1 {
+        font-size: 30px; /* Tamaño de fuente más pequeño */
+        margin-bottom: 10px;
     }
 }

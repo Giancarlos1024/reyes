@@ -23,8 +23,8 @@
 
 /* Ajusta la imagen dentro del contenedor */
 .seguro-img {
-    width: 90%; /* Ajusta el tamaño de la imagen */
-    height: 500px;
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto;
     /*border-radius: 10px;*/
 }
 
@@ -106,12 +106,27 @@
     }
 
     .text-container h1 {
-        font-size: 1.8rem;
+        font-size: 35px;
     }
 
     .text-container p {
         font-size: 1rem;
     }
+
+    .image-container {
+        text-align: center;
+    }
+    .seguro-img {
+        width: 80%;
+        height: auto;
+        /* border-radius: 10px; */
+    }
+
+    .text-container {
+        text-align: center;
+        padding: 10px 60px;
+    }
+
 }
 
 
@@ -158,7 +173,7 @@
 
 .riesgo-card img {
     max-width: 100%;
-    height: 276px;
+    height: auto;
     /*border-radius: 10px;*/
     margin-bottom: 15px;
 }
@@ -194,7 +209,11 @@
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
     .riesgo-card {
-        width: 100%; /* Las tarjetas ocupan el 100% en pantallas pequeñas */
+        width: 70%; /* Las tarjetas ocupan el 100% en pantallas pequeñas */
+        height: 505px;
+    }
+    .riesgo-card h2 {
+        font-size: 28px;
     }
 }
 
