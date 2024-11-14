@@ -239,20 +239,72 @@ nav ul li:hover .dropdown {
     align-items: center; */
 }
 
+
+
+
+
+
+/* Estilo para los mensajes del bot */
 .bot-message {
-    background-color: #e6e6e6;
-    color: black;
+    text-align: left;  /* Los mensajes del bot a la izquierda */
     padding: 10px;
+    background-color: #80BB4A;
+    color: white;
     border-radius: 10px;
-    margin-bottom: 8px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 80%;
+    position: relative; /* Necesario para posicionar la colita */
 }
-.bot-message > p{
-    font-size: 12px;
+
+/* Agregar la colita al mensaje del bot */
+.bot-message::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;  /* Posiciona la colita a la izquierda */
+    border-right: 10px solid #80BB4A; /* Color de la colita (igual que el fondo del mensaje) */
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transform: translateY(-50%);  /* Centra verticalmente la colita */
 }
+
+
+
+/* Estilo para los mensajes del bot */
+.mensaje-bot {
+    text-align: left;  /* Los mensajes del bot a la izquierda */
+    padding: 10px;
+    background-color: #80BB4A;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 80%;
+    position: relative; /* Necesario para posicionar la colita */
+}
+
+/* Agregar la colita al mensaje del bot */
+.mensaje-bot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;  /* Posiciona la colita a la izquierda */
+    border-right: 10px solid #80BB4A; /* Color de la colita (igual que el fondo del mensaje) */
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transform: translateY(-50%);  /* Centra verticalmente la colita */
+}
+
+
+
+
+
+
+
+
+
+
 .presentacion-chatbot{
     display: flex;
     flex-direction: row;
@@ -322,6 +374,38 @@ nav ul li:hover .dropdown {
 .option-button:hover {
     background-color: #45a049;
 }
+
+
+
+
+
+/* Estilo para los mensajes del usuario */
+.mensaje-usuario {
+    text-align: right;  /* Alinea los mensajes del usuario a la derecha */
+    padding: 10px;
+    background-color: #38509D;  /* Color de fondo para diferenciarlo */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    margin-left: auto; /* Alineación a la derecha */
+    position: relative; /* Necesario para posicionar la colita */
+}
+
+/* Agregar la colita al mensaje del usuario */
+.mensaje-usuario::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -9px;  /* Posiciona la colita a la derecha */
+    border-left: 10px solid #38509D; /* Color de la colita (igual que el fondo del mensaje) */
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transform: translateY(-50%);  /* Centra verticalmente la colita */
+}
+
+
+
 /* Media queries para móviles */
 @media (max-width: 768px) {
     nav {
