@@ -11,7 +11,7 @@ function toggleChatbot() {
 // Cargar mensaje de bienvenida solo una vez
 function mostrarMensajeDeInicio() {
     const messagesDiv = document.getElementById("chatbot-messages");
-    messagesDiv.innerHTML = ''; // Limpiar mensajes anteriores
+
     
     const welcomeMessage = `
         <div class="presentacion-chatbot">
@@ -30,14 +30,16 @@ function mostrarMensajeDeInicio() {
 
 // Función para manejar las opciones iniciales
 function manejarOpcionInicial(opcion) {
-    switch(opcion) {
+    switch (opcion) {
         case "Horarios de atención":
             mostrarMensaje("¿En qué ciudad deseas saber los horarios de atención?", "bot-message");
             mostrarOpciones(["Piura", "Chiclayo", "Lima", "Pisco", "Ica", "Cusco"], manejarHorariosAtencion);
             break;
         case "Contáctanos":
+            solicitarInformacionUsuario(true); // Indicar que viene de "Contáctanos"
+            break;
         case "Contactar con un asesor":
-            solicitarInformacionUsuario();
+            solicitarInformacionUsuario(); // Flujo genérico
             break;
         case "Oficinas":
             mostrarMensaje("¿Cuál de nuestras oficinas te queda más cerca?", "bot-message");
@@ -46,34 +48,41 @@ function manejarOpcionInicial(opcion) {
     }
 }
 
+
 // Función para mostrar horarios de atención según ciudad
 function manejarHorariosAtencion(ciudad) {
     const horarios = {
         "Piura": "Lunes a Viernes de 8:30 a.m. a 1:30 p.m. y de 3:30 p.m. a 6:30 p.m.",
-        "Chiclayo": "Lunes a Viernes de 8:30 a.m. a 1:00 p.m. y de 3:30 p.m. a 7:00 p.m.",
-        "Lima": "Lunes a Viernes de 9:00 a.m. a 6:00 p.m.",
-        // Agrega aquí el horario correspondiente para Pisco, Ica y Cusco
+        "Chiclayo": "Lunes a Viernes de 9:00a.m. a 1:00 p.m. y de 3:00 p.m. a 7:00 p.m.",
+        "Lima": "Lunes a Viernes de 9:00a.m. a 1:00 p.m. y de 2:00 p.m. a 6:00 p.m.",
+        "Pisco": "Lunes a Viernes de 9:00a.m. a 1:00 p.m. y de 2:00 p.m. a 6:00 p.m.",
+        "Ica": "Lunes a Viernes de 9:00a.m. a 1:00 p.m. y de 4:00 p.m. a 7:00 p.m.",
+        "Cusco": "Lunes a Viernes de 9:00a.m. a 1:00 p.m. y de 2:00 p.m. a 6:00 p.m."
     };
     
-    mostrarMensaje(`Nuestra oficina en ${ciudad} está para atenderte de ${horarios[ciudad]}. ¿Deseas agendar una cita?`, "bot-message");
+    mostrarMensaje(`Nuestra oficina en ${ciudad} está para atenderte de ${horarios[ciudad]} ¿Deseas agendar una cita?`, "bot-message");
     mostrarOpciones(["Sí", "No"], (respuesta) => {
         if (respuesta === "Sí") {
             solicitarInformacionUsuario();
         } else {
-            mostrarMensaje("¿Te puedo ayudar en algo más?", "bot-message");
+            mostrarMensaje("Cuéntame ¿Te puedo ayudar en algo más?", "bot-message");
             mostrarOpciones(["Sí", "No"], manejarAyudaAdicional);
         }
     });
 }
 
+
+
 // Función para manejar la ayuda adicional
 function manejarAyudaAdicional(opcion) {
     if (opcion === "Sí") {
-        mostrarMensajeDeInicio();
+        mostrarMensajeFinal();
     } else {
-        mostrarMensaje("Gracias por escribirnos. Fin del flujo.", "bot-message");
+        mostrarMensaje("¡Gracias por escribirnos!", "bot-message");
     }
 }
+
+
 
 // Detectar cuando se presiona la tecla "Enter" en el campo de texto
 document.getElementById("entrada-usuario").addEventListener("keypress", function(event) {
@@ -103,19 +112,23 @@ function manejarEntradaUsuario() {
 
 
 // Variables de estado para seguir el flujo
+
 let esperandoNombre = false;
 let esperandoContacto = false;
+let esDesdeContactanos = false; // Nueva bandera para identificar el flujo
 
 // Función para solicitar información del usuario
-function solicitarInformacionUsuario() {
+function solicitarInformacionUsuario(desdeContactanos = false) {
+    esDesdeContactanos = desdeContactanos; // Guardar si el flujo es de "Contáctanos"
     mostrarMensaje("Bríndame tu nombre, por favor.", "mensaje-bot");
-    esperandoNombre = true; // Cambia el estado para indicar que esperamos el nombre
+    esperandoNombre = true; // Cambiar estado
 }
+
 
 // Función para manejar la entrada del nombre
 function manejarNombre(nombre) {
     if (validarNombre(nombre)) {
-        mostrarMensaje("Bríndame tu teléfono y tu correo para que nuestros asesores se puedan contactar contigo.", "mensaje-bot");
+        mostrarMensaje("Bríndame tu teléfono y tu correo para que nuestros asesores se puedan contactar contigo. Separados por una coma", "mensaje-bot");
         esperandoNombre = false;
         esperandoContacto = true; // Cambia el estado para indicar que esperamos los datos de contacto
     } else {
@@ -123,20 +136,62 @@ function manejarNombre(nombre) {
     }
 }
 
+
 // Función para manejar la entrada de contacto (teléfono y correo)
 function manejarContacto(contacto) {
     const [telefono, correo] = contacto.split(",");
     if (validarTelefono(telefono) && validarCorreo(correo)) {
-        mostrarMensaje("Gracias por la información brindada. En breve, un asesor se pondrá en contacto contigo.", "mensaje-bot");
-        esperandoContacto = false;
-        /*mostrarMensaje("¿Te puedo ayudar en algo más?", "mensaje-bot");
-        mostrarOpciones(["Sí", "No"], manejarAyudaAdicional);*/
+        if (esDesdeContactanos) {
+            // Flujo específico para "Contáctanos"
+            mostrarMensaje(
+                "La oficina más cercana estará encantada de contactarte. Nuestros asesores se pondrán en contacto contigo.",
+                "bot-message"
+            );
+
+            mostrarOpciones(["Ver oficinas cercanas"], () => {
+                mostrarMensaje("¿Cuál de nuestras oficinas te queda más cerca?", "bot-message");
+                mostrarOpciones(["Piura", "Chiclayo", "Lima", "Pisco", "Ica", "Cusco"], manejarOficinas);
+            });
+        } else {
+            // Flujo para "Horarios de atención"
+            mostrarMensaje(
+                "¡Gracias por la información brindada! En breve, un asesor se pondrá en contacto contigo.",
+                "bot-message"
+            );
+        }
+
+        esperandoContacto = false; // Finalizar estado
     } else {
-        mostrarMensaje("Por favor, ingresa un teléfono y un correo válidos.", "mensaje-bot");
+        mostrarMensaje("Por favor, ingresa un teléfono y un correo válidos.", "bot-message");
     }
 }
 
-// Función para mostrar un mensaje en el chat
+// Funciones de validación
+function validarNombre(nombre) {
+    // Verificar que el nombre no tenga solo letras repetidas
+    const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóú\s]+$/; // Permite letras con tildes y espacios
+    const esValido = regexNombre.test(nombre.trim());  
+
+    // Comprobar que no haya secuencias de letras repetidas (como "XXXXX" o "AAAAA")
+    const noSecuenciasRepetidas = !/(.)\1{2,}/.test(nombre.trim()); // No más de dos caracteres repetidos seguidos
+
+    // Validación final
+    return esValido && noSecuenciasRepetidas;
+}
+
+
+function validarTelefono(telefono) {
+    return /^[\d\s+()-]+$/.test(telefono.trim());
+}
+
+function validarCorreo(correo) {
+    return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(correo.trim());
+}
+
+
+
+
+
 // Función para mostrar un mensaje en el chat
 function mostrarMensaje(mensaje, clase) {
     const mensajeElemento = document.createElement("div");
@@ -172,34 +227,123 @@ function mostrarOpciones(opciones, callback) {
     document.querySelector("#chatbot-messages").appendChild(contenedorOpciones);
 }
 
-// Funciones de validación
-function validarNombre(nombre) {
-    return /^[a-zA-Z\s]+$/.test(nombre.trim());
-}
 
-function validarTelefono(telefono) {
-    return /^[\d\s+()-]+$/.test(telefono.trim());
-}
 
-function validarCorreo(correo) {
-    return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(correo.trim());
-}
-
-// Función para manejar las oficinas
+// Función para manejar las oficinas TELEFONOS
 function manejarOficinas(ciudad) {
     const ubicaciones = {
-        "Piura": "Calle Junín Nro. 1011, Piura. Teléfonos: (073) 557825 / +51 972 014 356 /+51 981 296 934",
-        "Chiclayo": "Av. Balta N° 360 Of. 305 Edificio San Lázaro, Chiclayo. Teléfonos: (074) 270516 / +51 956 113 225",
-        "Lima": "Av. Jose Larco N°743, Ofi. 401, Miraflores. Teléfonos: +51 981 320 285 /+51 981 012 291 /+51 981 012 294"
-        // Agrega aquí las ubicaciones correspondientes para Pisco, Ica y Cusco
+        "Piura": "Calle Junín Nro. 1011, Piura  Teléfonos: (073) 557825 / +51 972 014 356 / +51 981 296 934",
+        "Chiclayo": "Av. Balta N° 360 Of. 305  Edificio San Lázaro, Chiclayo.  Teléfonos:  (074) 270516 / +51 956 113 225",
+        "Lima": "Av. Jose Larco N°743, Ofi. 401, Miraflores  Teléfonos: +51 981 320 285 / +51 981 012 291 / +51 981 012 294",
+        "Pisco": "Calle Comercio 429-B Pisco  Teléfonos: (056) 322462 / +51 960 238 266",
+        "Ica": "Residencial San Martín G-101, Ica  Teléfonos: (056) 231151 / +51 981 320 285 /+51 923 217 317",
+        "Cusco": "Jr. Retiro 426, Dpto. 402- Wanchac - Cusco  Teléfonos: +51 947 413 560"
     };
     
-    mostrarMensaje(`Nuestra oficina en ${ciudad} está ubicada en: ${ubicaciones[ciudad]}. ¿Hay algo más en lo que pueda ayudarte hoy?`, "bot-message");
+    mostrarMensaje(`Nuestra oficina en ${ciudad} está ubicada en: ${ubicaciones[ciudad]}. ¡Espero verte pronto en nuestras instalaciones! ¿Hay algo más en lo que pueda ayudarte hoy?`, "bot-message");
     mostrarOpciones(["Regresar Menú", "Horarios de Atención"], (respuesta) => {
         if (respuesta === "Regresar Menú") {
-            mostrarMensajeDeInicio();
+            mostrarMensaje("¿Cuál de nuestras oficinas te queda más cerca?", "bot-message");
+            mostrarOpciones(["Piura", "Chiclayo", "Lima", "Pisco", "Ica", "Cusco"], manejarOficinas);
         } else {
             manejarHorariosAtencion(ciudad);
         }
     });
 }
+
+
+
+
+// Función para mostrar el mensaje final después de la recolección de datos
+function mostrarMensajeFinal() {
+    mostrarMensaje("¡Gracias por la información brindada! Cuéntanos ¿Cómo podemos ayudarte?", "bot-message");
+
+    mostrarOpciones(["Seguro vehicular", "SOAT", "SCTR", "Vida Ley", "Otros"], manejarOpcionSeguros);
+}
+
+// Función para manejar la selección de opción de seguros
+function manejarOpcionSeguros(opcion) {
+    switch (opcion) {
+        case "Seguro vehicular":
+            mostrarMensaje("¿Deseas?", "bot-message");
+            mostrarOpciones(["Cotizar Renovar", "Siniestros/Reclamos", "Contactar a un asesor"], manejarSeguroVehicular);
+            break;
+        case "SOAT":
+            mostrarMensaje("¿Deseas?", "bot-message");
+            mostrarOpciones(["Renovar mi SOAT", "Cotizar mi SOAT", "Contactar a un asesor"], manejarSOAT);
+            break;
+        case "SCTR":
+            mostrarMensaje("¿Deseas?", "bot-message");
+            mostrarOpciones(["Renovar SCTR", "Cotizar SCTR", "Contactar a un asesor"], manejarSCTR);
+            break;
+        case "Vida Ley":
+            mostrarMensaje("¿Deseas?", "bot-message");
+            mostrarOpciones(["Renovar vida ley", "Cotizar vida ley", "Contactar a un asesor"], manejarVidaLey);
+            break;
+        case "Otros":
+            mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+            break;
+    }
+}
+
+
+
+// Función para manejar las opciones de "Seguro vehicular"
+function manejarSeguroVehicular(opcion) {
+    switch (opcion) {
+        case "Cotizar Renovar":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
+            mostrarMensaje("DNI / RUC:\nNombre:\nPlaca:\nAño:\nModelo:\nUso:\nZona de Circulación:\nValor comercial:", "bot-message");
+            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            break;
+        case "Siniestros/Reclamos":
+            mostrarMensaje("Por favor, bríndanos tu N° de documento y tu N° de póliza", "bot-message");
+            break;
+        case "Contactar a un asesor":
+            mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+            break;
+    }
+}
+
+
+// Función para manejar las opciones de "SOAT"
+function manejarSOAT(opcion) {
+    switch (opcion) {
+        case "Renovar mi SOAT":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
+            mostrarMensaje("DNI / RUC:\nNombre:\nPlaca:\nAño:\nModelo:\nUso:", "bot-message");
+            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            break;
+        case "Cotizar mi SOAT":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
+            mostrarMensaje("DNI / RUC:\nNombre:\nPlaca:\nAño:\nModelo:\nUso:", "bot-message");
+            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            break;
+        case "Contactar a un asesor":
+            mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+            break;
+    }
+}
+// Función para manejar las opciones de "SCTR"
+function manejarSCTR(opcion) {
+    switch (opcion) {
+        case "Renovar SCTR":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
+            mostrarMensaje("RUC:\nNombre:\nN° de Póliza:\nVigencia de la póliza:", "bot-message");
+            break;
+        case "Cotizar SCTR":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
+            mostrarMensaje("RUC:\nNombre:", "bot-message");
+            break;
+        case "Contactar a un asesor":
+            mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+            break;
+    }
+}
+
+// Función para manejar "Otros"
+function manejarOtros() {
+    mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+}
+
+

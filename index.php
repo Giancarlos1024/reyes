@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Iconos de Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/aliados.css">
     <link rel="stylesheet" href="./public/css/home.css">
@@ -178,32 +178,20 @@
     </div>
 
     <!-- Ventana del Chatbot -->
-    <div id="chatbot-window">
+    <div id="chatbot-window" class="hidden">
         <div id="chatbot-header">
             <div>
                 <img class="chat-fercito-logo" src="./public/img/FercitoChat.png" alt="Chatbot Icon">
                 <span>Fercito</span>
             </div>
-            <a href=""> <img src="./public/img/phone.png" alt="phone"></a>
             <button class="closebutton" onclick="toggleChatbot()">X</button>
         </div>
         <div id="chatbot-messages">
-        <div class="bot-message">  
-                <div class="presentacion-chatbot">
-                    <img class="chat-fercito-logo" src="./public/img/FercitoChat.png" alt="Chatbot Icon"> 
-                    <p>¡Hola! Soy Fercito, el asistente virtual de F. REYES Y CIA. ¿En qué puedo ayudarte hoy?</p>
-                </div>
-                <div class="options">
-                    <button class="option-button">Horarios de atención</button>
-                    <button class="option-button">Contáctenos</button>
-                    <button class="option-button">Oficinas</button>
-                    <button class="option-button">Contactar con un asesor</button>
-                </div>
-            </div>
+            <!-- Aquí solo se mostrará el mensaje de bienvenida al iniciar -->
         </div>
         <div id="chatbot-input">
-            <input type="text" placeholder="Escribe tu mensaje..." />
-            <button>Enviar</button>
+            <input type="text" id="entrada-usuario" placeholder="Escribe tu mensaje..." />
+            <button onclick="manejarEntradaUsuario()">Enviar</button>
         </div>
     </div>
 
