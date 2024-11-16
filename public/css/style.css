@@ -332,7 +332,12 @@ nav ul li:hover .dropdown {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px;
+
+}
+
+
+#chatbot-input img {
+    margin-right: 8px;
 }
 
 #chatbot-input button {
