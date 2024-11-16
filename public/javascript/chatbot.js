@@ -48,7 +48,6 @@ function manejarOpcionInicial(opcion) {
     }
 }
 
-
 // Función para mostrar horarios de atención según ciudad
 function manejarHorariosAtencion(ciudad) {
     const horarios = {
@@ -74,13 +73,22 @@ function manejarHorariosAtencion(ciudad) {
 
 
 // Función para manejar la ayuda adicional
+
 function manejarAyudaAdicional(opcion) {
     if (opcion === "Sí") {
-        mostrarMensajeFinal();
+        solicitarInformacionUsuario(false); // Inicia el flujo para pedir nombre, teléfono y correo
+        esperandoContactoFinal = true; // Bandera para detectar cuando se completan los datos
     } else {
         mostrarMensaje("¡Gracias por escribirnos!", "bot-message");
     }
 }
+
+// Nueva bandera para controlar el flujo de "mostrarMensajeFinal"
+let esperandoContactoFinal = false;
+
+
+
+
 
 
 
@@ -137,23 +145,26 @@ function manejarNombre(nombre) {
 }
 
 
-// Función para manejar la entrada de contacto (teléfono y correo)
+
+
+// Modificar manejarContacto para considerar el caso de mostrarMensajeFinal
 function manejarContacto(contacto) {
     const [telefono, correo] = contacto.split(",");
     if (validarTelefono(telefono) && validarCorreo(correo)) {
-        if (esDesdeContactanos) {
-            // Flujo específico para "Contáctanos"
+        if (esperandoContactoFinal) {
+            //mostrarMensaje("¡Gracias por la información! Continuemos...", "bot-message");
+            mostrarMensajeFinal(); // Llamar a mostrarMensajeFinal si se está en ese flujo
+            esperandoContactoFinal = false; // Resetear la bandera
+        } else if (esDesdeContactanos) {
             mostrarMensaje(
                 "La oficina más cercana estará encantada de contactarte. Nuestros asesores se pondrán en contacto contigo.",
                 "bot-message"
             );
-
             mostrarOpciones(["Ver oficinas cercanas"], () => {
                 mostrarMensaje("¿Cuál de nuestras oficinas te queda más cerca?", "bot-message");
                 mostrarOpciones(["Piura", "Chiclayo", "Lima", "Pisco", "Ica", "Cusco"], manejarOficinas);
             });
         } else {
-            // Flujo para "Horarios de atención"
             mostrarMensaje(
                 "¡Gracias por la información brindada! En breve, un asesor se pondrá en contacto contigo.",
                 "bot-message"
@@ -165,6 +176,20 @@ function manejarContacto(contacto) {
         mostrarMensaje("Por favor, ingresa un teléfono y un correo válidos.", "bot-message");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Funciones de validación
 function validarNombre(nombre) {
@@ -295,6 +320,7 @@ function manejarSeguroVehicular(opcion) {
             mostrarMensaje("Por favor, bríndanos los siguientes datos:", "bot-message");
             mostrarMensaje("DNI / RUC:\nNombre:\nPlaca:\nAño:\nModelo:\nUso:\nZona de Circulación:\nValor comercial:", "bot-message");
             mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            //aqui necesito que el 
             break;
         case "Siniestros/Reclamos":
             mostrarMensaje("Por favor, bríndanos tu N° de documento y tu N° de póliza", "bot-message");
