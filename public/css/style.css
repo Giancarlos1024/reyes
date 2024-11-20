@@ -192,13 +192,13 @@ nav ul li:hover .dropdown {
     cursor: pointer;
     z-index: 1000;
 }
-
+/*ventana del chatbot*/
 #chatbot-window {
     position: fixed;
     bottom: 80px;
     right: 20px;
     width: 350px;
-    max-height: 450px;
+    max-height: 420px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -232,6 +232,7 @@ nav ul li:hover .dropdown {
     padding: 15px;
     overflow-y: auto;
     max-height: 400px;
+    min-height: 240px;
     background-color: #fff;
     font-size: 12px;
     /* display: flex;
