@@ -32,9 +32,6 @@
             <button onclick="manejarEntradaUsuario()">Enviar</button>
             <input type="file" id="input-file" style="display: none;" onchange="manejarArchivoAdjunto(event)">
         </div>
-
-
-
     </div>
     <script src="../public/javascript/chatbot.js"></script>
 </body>

@@ -7,7 +7,7 @@ function toggleChatbot() {
         mostrarMensajeDeInicio();
     }
 }
-/////////
+////////////////////////////////////////////
 // Cargar mensaje de bienvenida solo una vez
 function mostrarMensajeDeInicio() {
     const messagesDiv = document.getElementById("chatbot-messages");
@@ -15,8 +15,13 @@ function mostrarMensajeDeInicio() {
     // Mensaje de bienvenida inicial
     const welcomeMessage = `
         <div class="presentacion-chatbot">
-            <img class="chat-fercito-logo" src="../public/img/FercitoChat.png" alt="Chatbot Icon"> 
-            <p>¡Hola! Soy Fercito, el asistente virtual de F. REYES Y CIA. Bríndame tu nombre por favor:</p>
+            <img 
+                class="chat-fercito-logo" 
+                src="../public/img/FercitoChat.png" 
+                alt="Chatbot Icon" 
+                onerror="this.src='./public/img/FercitoChat.png'; this.alt='Imagen no disponible';"
+            > 
+            <p>¡Hola! Soy Fercito, el asistente virtual de F. REYES Y CIA.</p>
         </div>
     `;
     messagesDiv.innerHTML = welcomeMessage;
@@ -24,6 +29,8 @@ function mostrarMensajeDeInicio() {
     // Invocar la función para manejar la solicitud de información
     solicitarInformacionUsuario();
 }
+
+
 
 
 
@@ -101,7 +108,7 @@ document.getElementById("entrada-usuario").addEventListener("keypress", function
 
 ///////
 // Manejar la entrada del usuario al hacer clic en "Enviar" o presionar "Enter"
-function manejarEntradaUsuario() {
+/*function manejarEntradaUsuario() {
     const entradaUsuario = document.getElementById("entrada-usuario").value.trim();
     if (entradaUsuario !== "") {
         mostrarMensaje(entradaUsuario, "mensaje-usuario");
@@ -114,7 +121,46 @@ function manejarEntradaUsuario() {
 
         document.getElementById("entrada-usuario").value = ""; // Limpiar el campo de entrada
     }
+}*/
+
+
+
+
+let esperandoDatosSOAT = false; // Variable para controlar cuándo se están esperando los datos del usuario
+let esperandoDatosSCTR = false; // Variable para controlar cuándo se están esperando los datos del usuario para SCTR
+let opcionSCTR = ""; // Variable global para almacenar la opción seleccionada para SCTR
+
+let esperandoDatosVidaLey = false; // Variable para controlar cuándo se están esperando los datos del usuario para Vida Ley
+let opcionVidaLey = ""; // Variable global para almacenar la opción seleccionada para Vida Ley
+
+let esperandoDatosSeguroVehicular = false; // Variable para controlar cuándo se están esperando los datos del usuario para Seguro Vehicular
+let opcionSeguroVehicular = ""; // Variable global para almacenar la opción seleccionada para Seguro Vehicular
+
+// Función para manejar la entrada del usuario
+function manejarEntradaUsuario() {
+    const entradaUsuario = document.getElementById("entrada-usuario").value.trim();
+    
+    if (entradaUsuario !== "") {
+        mostrarMensaje(entradaUsuario, "mensaje-usuario");
+
+        if (esperandoDatosSOAT) {
+            manejarDatosSOAT(entradaUsuario); // Validar y procesar datos SOAT
+        } else if (esperandoDatosSCTR) {
+            manejarDatosSCTR(entradaUsuario, opcionSCTR); // Validar y procesar datos SCTR
+        } else if (esperandoDatosVidaLey) {
+            manejarDatosVidaLey(entradaUsuario, opcionVidaLey); // Validar y procesar datos Vida Ley
+        } else if (esperandoDatosSeguroVehicular) {
+            manejarDatosSeguroVehicular(entradaUsuario, opcionSeguroVehicular); // Validar y procesar datos Seguro Vehicular
+        } else if (esperandoNombre) {
+            manejarNombre(entradaUsuario); // Manejo de nombre
+        } else if (esperandoContacto) {
+            manejarContacto(entradaUsuario); // Manejo de contacto
+        }
+
+        document.getElementById("entrada-usuario").value = ""; // Limpiar el campo de entrada
+    }
 }
+
 
 
 
@@ -265,16 +311,6 @@ function mostrarMensaje(mensaje, clase) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Función para mostrar opciones y manejar la respuesta
 function mostrarOpciones(opciones, callback) {
     const contenedorOpciones = document.createElement("div");
@@ -358,43 +394,175 @@ function manejarOpcionSeguros(opcion) {
 }
 
 // Función para manejar las opciones de "Seguro vehicular"
+// Función para manejar las opciones de "Seguro Vehicular"
 function manejarSeguroVehicular(opcion) {
+    opcionSeguroVehicular = opcion; // Guardar la opción seleccionada en la variable global
+
     switch (opcion) {
         case "Cotizar":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Uso:\n-Zona de Circulación:\n-Valor comercial:", "bot-message");
-            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial", "bot-message");
+            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
+            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
             break;
         case "Renovar":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Valor comercial:\n-Número de Póliza Anterior:", "bot-message");
-            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior", "bot-message");
+            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
+            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
             break;
         case "Siniestros/Reclamos":
-            mostrarMensaje("Por favor, bríndanos tu N° de documento y tu N° de póliza", "bot-message");
+            mostrarMensaje("Por favor, ingresa tu N° de documento y N° de póliza", "bot-message");
+            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
             break;
         case "Contactar a un asesor":
             manejarOtros();
+            break;
     }
 }
 
+// Función para validar y procesar los datos del usuario para Seguro Vehicular
+// Función para validar y procesar los datos del usuario para Seguro Vehicular
+function manejarDatosSeguroVehicular(entradaUsuario, opcion) {
+    // Separar los datos ingresados por comas
+    const datos = entradaUsuario.split(",");
+
+    // Validar que se hayan ingresado todos los campos requeridos según la opción seleccionada
+    if ((opcion === "Cotizar" && datos.length < 8) || 
+        (opcion === "Renovar" && datos.length < 8) || 
+        (opcion === "Siniestros/Reclamos" && datos.length < 2) || 
+        datos.some(campo => campo.trim() === "")) {
+        mostrarMensaje(
+            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
+            "Cotizar:\n DNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial\n" +
+            "Renovar:\n DNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior\n" +
+            "Siniestros/Reclamos:\n N° de documento, N° de póliza",
+            "bot-message"
+        );
+        return;
+    }
+
+    // Asegurarse de que los datos no sean undefined o null antes de usar .trim()
+    const datosUsuario = {
+        dni: (datos[0] && datos[0].trim()) || "",  // Validar si datos[0] existe antes de usar .trim()
+        nombre: (datos[1] && datos[1].trim()) || "",  // Validar si datos[1] existe antes de usar .trim()
+        placa: (datos[2] && datos[2].trim()) || "",  // Validar si datos[2] existe antes de usar .trim()
+        anio: (datos[3] && datos[3].trim()) || "",  // Validar si datos[3] existe antes de usar .trim()
+        modelo: (datos[4] && datos[4].trim()) || "",  // Validar si datos[4] existe antes de usar .trim()
+        uso: opcion === "Cotizar" ? (datos[5] && datos[5].trim()) || "" : undefined,  // Validar si datos[5] existe antes de usar .trim()
+        zonaCirculacion: opcion === "Cotizar" ? (datos[6] && datos[6].trim()) || "" : undefined,  // Validar si datos[6] existe antes de usar .trim()
+        valorComercial: opcion === "Cotizar" || opcion === "Renovar" ? (datos[7] && datos[7].trim()) || "" : undefined,  // Validar si datos[7] existe antes de usar .trim()
+        numeroPoliza: opcion === "Renovar" ? (datos[8] && datos[8].trim()) || "" : undefined  // Validar si datos[8] existe antes de usar .trim()
+    };
+
+    // Mensaje de confirmación y llamado a la función manejarOtros
+    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+    manejarOtros(); // Continuar con el flujo
+    esperandoDatosSeguroVehicular = false; // Desactivar la espera de datos Seguro Vehicular
+}
+
+
+
+
+// Función para manejar "Otros"
+function manejarOtros() {
+    mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
+}
+// Función para manejar las opciones de "SOAT"
+// Función para validar los datos ingresados por el usuario
+/*function validarDatos(datos) {
+    // Comprobar si algún campo está vacío
+    for (const clave in datos) {
+        if (!datos[clave].trim()) {
+            return false; // Si algún campo está vacío, retornar falso
+        }
+    }
+    return true; // Todos los campos están completos
+}
+
+// Función para manejar "SOAT"
+function manejarSOAT(opcion) {
+    switch (opcion) {
+        case "Renovar mi SOAT":
+
+        case "Cotizar mi SOAT":
+            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Uso:", "bot-message");
+            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            
+            // Aquí puedes capturar los datos ingresados por el usuario, simulando su entrada
+            const datosUsuario = {
+                dni: prompt("Ingrese su DNI o RUC:"),
+                nombre: prompt("Ingrese su Nombre:"),
+                placa: prompt("Ingrese su Placa:"),
+                anio: prompt("Ingrese el Año del vehículo:"),
+                modelo: prompt("Ingrese el Modelo del vehículo:"),
+                uso: prompt("Ingrese el Uso del vehículo:")
+            };
+
+            // Validar los datos ingresados
+            if (validarDatos(datosUsuario)) {
+                mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+                manejarOtros(); // Llamar a la función manejarOtros
+            } else {
+                mostrarMensaje("Por favor, complete todos los campos requeridos antes de continuar.", "bot-message");
+            }
+            break;
+
+        case "Contactar a un asesor":
+            manejarOtros();
+            break;
+    }
+}*/
 
 // Función para manejar las opciones de "SOAT"
 function manejarSOAT(opcion) {
     switch (opcion) {
         case "Renovar mi SOAT":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Uso:", "bot-message");
-            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
-            break;
         case "Cotizar mi SOAT":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Uso:", "bot-message");
-            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Uso", "bot-message");
+            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
+            esperandoDatosSOAT = true; // Activar la espera de datos SOAT
             break;
+
         case "Contactar a un asesor":
             manejarOtros();
             break;
     }
 }
+
+// Función para validar y procesar los datos del usuario para SOAT
+function manejarDatosSOAT(entradaUsuario) {
+    // Separar los datos ingresados por comas
+    const datos = entradaUsuario.split(",");
+
+    // Validar que se hayan ingresado todos los campos requeridos
+    if (datos.length < 6 || datos.some(campo => campo.trim() === "")) {
+        mostrarMensaje(
+            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
+            "DNI / RUC, Nombre, Placa, Año, Modelo, Uso",
+            "bot-message"
+        );
+        return;
+    }
+
+    // Si los datos son válidos, procesarlos
+    const datosUsuario = {
+        dni: datos[0].trim(),
+        nombre: datos[1].trim(),
+        placa: datos[2].trim(),
+        anio: datos[3].trim(),
+        modelo: datos[4].trim(),
+        uso: datos[5].trim()
+    };
+
+    // Mensaje de confirmación y llamado a la función manejarOtros
+    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+    manejarOtros(); // Continuar con el flujo
+    esperandoDatosSOAT = false; // Desactivar la espera de datos SOAT
+}
+
+
+
 // Función para manejar las opciones de "SCTR"
-function manejarSCTR(opcion) {
+/*function manejarSCTR(opcion) {
     switch (opcion) {
         case "Renovar SCTR":
             mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-RUC:\n-Nombre:\n-N° de Póliza:\n-Vigencia de la póliza:", "bot-message");
@@ -406,20 +574,22 @@ function manejarSCTR(opcion) {
             manejarOtros();
             break;
     }
-}
+}*/
 
 
 
+// Función para manejar las opciones de "SCTR"
+function manejarSCTR(opcion) {
+    opcionSCTR = opcion; // Guardar la opción seleccionada en la variable global
 
-
-//* Función para manejar las opciones de "Vida Ley"
-function manejarVidaLey(opcion) {
     switch (opcion) {
-        case "Renovar Vida Ley":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-RUC:\n-Nombre:\n-N° de Póliza:\n-Vigencia de la póliza:", "bot-message");
+        case "Renovar SCTR":
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nRUC, Nombre, N° de Póliza, Vigencia de la póliza", "bot-message");
+            esperandoDatosSCTR = true; // Activar la espera de datos SCTR
             break;
-        case "Cotizar Vida Ley":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-RUC:\n-Nombre:", "bot-message");
+        case "Cotizar SCTR":
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nRUC, Nombre", "bot-message");
+            esperandoDatosSCTR = true; // Activar la espera de datos SCTR
             break;
         case "Contactar a un asesor":
             manejarOtros();
@@ -427,14 +597,107 @@ function manejarVidaLey(opcion) {
     }
 }
 
+// Función para validar y procesar los datos del usuario para SCTR
+function manejarDatosSCTR(entradaUsuario, opcion) {
+    // Separar los datos ingresados por comas
+    const datos = entradaUsuario.split(",");
+
+    // Validar que se hayan ingresado todos los campos requeridos
+    if ((datos.length < 2 && opcion === "Cotizar SCTR") || 
+        (datos.length < 4 && opcion === "Renovar SCTR") || 
+        datos.some(campo => campo.trim() === "")) {
+        mostrarMensaje(
+            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
+            "Renovar SCTR:\n RUC, Nombre, N° de Póliza, Vigencia de la póliza\n" +
+            "Cotizar SCTR:\n RUC, Nombre",
+            "bot-message"
+        );
+        return;
+    }
+
+    // Si los datos son válidos, procesarlos
+    const datosUsuario = {
+        ruc: datos[0].trim(),
+        nombre: datos[1].trim(),
+        numeroPoliza: opcion === "Renovar SCTR" ? datos[2].trim() : undefined,
+        vigenciaPoliza: opcion === "Renovar SCTR" ? datos[3].trim() : undefined
+    };
+
+    // Mensaje de confirmación y llamado a la función manejarOtros
+    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+    manejarOtros(); // Continuar con el flujo
+    esperandoDatosSCTR = false; // Desactivar la espera de datos SCTR
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//* Función para manejar las opciones de "Vida Ley"
+// Función para manejar las opciones de "Vida Ley"
+function manejarVidaLey(opcion) {
+    opcionVidaLey = opcion; // Guardar la opción seleccionada en la variable global
+
+    switch (opcion) {
+        case "Renovar Vida Ley":
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nRUC, Nombre, N° de Póliza, Vigencia de la póliza", "bot-message");
+            esperandoDatosVidaLey = true; // Activar la espera de datos Vida Ley
+            break;
+        case "Cotizar Vida Ley":
+            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nRUC, Nombre", "bot-message");
+            esperandoDatosVidaLey = true; // Activar la espera de datos Vida Ley
+            break;
+        case "Contactar a un asesor":
+            manejarOtros();
+            break;
+    }
+}
+
+// Función para validar y procesar los datos del usuario para Vida Ley
+function manejarDatosVidaLey(entradaUsuario, opcion) {
+    // Separar los datos ingresados por comas
+    const datos = entradaUsuario.split(",");
+
+    // Validar que se hayan ingresado todos los campos requeridos
+    if ((datos.length < 2 && opcion === "Cotizar Vida Ley") || 
+        (datos.length < 4 && opcion === "Renovar Vida Ley") || 
+        datos.some(campo => campo.trim() === "")) {
+        mostrarMensaje(
+            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
+            "Renovar Vida Ley:\n RUC, Nombre, N° de Póliza, Vigencia de la póliza\n" +
+            "Cotizar Vida Ley:\n RUC, Nombre",
+            "bot-message"
+        );
+        return;
+    }
+
+    // Si los datos son válidos, procesarlos
+    const datosUsuario = {
+        ruc: datos[0].trim(),
+        nombre: datos[1].trim(),
+        numeroPoliza: opcion === "Renovar Vida Ley" ? datos[2].trim() : undefined,
+        vigenciaPoliza: opcion === "Renovar Vida Ley" ? datos[3].trim() : undefined
+    };
+
+    // Mensaje de confirmación y llamado a la función manejarOtros
+    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+    manejarOtros(); // Continuar con el flujo
+    esperandoDatosVidaLey = false; // Desactivar la espera de datos Vida Ley
+}
+
 
 ////////////////////
 
 
-// Función para manejar "Otros"
-function manejarOtros() {
-    mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
-}
+
 
 
 // Adjuntar archivos
