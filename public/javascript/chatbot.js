@@ -31,14 +31,6 @@ function mostrarMensajeDeInicio() {
 }
 
 
-
-
-
-
-
-
-
-
 // Función para manejar las opciones iniciales
 function manejarOpcionInicial(opcion) {
     switch (opcion) {
@@ -81,7 +73,6 @@ function manejarHorariosAtencion(ciudad) {
     });
 }
 
-
 // Función para manejar la ayuda adicional
 
 function manejarAyudaAdicional(opcion) {
@@ -96,35 +87,12 @@ function manejarAyudaAdicional(opcion) {
 // Nueva bandera para controlar el flujo de "mostrarMensajeFinal"
 let esperandoContactoFinal = false;
 
-
-
 // Detectar cuando se presiona la tecla "Enter" en el campo de texto
 document.getElementById("entrada-usuario").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         manejarEntradaUsuario(); // Ejecutar la función cuando se presiona Enter
     }
 });
-
-
-///////
-// Manejar la entrada del usuario al hacer clic en "Enviar" o presionar "Enter"
-/*function manejarEntradaUsuario() {
-    const entradaUsuario = document.getElementById("entrada-usuario").value.trim();
-    if (entradaUsuario !== "") {
-        mostrarMensaje(entradaUsuario, "mensaje-usuario");
-
-        if (esperandoNombre) {
-            manejarNombre(entradaUsuario);
-        } else if (esperandoContacto) {
-            manejarContacto(entradaUsuario);
-        }
-
-        document.getElementById("entrada-usuario").value = ""; // Limpiar el campo de entrada
-    }
-}*/
-
-
-
 
 let esperandoDatosSOAT = false; // Variable para controlar cuándo se están esperando los datos del usuario
 let esperandoDatosSCTR = false; // Variable para controlar cuándo se están esperando los datos del usuario para SCTR
@@ -160,9 +128,6 @@ function manejarEntradaUsuario() {
         document.getElementById("entrada-usuario").value = ""; // Limpiar el campo de entrada
     }
 }
-
-
-
 
 
 // Variables de estado para seguir el flujo
@@ -228,8 +193,6 @@ function manejarContactanos(){
         }
     }
     
-
-
 
 // Funciones de validación
 function validarNombre(nombre) {
@@ -466,51 +429,7 @@ function manejarDatosSeguroVehicular(entradaUsuario, opcion) {
 function manejarOtros() {
     mostrarMensaje("Listo, en unos minutos nos pondremos en contacto contigo.", "bot-message");
 }
-// Función para manejar las opciones de "SOAT"
-// Función para validar los datos ingresados por el usuario
-/*function validarDatos(datos) {
-    // Comprobar si algún campo está vacío
-    for (const clave in datos) {
-        if (!datos[clave].trim()) {
-            return false; // Si algún campo está vacío, retornar falso
-        }
-    }
-    return true; // Todos los campos están completos
-}
 
-// Función para manejar "SOAT"
-function manejarSOAT(opcion) {
-    switch (opcion) {
-        case "Renovar mi SOAT":
-
-        case "Cotizar mi SOAT":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-DNI / RUC:\n-Nombre:\n-Placa:\n-Año:\n-Modelo:\n-Uso:", "bot-message");
-            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
-            
-            // Aquí puedes capturar los datos ingresados por el usuario, simulando su entrada
-            const datosUsuario = {
-                dni: prompt("Ingrese su DNI o RUC:"),
-                nombre: prompt("Ingrese su Nombre:"),
-                placa: prompt("Ingrese su Placa:"),
-                anio: prompt("Ingrese el Año del vehículo:"),
-                modelo: prompt("Ingrese el Modelo del vehículo:"),
-                uso: prompt("Ingrese el Uso del vehículo:")
-            };
-
-            // Validar los datos ingresados
-            if (validarDatos(datosUsuario)) {
-                mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
-                manejarOtros(); // Llamar a la función manejarOtros
-            } else {
-                mostrarMensaje("Por favor, complete todos los campos requeridos antes de continuar.", "bot-message");
-            }
-            break;
-
-        case "Contactar a un asesor":
-            manejarOtros();
-            break;
-    }
-}*/
 
 // Función para manejar las opciones de "SOAT"
 function manejarSOAT(opcion) {
@@ -558,24 +477,6 @@ function manejarDatosSOAT(entradaUsuario) {
     manejarOtros(); // Continuar con el flujo
     esperandoDatosSOAT = false; // Desactivar la espera de datos SOAT
 }
-
-
-
-// Función para manejar las opciones de "SCTR"
-/*function manejarSCTR(opcion) {
-    switch (opcion) {
-        case "Renovar SCTR":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-RUC:\n-Nombre:\n-N° de Póliza:\n-Vigencia de la póliza:", "bot-message");
-            break;
-        case "Cotizar SCTR":
-            mostrarMensaje("Por favor, bríndanos los siguientes datos:\n-RUC:\n-Nombre:", "bot-message");
-            break;
-        case "Contactar a un asesor":
-            manejarOtros();
-            break;
-    }
-}*/
-
 
 
 // Función para manejar las opciones de "SCTR"
@@ -629,19 +530,6 @@ function manejarDatosSCTR(entradaUsuario, opcion) {
     esperandoDatosSCTR = false; // Desactivar la espera de datos SCTR
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//* Función para manejar las opciones de "Vida Ley"
 // Función para manejar las opciones de "Vida Ley"
 function manejarVidaLey(opcion) {
     opcionVidaLey = opcion; // Guardar la opción seleccionada en la variable global
@@ -694,41 +582,7 @@ function manejarDatosVidaLey(entradaUsuario, opcion) {
 }
 
 
-////////////////////
 
-
-
-
-
-// Adjuntar archivos
-/*function manejarArchivoAdjunto(event) {
-    const fileInput = event.target;
-    const archivo = fileInput.files[0];
-
-    if (archivo) {
-        const mensajeElemento = document.createElement("div");
-        mensajeElemento.classList.add("mensaje-usuario");
-
-        // Validar tipo de archivo (solo imágenes, por ejemplo)
-        if (archivo.type.startsWith("image/")) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.createElement("img");
-                img.src = e.target.result;
-                img.alt = archivo.name;
-                img.style.maxWidth = "150px";
-                img.style.borderRadius = "8px";
-                mensajeElemento.appendChild(img);
-            };
-            reader.readAsDataURL(archivo);
-        } else {
-            mensajeElemento.textContent = `Archivo adjunto: ${archivo.name}`;
-        }
-
-        document.querySelector("#chatbot-messages").appendChild(mensajeElemento);
-        document.querySelector("#chatbot-messages").scrollTop = document.querySelector("#chatbot-messages").scrollHeight;
-    }
-}*/
 
 function manejarArchivoAdjunto(event) {
     const fileInput = event.target;
@@ -756,3 +610,87 @@ function manejarArchivoAdjunto(event) {
 
 
 
+
+// Función para validar y enviar mensajes al correo electrónico
+function enviarMensajesPorCorreo() {
+    const messagesDiv = document.querySelector("#chatbot-messages");
+    const mensajes = messagesDiv.innerHTML; // Capturar todo el contenido del div
+
+    // Verificar si alguno de los mensajes clave se encuentra en el div
+    const mensajeClave1 = "En breve, un asesor se pondrá en contacto contigo.";
+    const mensajeClave2 = "Listo, en unos minutos nos pondremos en contacto contigo.";
+
+    if (mensajes.includes(mensajeClave1) || mensajes.includes(mensajeClave2)) {
+        // Si se encuentra algún mensaje clave, enviar los datos al servidor para enviarlo por correo
+        fetch("https://tu-servidor.com/enviar-correo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                destinatario: "fysat.20@gmail.com",
+                asunto: "Transcripción del Chatbot Fercito",
+                contenido: mensajes
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                mostrarMensaje("Los mensajes se han enviado a tu correo electrónico.", "bot-message");
+            } else {
+                throw new Error("Error al enviar el correo");
+            }
+        })
+        .catch(error => {
+            console.error("Hubo un problema al enviar el correo:", error);
+            mostrarMensaje("Ocurrió un error al enviar el correo. Por favor, intenta de nuevo más tarde.", "bot-message");
+        });
+    } else {
+        mostrarMensaje("No hay mensajes relevantes para enviar por correo.", "bot-message");
+    }
+}
+
+
+
+
+
+const express = require("express");
+const nodemailer = require("nodemailer");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.json());
+
+// Configuración del transporte de nodemailer
+const transporter = nodemailer.createTransport({
+    service: "gmail", // Cambiar según el proveedor de correo
+    auth: {
+        user: "tu-correo@gmail.com", // Tu correo
+        pass: "tu-contraseña"        // Tu contraseña o app password
+    }
+});
+
+app.post("/enviar-correo", (req, res) => {
+    const { destinatario, asunto, contenido } = req.body;
+
+    const mailOptions = {
+        from: "tu-correo@gmail.com",
+        to: destinatario,
+        subject: asunto,
+        html: contenido // Enviar el contenido del chat como HTML
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("Error al enviar el correo:", error);
+            res.status(500).send("Error al enviar el correo");
+        } else {
+            console.log("Correo enviado:", info.response);
+            res.status(200).send("Correo enviado correctamente");
+        }
+    });
+});
+
+const PORT = 3000; // Cambiar el puerto según tu preferencia
+app.listen(PORT, () => {
+    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+});

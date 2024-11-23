@@ -34,5 +34,6 @@
         </div>
     </div>
     <script src="../public/javascript/chatbot.js"></script>
+    <script src="../public/javascript/calificaciones.js"></script>
 </body>
 </html>
