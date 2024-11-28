@@ -589,19 +589,25 @@ function manejarArchivoAdjunto(event) {
     const archivo = fileInput.files[0];
 
     if (archivo) {
-        // Aquí puedes manejar la carga del archivo, por ejemplo, enviarlo a un servidor
-        console.log(`Archivo cargado: ${archivo.name}, Tipo: ${archivo.type}, Tamaño: ${archivo.size} bytes`);
+        // Crear un objeto FormData para enviar el archivo y los datos
+        const formData = new FormData();
+        formData.append("archivo", archivo); // Agregar el archivo al FormData
+        formData.append("mensaje", "Este es el mensaje que quiero enviar"); // Agregar el mensaje, o captura lo que necesites
 
-        // Si necesitas enviar el archivo a un servidor:
-        // const formData = new FormData();
-        // formData.append("archivo", archivo);
-        // fetch("URL_DEL_SERVIDOR", {
-        //     method: "POST",
-        //     body: formData
-        // })
-        // .then(response => response.json())
-        // .then(data => console.log("Archivo cargado exitosamente:", data))
-        // .catch(error => console.error("Error al cargar el archivo:", error));
+        // Enviar los datos al servidor
+        fetch("http://localhost:3000/send-email", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Archivo enviado exitosamente:", data);
+            mostrarMensaje("Tu archivo y mensaje han sido enviados correctamente.", "bot-message");
+        })
+        .catch(error => {
+            console.error("Error al enviar el archivo:", error);
+            mostrarMensaje("Hubo un error al enviar el archivo.", "bot-message");
+        });
     }
 
     // Resetear el campo de archivo para permitir una nueva carga
@@ -611,86 +617,53 @@ function manejarArchivoAdjunto(event) {
 
 
 
-// Función para validar y enviar mensajes al correo electrónico
-function enviarMensajesPorCorreo() {
-    const messagesDiv = document.querySelector("#chatbot-messages");
-    const mensajes = messagesDiv.innerHTML; // Capturar todo el contenido del div
+// Variable para almacenar los mensajes del chatbot
+let mensajesChatbot = [];
 
-    // Verificar si alguno de los mensajes clave se encuentra en el div
-    const mensajeClave1 = "En breve, un asesor se pondrá en contacto contigo.";
-    const mensajeClave2 = "Listo, en unos minutos nos pondremos en contacto contigo.";
+// Interceptar y almacenar mensajes en el chat
+function mostrarMensaje(mensaje, tipo) {
+    const chatMessages = document.getElementById("chatbot-messages");
 
-    if (mensajes.includes(mensajeClave1) || mensajes.includes(mensajeClave2)) {
-        // Si se encuentra algún mensaje clave, enviar los datos al servidor para enviarlo por correo
-        fetch("https://tu-servidor.com/enviar-correo", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                destinatario: "fysat.20@gmail.com",
-                asunto: "Transcripción del Chatbot Fercito",
-                contenido: mensajes
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                mostrarMensaje("Los mensajes se han enviado a tu correo electrónico.", "bot-message");
-            } else {
-                throw new Error("Error al enviar el correo");
-            }
-        })
-        .catch(error => {
-            console.error("Hubo un problema al enviar el correo:", error);
-            mostrarMensaje("Ocurrió un error al enviar el correo. Por favor, intenta de nuevo más tarde.", "bot-message");
-        });
-    } else {
-        mostrarMensaje("No hay mensajes relevantes para enviar por correo.", "bot-message");
+    // Crear el elemento para el mensaje
+    const mensajeElemento = document.createElement("div");
+    mensajeElemento.className = tipo;
+    mensajeElemento.innerText = mensaje;
+
+    // Agregar el mensaje al chat
+    chatMessages.appendChild(mensajeElemento);
+
+    // Almacenar el mensaje en la lista de mensajes
+    mensajesChatbot.push(`${tipo === "bot-message" ? "Chatbot: " : "Usuario: "} ${mensaje}`);
+
+    // Verificar si el mensaje desencadena el envío de correo
+    if (
+        tipo === "bot-message" &&
+        (mensaje === "En breve, un asesor se pondrá en contacto contigo." ||
+            mensaje === "Listo, en unos minutos nos pondremos en contacto contigo.")
+    ) {
+        enviarDatosPorCorreo(mensajesChatbot);
     }
 }
 
+// Función para enviar los datos capturados al servidor
+function enviarDatosPorCorreo(datos) {
+    fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            subject: "Información del Chatbot",
+            text: datos.join("\n"), // Convertir el array en texto
+        }),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error al enviar el correo");
+            }
+            console.log("Correo enviado con éxito");
+        })
+        .catch((error) => console.error("Error al enviar el correo:", error));
+}
 
 
-
-
-const express = require("express");
-const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
-
-const app = express();
-app.use(bodyParser.json());
-
-// Configuración del transporte de nodemailer
-const transporter = nodemailer.createTransport({
-    service: "gmail", // Cambiar según el proveedor de correo
-    auth: {
-        user: "tu-correo@gmail.com", // Tu correo
-        pass: "tu-contraseña"        // Tu contraseña o app password
-    }
-});
-
-app.post("/enviar-correo", (req, res) => {
-    const { destinatario, asunto, contenido } = req.body;
-
-    const mailOptions = {
-        from: "tu-correo@gmail.com",
-        to: destinatario,
-        subject: asunto,
-        html: contenido // Enviar el contenido del chat como HTML
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error("Error al enviar el correo:", error);
-            res.status(500).send("Error al enviar el correo");
-        } else {
-            console.log("Correo enviado:", info.response);
-            res.status(200).send("Correo enviado correctamente");
-        }
-    });
-});
-
-const PORT = 3000; // Cambiar el puerto según tu preferencia
-app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
-});
