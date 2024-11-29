@@ -274,14 +274,14 @@ nav ul li:hover .dropdown {
 
 /* Estilo para los mensajes del bot */
 .mensaje-bot {
-    text-align: left;  /* Los mensajes del bot a la izquierda */
+    text-align: justify;  /* Los mensajes del bot a la izquierda */
     padding: 10px;
     background-color: #80BB4A;
     color: white;
     border-radius: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
-    max-width: 80%;
+    max-width: max-content;
     position: relative; /* Necesario para posicionar la colita */
 }
 
@@ -326,6 +326,8 @@ nav ul li:hover .dropdown {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ddd;
+    justify-content: center;
+    align-items: center;
 }
 
 #chatbot-input input {
@@ -339,6 +341,7 @@ nav ul li:hover .dropdown {
 
 #chatbot-input img {
     margin-right: 8px;
+    
 }
 
 #chatbot-input button {
@@ -356,7 +359,7 @@ nav ul li:hover .dropdown {
 .closebutton{
     background: none;
     border: none;
-    color: #38509D;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -381,19 +384,15 @@ nav ul li:hover .dropdown {
     background-color: #45a049;
 }
 
-
-
-
-
 /* Estilo para los mensajes del usuario */
 .mensaje-usuario {
-    text-align: right;  /* Alinea los mensajes del usuario a la derecha */
+    text-align: justify;  /* Alinea los mensajes del usuario a la derecha */
     padding: 10px;
     background-color: #38509D;  /* Color de fondo para diferenciarlo */
     color: white;
     border-radius: 10px;
     margin-bottom: 10px;
-    max-width: 80%;
+    max-width: max-content;
     margin-left: auto; /* Alineación a la derecha */
     position: relative; /* Necesario para posicionar la colita */
 }

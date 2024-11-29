@@ -1,6 +1,3 @@
-<?php
-include('../includes/db.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,16 +64,16 @@ include('../includes/db.php');
 
         <section class="section-contacto">
             <h2>Contáctenos</h2>
-            <form id="data">
+            <form id="contactForm">
                 <div class="datos-form-personales">
-                    <label for="">Nombre</label>
-                    <input type="text" placeholder="Introduzca su nombre">
-                    <label for="">Correo Electrónico</label>
-                    <input type="email" placeholder="Introduzca su correo">
-                    <label for="">Teléfono</label>
-                    <input type="tel" placeholder="Introduzca su teléfono">
-                    <label for="">Tipo de Seguro</label>
-                    <select id="select-seguros">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Introduzca su nombre" required>
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" name="email" id="email" placeholder="Introduzca su correo" required>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Introduzca su teléfono" required>
+                    <label for="tipo-seguro">Tipo de Seguro</label>
+                    <select name="tipo-seguro" id="tipo-seguro">
                         <option value="#">Introduzca el tipo de seguro</option>
                         <option value="Vehículos y SOAT">Vehículos y SOAT</option>
                         <option value="Transporte">Transporte</option>
@@ -90,15 +87,15 @@ include('../includes/db.php');
                         <option value="Inspección de Riesgos">Inspección de Riesgos</option>
                         <option value="SCTR Pensión">SCTR Pensión</option>
                         <option value="SCTR Salud">SCTR Salud</option>
-                        <option value="Inspección de Riesgos">Seguros de vida con retorno</option>
-                        <option value="Inspección de Riesgos">Accidentes personales</option>
-                        <option value="Inspección de Riesgos">Asistencia médica familiar</option>
-                        <option value="Inspección de Riesgos">EPS</option>      
+                        <option value="Seguros de vida con retorno">Seguros de vida con retorno</option>
+                        <option value="Accidentes personales">Accidentes personales</option>
+                        <option value="Asistencia médica familiar">Asistencia médica familiar</option>
+                        <option value="EPS">EPS</option>      
                     </select>
                 </div>
                 <div class="datos-form-personales">
-                    <label for="">Oficina</label>
-                    <select id="select-oficina">
+                    <label for="oficina">Oficina</label>
+                    <select name="oficina" id="oficina">
                         <option value="#">Introduzca la oficina</option>
                         <option value="Piura">Piura</option>
                         <option value="Chiclayo">Chiclayo</option>
@@ -107,15 +104,16 @@ include('../includes/db.php');
                         <option value="Ica">Ica</option>
                         <option value="Cusco">Cusco</option>
                     </select>
-                    <label for="">Mensaje</label>
-                    <textarea id="mensaje" rows="5" placeholder="Describe tu mensaje aquí..."></textarea>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" placeholder="Describe tu mensaje aquí..."></textarea>
                     <div class="validacion-form">
-                        <input type="checkbox" id="promo-checkbox">
+                        <input type="checkbox" name="promo" id="promo-checkbox">
                         <label id="label-validacion" for="promo-checkbox">Deseo recibir promociones y recordatorios en mi buzón de mensajes de mi correo electrónico.</label>
                     </div>
                     <button type="submit">Enviar</button>
                 </div>
             </form>
+
         </section>
 
     </main>
@@ -124,12 +122,44 @@ include('../includes/db.php');
     <?php include('../templates/footer.php');?>
 
     <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                tipoSeguro: document.getElementById('tipo-seguro').value,
+                oficina: document.getElementById('oficina').value,
+                mensaje: document.getElementById('mensaje').value,
+                promo: document.getElementById('promo-checkbox').checked
+            };
+
+            fetch('http://localhost:3000/send-contact-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())  // Esto debería funcionar ahora porque el servidor devuelve JSON
+            .then(data => {
+                if (data.message === "Correo enviado con éxito") {
+                    alert("Correo enviado con éxito");
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert("Error al enviar el correo: " + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        });
+
         // PIURA
         function accionObjeto1() {
             // alert("zona 1")
             window.open("https://maps.app.goo.gl/N1cBBCpu7TaxFYrt5", "_blank");
         }
-
 
         // CHICLAYO - CORREGIR EL LINK CORRECTO
         function accionObjeto2() {

@@ -4,17 +4,17 @@
 // $password = "nXFg0vZ3GON4r";
 // $dbname = "if0_37236684_fdf_psicologia";
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "70434581";
-$dbname = "reyes_cia";
+// $servername = "localhost:3306";
+// $username = "root";
+// $password = "70434581";
+// $dbname = "reyes_cia";
 
 
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+// // Crear la conexión
+// $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+// // Verificar la conexión
+// if ($conn->connect_error) {
+//     die("Conexión fallida: " . $conn->connect_error);
+// }
 ?>

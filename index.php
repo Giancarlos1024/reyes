@@ -193,7 +193,7 @@
         <div id="chatbot-input">
             <input type="text" id="entrada-usuario" placeholder="Escribe tu mensaje..." />
             <img src="./public/img/adjuntarArchivo.png" alt="Adjuntar archivo" 
-                onclick="document.getElementById('input-file').click()" style="cursor: pointer; width: 28px; margin-left: 8px;">
+                onclick="document.getElementById('input-file').click()" style="cursor: pointer; width: 25px; heigh:25px; margin-left: 8px;">
             <button onclick="manejarEntradaUsuario()">Enviar</button>
             <input type="file" id="input-file" style="display: none;" onchange="manejarArchivoAdjunto(event)">
         </div>
