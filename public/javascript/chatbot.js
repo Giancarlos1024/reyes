@@ -584,35 +584,43 @@ function manejarDatosVidaLey(entradaUsuario, opcion) {
 
 
 
+
+
 function manejarArchivoAdjunto(event) {
     const fileInput = event.target;
     const archivo = fileInput.files[0];
+    const mensajesTexto = mensajesChatbot.join("\n"); // Capturar mensajes del chatbot como texto
 
+    // Crear un objeto FormData para enviar datos al servidor
+    const formData = new FormData();
+    formData.append("texto", mensajesTexto); // Incluir los mensajes del chatbot
+
+    // Si hay un archivo, adjuntarlo
     if (archivo) {
-        // Crear un objeto FormData para enviar el archivo y los datos
-        const formData = new FormData();
-        formData.append("archivo", archivo); // Agregar el archivo al FormData
-        formData.append("mensaje", "Este es el mensaje que quiero enviar"); // Agregar el mensaje, o captura lo que necesites
-
-        // Enviar los datos al servidor
-        fetch("http://localhost:3000/send-email", {
-            method: "POST",
-            body: formData,
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Archivo enviado exitosamente:", data);
-            mostrarMensaje("Tu archivo y mensaje han sido enviados correctamente.", "bot-message");
-        })
-        .catch(error => {
-            console.error("Error al enviar el archivo:", error);
-            mostrarMensaje("Hubo un error al enviar el archivo.", "bot-message");
-        });
+        formData.append("archivo", archivo);
     }
+
+    // Enviar los datos al servidor
+    fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        body: formData,
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log("Datos enviados exitosamente:", data);
+        mostrarMensaje("Tu información ha sido enviada correctamente.", "bot-message");
+    })
+    .catch((error) => {
+        console.error("Error al enviar los datos:", error);
+        mostrarMensaje("Hubo un error al enviar la información.", "bot-message");
+    });
 
     // Resetear el campo de archivo para permitir una nueva carga
     fileInput.value = "";
 }
+
+
+
 
 
 
