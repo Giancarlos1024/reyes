@@ -152,6 +152,38 @@ app.post("/send-email", upload.single("archivo"), (req, res) => {
     });
 });
 
+
+app.post("/send-contact-form", (req, res) => {
+    const { nombre, email, telefono, tipoSeguro, oficina, mensaje, promo } = req.body;
+
+    const mailOptions = {
+        from: userGmail,
+        to: userGmail,
+        subject: `Nuevo mensaje de contacto de ${nombre}`,
+        text: `
+            Nombre: ${nombre}
+            Correo Electrónico: ${email}
+            Teléfono: ${telefono}
+            Tipo de Seguro: ${tipoSeguro}
+            Oficina: ${oficina}
+            Mensaje: ${mensaje}
+            Promociones: ${promo ? "Sí" : "No"}
+        `,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            return res.status(500).json({ message: "Error al enviar el correo" });
+        }
+        console.log("Correo enviado: " + info.response);
+        res.status(200).json({ message: "Correo enviado con éxito" });
+    });
+});
+
+
+
+
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
