@@ -129,7 +129,7 @@ app.post("/send-email", upload.single("archivo"), (req, res) => {
         from: userGmail,
         to: userGmail,
         subject: "Información del Chatbot",
-        text: texto || "No se proporcionó un texto",
+        text: texto ||"Información del Chatbot",
     };
 
     // Si hay un archivo, agregarlo como adjunto

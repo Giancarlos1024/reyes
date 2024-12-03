@@ -107,12 +107,14 @@ let opcionSeguroVehicular = ""; // Variable global para almacenar la opción sel
 // Función para manejar la entrada del usuario
 function manejarEntradaUsuario() {
     const entradaUsuario = document.getElementById("entrada-usuario").value.trim();
-    
+
     if (entradaUsuario !== "") {
         mostrarMensaje(entradaUsuario, "mensaje-usuario");
 
         if (esperandoDatosSOAT) {
             manejarDatosSOAT(entradaUsuario); // Validar y procesar datos SOAT
+        }else if (esperandoPrimeraParteVehicular || esperandoSegundaParteVehicular) {
+                manejarDatosSeguroVehicular(entradaUsuario);
         } else if (esperandoDatosSCTR) {
             manejarDatosSCTR(entradaUsuario, opcionSCTR); // Validar y procesar datos SCTR
         } else if (esperandoDatosVidaLey) {
@@ -356,70 +358,81 @@ function manejarOpcionSeguros(opcion) {
     }
 }
 
-// Función para manejar las opciones de "Seguro vehicular"
+// Variables para manejar las etapas del flujo
+let esperandoPrimeraParteVehicular = false;
+let esperandoSegundaParteVehicular = false;
+let opcionActualVehicular = "";
+
 // Función para manejar las opciones de "Seguro Vehicular"
 function manejarSeguroVehicular(opcion) {
-    opcionSeguroVehicular = opcion; // Guardar la opción seleccionada en la variable global
+    opcionActualVehicular = opcion; // Guardar la opción seleccionada
 
     switch (opcion) {
         case "Cotizar":
-            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial", "bot-message");
-            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
-            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
+            // Primera etapa: Pedir los datos principales
+            mostrarMensaje(
+                "Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial",
+                "bot-message"
+            );
+            esperandoPrimeraParteVehicular = true; // Activar espera de la primera parte
             break;
+
         case "Renovar":
-            mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior", "bot-message");
-            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
-            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
+            // Primera etapa: Pedir los datos principales
+            mostrarMensaje(
+                "Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior",
+                "bot-message"
+            );
+            esperandoPrimeraParteVehicular = true; // Activar espera de la primera parte
             break;
+
         case "Siniestros/Reclamos":
-            mostrarMensaje("Por favor, ingresa tu N° de documento y N° de póliza", "bot-message");
-            esperandoDatosSeguroVehicular = true; // Activar la espera de datos Seguro Vehicular
+            mostrarMensaje(
+                "Por favor, ingresa tu N° de documento y N° de póliza",
+                "bot-message"
+            );
+            esperandoDatosSeguroVehicular = true; // Activar la espera de datos
             break;
+
         case "Contactar a un asesor":
             manejarOtros();
             break;
     }
 }
 
-// Función para validar y procesar los datos del usuario para Seguro Vehicular
-// Función para validar y procesar los datos del usuario para Seguro Vehicular
-function manejarDatosSeguroVehicular(entradaUsuario, opcion) {
-    // Separar los datos ingresados por comas
-    const datos = entradaUsuario.split(",");
+// Función para manejar los datos ingresados por el usuario para Seguro Vehicular
+function manejarDatosSeguroVehicular(entradaUsuario) {
+    if (esperandoPrimeraParteVehicular) {
+        // Validar la primera entrada del usuario
+        const datos = entradaUsuario.split(",");
 
-    // Validar que se hayan ingresado todos los campos requeridos según la opción seleccionada
-    if ((opcion === "Cotizar" && datos.length < 8) || 
-        (opcion === "Renovar" && datos.length < 8) || 
-        (opcion === "Siniestros/Reclamos" && datos.length < 2) || 
-        datos.some(campo => campo.trim() === "")) {
-        mostrarMensaje(
-            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
-            "Cotizar:\n DNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial\n" +
-            "Renovar:\n DNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior\n" +
-            "Siniestros/Reclamos:\n N° de documento, N° de póliza",
-            "bot-message"
-        );
-        return;
+        const requisitos =
+            opcionActualVehicular === "Cotizar"
+                ? 8 // Cotizar requiere 8 datos
+                : 7; // Renovar requiere 7 datos
+
+        if (datos.length < requisitos || datos.some(campo => campo.trim() === "")) {
+            mostrarMensaje(
+                `Por favor, asegúrate de ingresar todos los datos en el formato correcto:\n` +
+                (opcionActualVehicular === "Cotizar"
+                    ? "DNI / RUC, Nombre, Placa, Año, Modelo, Uso, Zona de Circulación, Valor comercial"
+                    : "DNI / RUC, Nombre, Placa, Año, Modelo, Valor comercial, Número de Póliza Anterior"),
+                "bot-message"
+            );
+            return;
+        }
+
+        // Datos validados, pasar a la segunda etapa
+        mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+        esperandoPrimeraParteVehicular = false;
+        esperandoSegundaParteVehicular = true; // Activar la espera de la segunda etapa
+    } else if (esperandoSegundaParteVehicular) {
+        // Aquí puedes manejar cualquier otra acción después de la segunda etapa si fuera necesario
+        mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
+        manejarOtros(); // Continuar con el flujo
+        esperandoSegundaParteVehicular = false;
+        esperandoDatosSeguroVehicular = false;
     }
-
-    // Asegurarse de que los datos no sean undefined o null antes de usar .trim()
-    const datosUsuario = {
-        dni: (datos[0] && datos[0].trim()) || "",  // Validar si datos[0] existe antes de usar .trim()
-        nombre: (datos[1] && datos[1].trim()) || "",  // Validar si datos[1] existe antes de usar .trim()
-        placa: (datos[2] && datos[2].trim()) || "",  // Validar si datos[2] existe antes de usar .trim()
-        anio: (datos[3] && datos[3].trim()) || "",  // Validar si datos[3] existe antes de usar .trim()
-        modelo: (datos[4] && datos[4].trim()) || "",  // Validar si datos[4] existe antes de usar .trim()
-        uso: opcion === "Cotizar" ? (datos[5] && datos[5].trim()) || "" : undefined,  // Validar si datos[5] existe antes de usar .trim()
-        zonaCirculacion: opcion === "Cotizar" ? (datos[6] && datos[6].trim()) || "" : undefined,  // Validar si datos[6] existe antes de usar .trim()
-        valorComercial: opcion === "Cotizar" || opcion === "Renovar" ? (datos[7] && datos[7].trim()) || "" : undefined,  // Validar si datos[7] existe antes de usar .trim()
-        numeroPoliza: opcion === "Renovar" ? (datos[8] && datos[8].trim()) || "" : undefined  // Validar si datos[8] existe antes de usar .trim()
-    };
-
-    // Mensaje de confirmación y llamado a la función manejarOtros
-    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
-    manejarOtros(); // Continuar con el flujo
-    esperandoDatosSeguroVehicular = false; // Desactivar la espera de datos Seguro Vehicular
 }
 
 
@@ -431,14 +444,22 @@ function manejarOtros() {
 }
 
 
-// Función para manejar las opciones de "SOAT"
+
+
+
+
+
+// Variable para controlar el estado de espera de la tarjeta de propiedad
+let esperandoTarjetaPropiedad = false; 
+
+// Función para manejar "SOAT"
 function manejarSOAT(opcion) {
     switch (opcion) {
         case "Renovar mi SOAT":
         case "Cotizar mi SOAT":
+            // Primera solicitud: Pedir los datos iniciales
             mostrarMensaje("Por favor, ingresa los siguientes datos en una sola línea separados por comas:\nDNI / RUC, Nombre, Placa, Año, Modelo, Uso", "bot-message");
-            mostrarMensaje("Asimismo, puedes adjuntar la tarjeta de propiedad si es necesario.", "bot-message");
-            esperandoDatosSOAT = true; // Activar la espera de datos SOAT
+            esperandoDatosSOAT = true; // Activar la espera de los datos iniciales
             break;
 
         case "Contactar a un asesor":
@@ -449,34 +470,55 @@ function manejarSOAT(opcion) {
 
 // Función para validar y procesar los datos del usuario para SOAT
 function manejarDatosSOAT(entradaUsuario) {
-    // Separar los datos ingresados por comas
-    const datos = entradaUsuario.split(",");
+    if (!esperandoTarjetaPropiedad) {
+        // Separar los datos ingresados por comas
+        const datos = entradaUsuario.split(",");
 
-    // Validar que se hayan ingresado todos los campos requeridos
-    if (datos.length < 6 || datos.some(campo => campo.trim() === "")) {
-        mostrarMensaje(
-            "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
-            "DNI / RUC, Nombre, Placa, Año, Modelo, Uso",
-            "bot-message"
-        );
-        return;
+        // Validar que se hayan ingresado todos los campos requeridos
+        if (datos.length < 6 || datos.some(campo => campo.trim() === "")) {
+            mostrarMensaje(
+                "Por favor, asegúrate de ingresar todos los datos en el siguiente formato:\n" +
+                "DNI / RUC, Nombre, Placa, Año, Modelo, Uso",
+                "bot-message"
+            );
+            return;
+        }
+
+        // Si los datos son válidos, procesarlos
+        const datosUsuario = {
+            dni: datos[0].trim(),
+            nombre: datos[1].trim(),
+            placa: datos[2].trim(),
+            anio: datos[3].trim(),
+            modelo: datos[4].trim(),
+            uso: datos[5].trim()
+        };
+
+        mostrarMensaje("Datos validados correctamente.", "bot-message");
+
+        // Pasar a la siguiente solicitud: Pedir la tarjeta de propiedad
+        mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+        esperandoTarjetaPropiedad = true; // Activar la espera de la tarjeta de propiedad
+    } else {
+        // Procesar la tarjeta de propiedad
+        if (entradaUsuario.toLowerCase().includes("adjunto") || entradaUsuario.trim() !== "") {
+            mostrarMensaje("Tarjeta de propiedad recibida. Procesando información...", "bot-message");
+        } else {
+            mostrarMensaje("Asimismo, adjúntanos la tarjeta de propiedad.", "bot-message");
+            return;
+        }
+
+        // Reiniciar los estados
+        manejarOtros(); // Continuar con el flujo
+        esperandoDatosSOAT = false;
+        esperandoTarjetaPropiedad = false;
     }
-
-    // Si los datos son válidos, procesarlos
-    const datosUsuario = {
-        dni: datos[0].trim(),
-        nombre: datos[1].trim(),
-        placa: datos[2].trim(),
-        anio: datos[3].trim(),
-        modelo: datos[4].trim(),
-        uso: datos[5].trim()
-    };
-
-    // Mensaje de confirmación y llamado a la función manejarOtros
-    mostrarMensaje("Datos validados correctamente. Procesando información...", "bot-message");
-    manejarOtros(); // Continuar con el flujo
-    esperandoDatosSOAT = false; // Desactivar la espera de datos SOAT
 }
+
+
+
+
+
 
 
 // Función para manejar las opciones de "SCTR"
@@ -608,11 +650,11 @@ function manejarArchivoAdjunto(event) {
     .then((response) => response.json())
     .then((data) => {
         console.log("Datos enviados exitosamente:", data);
-        mostrarMensaje("Tu información ha sido enviada correctamente.", "bot-message");
+        mostrarMensaje("Tu tarjeta de propiedad ha sido enviado correctamente.\nEn unos minutos nos pondremos en contacto contigo.", "bot-message");
     })
     .catch((error) => {
         console.error("Error al enviar los datos:", error);
-        mostrarMensaje("Hubo un error al enviar la información.", "bot-message");
+        mostrarMensaje("Hubo un error al enviar tu tarjeta de propiedad.", "bot-message");
     });
 
     // Resetear el campo de archivo para permitir una nueva carga
@@ -625,10 +667,66 @@ function manejarArchivoAdjunto(event) {
 
 
 
-// Variable para almacenar los mensajes del chatbot
+//Variable para almacenar los mensajes del chatbot
 let mensajesChatbot = [];
 
 // Interceptar y almacenar mensajes en el chat
+function mostrarMensaje(mensaje, tipo) {
+    const chatMessages = document.getElementById("chatbot-messages");
+
+    // Crear el elemento para el mensaje
+    const mensajeElemento = document.createElement("div");
+    mensajeElemento.className = tipo;
+    mensajeElemento.innerText = mensaje;
+
+    // Agregar el mensaje al chat
+    chatMessages.appendChild(mensajeElemento);
+
+    // Almacenar el mensaje en la lista de mensajes
+    mensajesChatbot.push(`${tipo === "bot-message" ? "Chatbot: " : "Usuario: "} ${mensaje}`);
+
+    // Verificar si el mensaje desencadena el envío de correo
+    if (
+        tipo === "bot-message" &&
+        (mensaje === "En breve, un asesor se pondrá en contacto contigo." ||
+            mensaje === "Listo, en unos minutos nos pondremos en contacto contigo.")
+    ) {
+        // Enviar el array completo al servidor
+        enviarDatosPorCorreo(mensajesChatbot);
+    }
+}
+
+// Función para enviar los datos capturados al servidor
+function enviarDatosPorCorreo(datos) {
+    const mensajesTexto = datos.join("\n"); // Convertir el array en texto
+
+    // Crear un objeto FormData para enviar datos al servidor
+    const formData = new FormData();
+    formData.append("texto", mensajesTexto);
+
+    // Enviar los datos al servidor
+    fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error al enviar el correo");
+            }
+            console.log("Correo enviado con éxito");
+        })
+        .catch((error) => console.error("Error al enviar el correo:", error));
+}
+
+
+
+
+
+
+
+
+
+/*// Interceptar y almacenar mensajes en el chat
 function mostrarMensaje(mensaje, tipo) {
     const chatMessages = document.getElementById("chatbot-messages");
 
@@ -653,7 +751,7 @@ function mostrarMensaje(mensaje, tipo) {
     }
 }
 
-// Función para enviar los datos capturados al servidor
+//Función para enviar los datos capturados al servidor
 function enviarDatosPorCorreo(datos) {
     fetch("http://localhost:3000/send-email", {
         method: "POST",
@@ -672,6 +770,71 @@ function enviarDatosPorCorreo(datos) {
             console.log("Correo enviado con éxito");
         })
         .catch((error) => console.error("Error al enviar el correo:", error));
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Interceptar y almacenar mensajes en el chat
+function mostrarMensaje(mensaje, tipo) {
+    const chatMessages = document.getElementById("chatbot-messages");
+
+    // Crear el elemento para el mensaje
+    const mensajeElemento = document.createElement("div");
+    mensajeElemento.className = tipo;
+    mensajeElemento.innerText = mensaje;
+
+    // Agregar el mensaje al chat
+    chatMessages.appendChild(mensajeElemento);
+
+    // Almacenar el mensaje en la lista de mensajes
+    mensajesChatbot.push(`${tipo === "bot-message" ? "Chatbot: " : "Usuario: "} ${mensaje}`);
+
+    // Verificar si el mensaje desencadena el envío de correo
+    if (
+        tipo === "bot-message" &&
+        (mensaje === "En breve, un asesor se pondrá en contacto contigo." ||
+            mensaje === "Listo, en unos minutos nos pondremos en contacto contigo.")
+    ) {
+        enviarDatosPorCorreo(mensajesChatbot); // Enviar todo el historial del chatbot
+    }
 }
 
+
+// Función para enviar los datos capturados al servidor
+function enviarDatosPorCorreo(datos) {
+    // Crear un objeto para enviar datos al servidor
+    const bodyData = {
+        texto: datos.join("\n"), // Convertir el array en un texto legible con saltos de línea
+    };
+
+    fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyData), // Enviar el historial completo
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error al enviar el correo");
+            }
+            console.log("Correo enviado con éxito");
+        })
+        .catch((error) => console.error("Error al enviar el correo:", error));
+}*/
 
