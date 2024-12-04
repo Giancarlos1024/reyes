@@ -30,7 +30,7 @@ const upload = multer({ storage });
 
 // Credenciales del correo
 const userGmail = "fysat.20@gmail.com";
-const passAppGmail = "nmvv njkx byic bwkb";
+const passAppGmail = "seny jztq gwmb nmbs";
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -48,7 +48,7 @@ app.post("/send-email", upload.single("archivo"), (req, res) => {
     const mailOptions = {
         from: userGmail,
         to: userGmail,
-        subject: "Información del Chatbot",
+        subject: "Información del Chatbot Clientes",
         text: texto ||"Información del Chatbot",
     };
 
