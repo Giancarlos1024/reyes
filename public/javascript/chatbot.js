@@ -642,7 +642,7 @@ function manejarArchivoAdjunto(event) {
         formData.append("archivo", archivo);
     }
 
-    // Enviar los datos al servidor
+    // Enviar los datos al servidor "http://Domain/api/send-email"
     fetch("http://localhost:3000/send-email", {
         method: "POST",
         body: formData,
@@ -704,7 +704,7 @@ function enviarDatosPorCorreo(datos) {
     const formData = new FormData();
     formData.append("texto", mensajesTexto);
 
-    // Enviar los datos al servidor
+    // Enviar los datos al servidor "http://Domain/api/send-email"
     fetch("http://localhost:3000/send-email", {
         method: "POST",
         body: formData,
@@ -717,124 +717,3 @@ function enviarDatosPorCorreo(datos) {
         })
         .catch((error) => console.error("Error al enviar el correo:", error));
 }
-
-
-
-
-
-
-
-
-
-/*// Interceptar y almacenar mensajes en el chat
-function mostrarMensaje(mensaje, tipo) {
-    const chatMessages = document.getElementById("chatbot-messages");
-
-    // Crear el elemento para el mensaje
-    const mensajeElemento = document.createElement("div");
-    mensajeElemento.className = tipo;
-    mensajeElemento.innerText = mensaje;
-
-    // Agregar el mensaje al chat
-    chatMessages.appendChild(mensajeElemento);
-
-    // Almacenar el mensaje en la lista de mensajes
-    mensajesChatbot.push(`${tipo === "bot-message" ? "Chatbot: " : "Usuario: "} ${mensaje}`);
-
-    // Verificar si el mensaje desencadena el envío de correo
-    if (
-        tipo === "bot-message" &&
-        (mensaje === "En breve, un asesor se pondrá en contacto contigo." ||
-            mensaje === "Listo, en unos minutos nos pondremos en contacto contigo.")
-    ) {
-        enviarDatosPorCorreo(mensajesChatbot);
-    }
-}
-
-//Función para enviar los datos capturados al servidor
-function enviarDatosPorCorreo(datos) {
-    fetch("http://localhost:3000/send-email", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            subject: "Información del Chatbot",
-            text: datos.join("\n"), // Convertir el array en texto
-        }),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Error al enviar el correo");
-            }
-            console.log("Correo enviado con éxito");
-        })
-        .catch((error) => console.error("Error al enviar el correo:", error));
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Interceptar y almacenar mensajes en el chat
-function mostrarMensaje(mensaje, tipo) {
-    const chatMessages = document.getElementById("chatbot-messages");
-
-    // Crear el elemento para el mensaje
-    const mensajeElemento = document.createElement("div");
-    mensajeElemento.className = tipo;
-    mensajeElemento.innerText = mensaje;
-
-    // Agregar el mensaje al chat
-    chatMessages.appendChild(mensajeElemento);
-
-    // Almacenar el mensaje en la lista de mensajes
-    mensajesChatbot.push(`${tipo === "bot-message" ? "Chatbot: " : "Usuario: "} ${mensaje}`);
-
-    // Verificar si el mensaje desencadena el envío de correo
-    if (
-        tipo === "bot-message" &&
-        (mensaje === "En breve, un asesor se pondrá en contacto contigo." ||
-            mensaje === "Listo, en unos minutos nos pondremos en contacto contigo.")
-    ) {
-        enviarDatosPorCorreo(mensajesChatbot); // Enviar todo el historial del chatbot
-    }
-}
-
-
-// Función para enviar los datos capturados al servidor
-function enviarDatosPorCorreo(datos) {
-    // Crear un objeto para enviar datos al servidor
-    const bodyData = {
-        texto: datos.join("\n"), // Convertir el array en un texto legible con saltos de línea
-    };
-
-    fetch("http://localhost:3000/send-email", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyData), // Enviar el historial completo
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Error al enviar el correo");
-            }
-            console.log("Correo enviado con éxito");
-        })
-        .catch((error) => console.error("Error al enviar el correo:", error));
-}*/
-

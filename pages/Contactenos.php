@@ -134,8 +134,8 @@
                 mensaje: document.getElementById('mensaje').value,
                 promo: document.getElementById('promo-checkbox').checked
             };
-
-            fetch('http://localhost:3000/send-contact-form', {
+//dominio 'http://ReyesYCia/api/send-contact-form'
+            fetch('http://localhost:3000/api/send-contact-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
