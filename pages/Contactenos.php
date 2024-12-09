@@ -135,7 +135,7 @@
                 promo: document.getElementById('promo-checkbox').checked
             };
 //dominio 'http://ReyesYCia/api/send-contact-form'
-            fetch('http://localhost:3000/api/send-contact-form', {
+            fetch('http://localhost:3000/send-contact-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
