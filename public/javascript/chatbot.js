@@ -35,7 +35,7 @@ function mostrarMensajeDeInicio() {
 function manejarOpcionInicial(opcion) {
     switch (opcion) {
         case "Horarios de atención":
-            mostrarMensaje("¿En qué ciudad deseas saber los horarios de atención?", "bot-message");
+            mostrarMensaje("Dime, ¿en qué ciudad te gustaría saber los horarios?", "bot-message");
             mostrarOpciones(["Piura", "Chiclayo", "Lima", "Pisco", "Ica", "Cusco"], manejarHorariosAtencion);
             break;
         case "Contáctanos":
